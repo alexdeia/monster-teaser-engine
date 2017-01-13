@@ -1,18 +1,18 @@
 <?php
 $str = '
 <div class="page_content">
-	<h1 class="title">Статистика сети</h1>
+  <h1 class="title">РЎС‚Р°С‚РёСЃС‚РёРєР° СЃРµС‚Рё</h1>
     <div id="cont">
-					<ul>
-						<li>Всего сайтов: <b><TVAR>total_sites</TVAR></b></li>
-						<li>Всего рекламодателей: <b><TVAR>total_advertisers</TVAR></b></li>
-						<li>Всего тизеров: <b><TVAR>total_tizers</TVAR></b></li>
-						<li>Количество показов: <b><TVAR>total_tizers</TVAR></b></li>
-						<li>Количество выплат: <b><TVAR>total_tizers</TVAR></b> на сумму <b>0</b>$</li>
-					</ul>
-		<br/>
-		<i>Обновляется раз в сутки</i>
-	</div>
+                    <ul>
+                        <li>Р’СЃРµРіРѕ СЃР°Р№С‚РѕРІ: <b><TVAR>total_sites</TVAR></b></li>
+                        <li>Р’СЃРµРіРѕ СЂРµРєР»Р°РјРѕРґР°С‚РµР»РµР№: <b><TVAR>total_advertisers</TVAR></b></li>
+                        <li>Р’СЃРµРіРѕ С‚РёР·РµСЂРѕРІ: <b><TVAR>total_tizers</TVAR></b></li>
+                        <li>РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРєР°Р·РѕРІ: <b><TVAR>total_tizers</TVAR></b></li>
+                        <li>РљРѕР»РёС‡РµСЃС‚РІРѕ РІС‹РїР»Р°С‚: <b><TVAR>total_tizers</TVAR></b> РЅР° СЃСѓРјРјСѓ <b>0</b>$</li>
+                    </ul>
+        <br/>
+        <i>РћР±РЅРѕРІР»СЏРµС‚СЃСЏ СЂР°Р· РІ СЃСѓС‚РєРё</i>
+    </div>
 </div>
 ';
 ?>
