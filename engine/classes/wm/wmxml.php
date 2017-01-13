@@ -1,4 +1,16 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 class WMI {	public $wmsign_dir = "/home/inf.loc/wmsign/";
 	public $addr = array(
 		1 =>'https://w3s.webmoney.ru/asp/XMLInvoice.asp',
@@ -31,15 +43,15 @@ class WMI {	public $wmsign_dir = "/home/inf.loc/wmsign/";
 	}
 
 	public function x2 ($reqn,$tranid,$purse,$rpurse,$amount,$period,$pcode,$desc,$wminvid) {
-		$desc=trim($desc);
-		$pcode=trim($pcode);
-		$amount=floatval($amount);
-		$rsign=$this->get_sign($reqn.$tranid.$purse.$rpurse.$amount.$period.$pcode.$desc.$wminvid);
-		$pcode=htmlspecialchars($pcode, ENT_QUOTES);
-		$desc=htmlspecialchars($desc, ENT_QUOTES);
-		$pcode=iconv("CP1251", "UTF-8", $pcode);
-		$desc=iconv("CP1251", "UTF-8", $desc);
-		$xml=" <w3s.request>
+		$desc = trim($desc);
+		$pcode = trim($pcode);
+		$amount = floatval($amount);
+		$rsign = $this->get_sign($reqn.$tranid.$purse.$rpurse.$amount.$period.$pcode.$desc.$wminvid);
+		$pcode = htmlspecialchars($pcode, ENT_QUOTES);
+		$desc = htmlspecialchars($desc, ENT_QUOTES);
+		$pcode = iconv("CP1251", "UTF-8", $pcode);
+		$desc = iconv("CP1251", "UTF-8", $desc);
+		$xml = " <w3s.request>
 			<reqn>$reqn</reqn>
 			<wmid>".$this->sys['wmid']."</wmid>
 			<sign>$rsign</sign>
@@ -59,7 +71,7 @@ class WMI {	public $wmsign_dir = "/home/inf.loc/wmsign/";
 		$xmlres = simplexml_load_string($resxml);
 		if(!$xmlres) {
 			$result['retval']=1000;
-			$result['retdesc']="Не получен XML-ответ";
+			$result['retdesc']="РќРµ РїРѕР»СѓС‡РµРЅ XML-РѕС‚РІРµС‚";
 			return $result;
 		}
 		$result['retval']=strval($xmlres->retval);
@@ -83,16 +95,14 @@ class WMI {	public $wmsign_dir = "/home/inf.loc/wmsign/";
 require_once('../../../config/config.php');
 $wm = new WMI();
 $tranid="1";
-$purse="кошелек_отправитель";
-$rpurse="кошелек_получатель";
+$purse="РєРѕС€РµР»РµРє_РѕС‚РїСЂР°РІРёС‚РµР»СЊ";
+$rpurse="РєРѕС€РµР»РµРє_РїРѕР»СѓС‡Р°С‚РµР»СЊ";
 $amount="0.01";
 $period="0";
 $pcode="";
-$desc="тестовый товар & тестовая услуга";
+$desc="С‚РµСЃС‚РѕРІС‹Р№ С‚РѕРІР°СЂ & С‚РµСЃС‚РѕРІР°СЏ СѓСЃР»СѓРіР°";
 $wminvid="0";
 $r = $wm->x2(2,$tranid,$purse,$rpurse,$amount,$period,$pcode,$desc,$wminvid);
-echo "Результат (0 - успешно) - ".$r['retval']."<br>";
-echo "Расшифровка - ".$r['retdesc']."<br>";
-echo "Дата и время - ".$r['date']."<br>";
-
-?>
+echo "Р РµР·СѓР»СЊС‚Р°С‚ (0 - СѓСЃРїРµС€РЅРѕ) - ".$r['retval']."<br>";
+echo "Р Р°СЃС€РёС„СЂРѕРІРєР° - ".$r['retdesc']."<br>";
+echo "Р”Р°С‚Р° Рё РІСЂРµРјСЏ - ".$r['date']."<br>";

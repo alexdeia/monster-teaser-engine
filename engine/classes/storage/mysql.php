@@ -1,4 +1,16 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 class MysqlDBM {
 	private $db = null;
 	public $queries = 0;
@@ -15,7 +27,7 @@ class MysqlDBM {
 				mysql_query("SET NAMES CP1251");
 				mysql_query("SET COLLATION_CONNECTION=CP1251_GENERAL_CI");
 			}else{
-				trigger_error('Hевозможно выбрать базу данных <b>"'.$this->sys['mysql_db'].'"</b>');
+				trigger_error('РќРµРІРѕР·РјРѕР¶РЅРѕ РІС‹Р±СЂР°С‚СЊ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… <b>"'.$this->sys['mysql_db'].'"</b>');
 			}
 		}
 	}
@@ -29,7 +41,7 @@ class MysqlDBM {
 #		echo $this->queries.'. '.$SQL.'<br/><br/>';
 		if ($rs) {			return $rs;
 		}else{
-			trigger_error('Ошибка SQL запроса<br><b>Запрос:</b> '.$SQL.'<br><b>Ошибка:</b> '.mysql_error(),E_USER_NOTICE);
+			trigger_error('РћС€РёР±РєР° SQL Р·Р°РїСЂРѕСЃР°<br><b>Р—Р°РїСЂРѕСЃ:</b> '.$SQL.'<br><b>РћС€РёР±РєР°:</b> '.mysql_error(),E_USER_NOTICE);
 		}
 	}
 
