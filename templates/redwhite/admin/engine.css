@@ -1,0 +1,92 @@
+.message
+{
+	padding: 10px; 
+	border: 1px solid #ececec; 
+	background-color: #fcfcfc; 
+	font-family: arial; 
+	color: gray; 
+	font-size: 12px;
+}
+
+.news
+{
+	font-family: arial; 
+	color: #2e2e2e; 
+	color: gray;
+}
+
+.adv_text
+{
+	color: gray;
+	border: 1px solid #a1a1a1;
+	padding: 2px;
+}
+
+.adv_textarea
+{
+	color: gray;
+	border: 1px solid #a1a1a1;
+	padding: 2px;
+	font-size: 12px
+}
+
+.adv_selectbox
+{
+	#color: gray;
+	#border: 1px solid #a1a1a1;
+	#padding: 2px;
+}
+
+.adv_list_td
+{
+	padding: 5px;
+	font-size: 12px;
+	background-color: #ececec;
+	text-align: center;
+}
+
+.list_td
+{
+	font-size: 12px;
+	background-color: #ececec;
+	text-align: center;
+	padding: 3px;
+}
+
+.list_td
+{
+	font-size: 12px;
+	background-color: #ececec;
+	text-align: center;
+}
+
+.list_table
+{
+	border: 1px solid #ececec;
+	font-size: 12px;
+	text-align: center;
+	width: 80%;
+}	
+
+.adv_table
+{
+	font-size: 12px;
+}
+
+
+.adv_table td
+{
+	font-size: 12px;
+}
+
+.adv_checkbox
+{
+	border: 1px solid gray;
+	color: #aeaeae;
+}
+
+.adv_buttn
+{
+	border: 1px solid #b3b3b3;
+	color: gray;
+}

@@ -1,0 +1,21 @@
+#wrapper { border: 1px solid #F0F1F3; background: #fff;}
+
+#panel, #panel a { color: #CCC; }
+#panel span { border-bottom: 1px dashed #CCC; }
+
+#blank { background: #fff; }
+#panelshade { background: #FFF;}
+
+.picture { border: 1px solid #F0F1F3; }
+
+h2 { background: #fff; }
+h2 a { color: #990000; }
+h2 a:hover { color: #C00; }
+
+
+.info { background: #fff; }
+.info a { color: #404040;}
+
+.domain { background: #fff; }
+.domain a { color: #9BAAB6; }
+

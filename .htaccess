@@ -1,0 +1,78 @@
+<Files config>
+	deny from all
+</Files>
+<Files engine>
+	deny from all
+</Files>
+<Files data>
+	deny from all
+</Files>
+
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^go/([0-9]*)/([0-9]*)/([0-9]*)$ go.php?inf_id=$1&site_id=$2&com_id=$3 [QSA,L]
+
+RewriteRule ^$ index.php?page=index [QSA,L]
+RewriteRule ^index.html$ index.php?page=index [QSA,L]
+RewriteRule ^rules.html$ index.php?page=rules [QSA,L]
+RewriteRule ^help/index.html$ index.php?page=faq [QSA,L]
+RewriteRule ^contacts.html$ index.php?page=contacts [QSA,L]
+RewriteRule ^buy.html$ index.php?page=buy [QSA,L]
+RewriteRule ^send-message.html$ send.php [QSA,L]
+
+RewriteRule ^registration.html$ index.php?handler=user&show=registration [QSA,L]
+RewriteRule ^register/([0-9]*)$ index.php?handler=user&show=registration&referrer=$1 [QSA,L]
+RewriteRule ^register.html$ index.php?handler=user&show=registration&action=register [QSA,L]
+RewriteRule ^restore-password.html$ index.php?handler=user&show=restore_password [QSA,L]
+
+RewriteRule ^account/login.html$ index.php?handler=user&action=login [QSA,L]
+RewriteRule ^account/logout$ index.php?handler=user&action=logout [QSA,L]
+
+RewriteRule ^account/referrals.html index.php?handler=user&show=referrals [QSA,L]
+
+RewriteRule ^news/index.html$ index.php?handler=news&show=all_news [QSA,L]
+RewriteRule ^news/([0-9]*).html$ index.php?handler=news&id=$1&show=news [QSA,L]
+
+RewriteRule ^restore-password/([0-9a-z]{32}).html$ index.php?handler=user&code=$1&show=pass_set [QSA,L]
+RewriteRule ^set-password/([0-9a-z]{32}).html$ index.php?handler=user&action=pass_set&code=$1 [QSA,L]
+
+RewriteRule ^account/funds/index.html index.php?handler=user&show=funds [QSA,L]
+RewriteRule ^account/funds/wm/order.html index.php?handler=user&show=funds&action=order_wm [QSA,L]
+RewriteRule ^account/funds/add-wm.html index.php?handler=user&show=add_wm&action=add_wm [QSA,L]
+RewriteRule ^account/funds/failed.html index.php?handler=user&show=wm_failed [QSA,L]
+RewriteRule ^account/funds/sucessfull.html index.php?handler=user&show=wm_sucessfull [QSA,L]
+
+RewriteRule ^account/index.html$ index.php?handler=user&show=account [QSA,L]
+RewriteRule ^account/$ index.php?handler=user&show=account [QSA,L]
+RewriteRule ^account/settings.html$ index.php?handler=user&show=settings [QSA,L]
+RewriteRule ^account/save.html$ index.php?handler=user&show=settings&action=save_settings [QSA,L]
+
+RewriteRule ^account/sites/index.html$ index.php?handler=site&show=my_list [QSA,L]
+RewriteRule ^account/sites/add.html$ index.php?handler=site&show=add [QSA,L]
+RewriteRule ^account/sites/([0-9]*)/edit.html$ index.php?handler=site&show=edit&id=$1 [QSA,L]
+RewriteRule ^account/sites/([0-9]*)/code.html$ index.php?handler=site&show=code&id=$1 [QSA,L]
+RewriteRule ^account/sites/([0-9]*)/save.html$ index.php?handler=site&action=save&show=my_list&id=$1 [QSA,L]
+RewriteRule ^account/sites/([0-9]*)/delete.html$ index.php?handler=site&action=delete&show=my_list&id=$1 [QSA,L]
+RewriteRule ^account/sites/([0-9]*)/reports.html$ index.php?handler=site&show=reports&id=$1 [QSA,L]
+
+RewriteRule ^account/informers/index.html$ index.php?handler=informer&show=my_list [QSA,L]
+RewriteRule ^account/informers/([0-9]*)/edit.html$ index.php?handler=informer&show=edit&id=$1 [QSA,L]
+RewriteRule ^account/informers/([0-9]*)/save.html$ index.php?handler=informer&show=my_list&action=save&id=$1 [QSA,L]
+RewriteRule ^account/informers/([0-9]*)/delete.html$ index.php?handler=informer&show=my_list&action=delete&id=$1 [QSA,L]
+RewriteRule ^account/informers/([0-9]*)/reports.html$ index.php?handler=informer&show=reports&id=$1 [QSA,L]
+RewriteRule ^account/informers/add.html$ index.php?handler=informer&show=add [QSA,L]
+
+RewriteRule ^account/companies/index.html$ index.php?handler=company&show=my_list [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/edit.html$ index.php?handler=company&show=edit&id=$1 [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/balance.html$ index.php?handler=company&show=balance&id=$1 [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/save.html$ index.php?handler=company&show=my_list&action=save&id=$1 [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/delete.html$ index.php?handler=company&show=my_list&action=delete&id=$1 [QSA,L]
+RewriteRule ^account/companies/add.html$ index.php?handler=company&show=add [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/add-informers.html$ index.php?handler=company&show=add_informers&id=$1 [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/delete-informers.html$ index.php?handler=company&show=delete_informers&id=$1 [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/targeting.html$ index.php?handler=company&show=targeting&id=$1 [QSA,L]
+RewriteRule ^account/companies/([0-9]*)/reports.html$ index.php?handler=company&show=reports&id=$1 [QSA,L]
+
+RewriteRule ^tizers/([0-9]*)/(.*)$ get_tizer.php?site=$1&params=$2 [QSA,L]

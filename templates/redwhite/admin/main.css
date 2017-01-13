@@ -1,0 +1,262 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #333333;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	font-weight: normal;
+	color: #333333;
+}
+
+th {	background: #E6E6E6;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 2.6em;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+p, ul, ol {
+	margin-bottom: 1.6em;
+	line-height: 180%;
+}
+
+p {
+}
+
+blockquote {
+	font-style: italic;
+}
+
+ul {
+}
+
+ol {
+}
+
+a {
+	border-bottom: 1px dotted #EFEFEF;
+	text-decoration: none;
+	color: #356AA0;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #CC0000;
+}
+
+small {
+}
+
+hr {
+	display: none;
+}
+
+img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+img.right {
+	float: left;
+	margin: 0 0 0 15px;
+}
+
+/* Header */
+
+#header {
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	background: #FFFFFF url(/templates/default/images/admin/fon.png) repeat-x;
+}
+
+.menu {	font-weight: bold;
+}
+
+#header #menu {	padding-left: 10px;
+}
+
+#header #logo {
+	height: 80px;
+}
+
+#header #menu #menu_cell {/*	background: url(/templates/default/img/blue_dot.gif) no-repeat left;*/
+	padding-left: 8px;	padding-right: 10px;	font-weight: bold;
+	font-size: 12px;
+}
+
+label {	font-weight: bold;
+	color: #333333;
+}
+
+.labelsimple {	font-weight: none;
+}
+
+input {	font-size: 12px;
+	height: 16px;
+	font-weight: bold;
+}
+
+.button {
+	padding: 0px 10px 5px 10px;
+	height: 20px;
+	background: url(/templates/default/img/button_bg.jpg) repeat-x;
+	border: 1px solid #acacac;
+}
+
+#header h1 {
+	float: left;
+	margin-top: 20px;
+	padding: 100px 190px 0 0;
+	background: url(/templates/default/img/img02.jpg) no-repeat right top;
+	text-transform: lowercase;
+	letter-spacing: -3px;
+	font-size: 4.4em;
+}
+
+#header h1 span {
+	color: #CC0000;
+}
+
+#header h2 {
+	float: left;
+	margin: 0 0 0 -190px;
+	padding: 160px 0 0 0;
+	text-transform: lowercase;
+	font-size: 1em;
+	font-weight: bold;
+	color: #333333;
+}
+
+#header h2 a {
+	color: #333333;
+}
+
+/* Search */
+
+#search {
+	float: right;
+	width: 300px;
+	padding: 150px 0 0 0;
+}
+
+#search legend {
+	display: none;
+}
+
+#searchfield {
+	width: 200px;
+}
+
+#searchsubmit {
+	width: 80px;
+}
+
+/* Page */
+
+#page {
+	width: 95%;
+	margin: 0 auto;
+	padding: 20px 20px;
+}
+
+/* Content */
+
+#content {
+	float: right;
+	width: 100%;
+}
+
+.page_content h2 {
+	padding: 20px 50px;
+	background: url(/templates/default/img/img04.jpg) no-repeat;
+}
+
+.page_content #cont{	padding-left: 50px;
+}
+
+.help {	font-size: 10px;
+	color: #888888;
+}
+
+.err_notice {	border: 1px solid #E4B9B9;
+	padding: 10px 0px 10px 90px;
+	min-height: 44px;
+	background: #F9E6E6 url(/templates/default/img/error.gif) no-repeat left;
+	margin-bottom: 20px;
+}
+
+.ok_notice {
+	border: 1px solid #B5D7AF;
+	padding: 10px 0px 10px 90px;
+	min-height: 44px;
+	background: #D8FFD2 url(/templates/default/img/ok.gif) no-repeat left;
+	margin-bottom: 20px;
+}
+
+.post .title {
+	letter-spacing: -1px;
+	font-size: 2.4em;
+	color: #356AA0;
+}
+
+.post .meta {
+	margin: 0 0 20px 0;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid #EFEFEF;
+	line-height: normal;
+	color: #666666;
+}
+
+.frm {#	border-bottom: 1px solid #acacac;
+}
+/* Footer */
+
+#footer {
+	clear: both;
+	padding: 30px 0;
+        background-image: url(/templates/default/images/admin/fon.png);
+	background-repeat: repeat-x; 
+}
+
+#footer p {
+	margin: 0;
+	padding: 10px 0 0 0;
+	text-align: center;
+	line-height: normal;
+}

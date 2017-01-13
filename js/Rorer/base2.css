@@ -1,0 +1,27 @@
+form { margin: 0; }
+
+#wrapper { position: absolute; z-index: 10; width: 240px; height: 400px; border: 0 !important; background: #fff; overflow: hidden; }
+#panel { position: absolute; top: 363px; left: 10px; width: 230px; padding-bottom: 5px; font-family: Tahoma, Arial, sans-serif; color: #ccc; font-size: 9px; line-height: 12px; }
+#panel a { text-decoration: underline; color: #ccc; }
+#panel span { cursor: pointer; cursor: hand; border-bottom: 1px dashed #ccc; }
+#panelshade { z-index: 30; display: block; position: absolute; top: 360px; left: 0; width: 238px; height: 38px; background: #fff; }
+#poll { display: none; position: absolute; top: 400px; left: 0; width: 240px; height: 400px; color: #000; background: #F0F1F3; }
+#poll .wrapper { padding: 0 20px 20px; font-family: Tahoma, Arial, sans-serif; font-size: 11px; }
+#poll h3 { margin-top: 20px; }
+#blank { display: none; position: absolute; top: 398px; left: 0; width: 238px; height: 398px; background: #fff; }
+#poll_back { position: absolute; top: 375px; left: 20px; padding-bottom: 3px; font-family: Tahoma, Arial, sans-serif; font-size: 9px; color: #999; }
+#poll_back span { cursor: pointer; cursor: hand; border-bottom: 1px dashed #999; }
+
+.picture { z-index: 20; position: absolute; border: 1px solid #e3e1e9; width: 100px; height: 100px; }
+.text { z-index: 10;  position: absolute; width: 125px; }
+
+h3 {font-family: Arial, Tahoma, sans-serif; font-size: 15px; line-height: 17px; font-weight: bold; color: #000; margin:20px 0 2px 0;}
+
+h2 { position: relative; top:-2px; display: block; margin: 0; font-family: Arial, Tahoma, sans-serif; font-size: 14px; line-height: 15px; font-weight: bold; color: #039; letter-spacing:0px;}
+h2 a { text-decoration: underline; color: #990000; }
+
+.info { position: relative; margin-top: 1px; font-family: Verdana, Arial, Tahoma, sans-serif; font-size: 10px; line-height: 10px; color: #000; }
+.info a { text-decoration: none; color: #000; }
+
+.domain { position: relative; margin-top: 2px; font-family: Tahoma, Arial, sans-serif; font-size: 10px; line-height: 11px; color: #999; }
+.domain a { text-decoration: underline; color: #999; }
