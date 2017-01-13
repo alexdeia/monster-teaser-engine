@@ -1,4 +1,16 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 $sys['title'] = 'Monster Teaser Engine';
 $sys['template'] = 'redwhite';
 $sys['perc'] = '15';
@@ -12,7 +24,7 @@ $sys['passrobot_email'] = 'info@admonster.org';
 $sys['massmail_email'] = 'info@admonster.org';
 $sys['wmid'] = '';
 $sys['wmz'] = '';
-$sys['payout_info'] = 'Ближайшая выплата — 17 марта. Выплаты производятся автоматически два раза в месяц 3-5 и 17-19 числах. Минимальная сумма - 5 у.е.';
+$sys['payout_info'] = 'Р’С‹РїР»Р°С‚С‹ РїРѕ РїСЏС‚РЅРёС†Р°Рј. РњРёРЅРёРјР°Р»СЊРЅР°СЏ СЃСѓРјРјР° РІС‹РїР»Р°С‚ - 5$.';
 $sys['payout_type'] = 'mp';
 $sys['ref_perc'] = '10';
 $sys['tizer_formats'] = array(0=>array('w'=>60,'h'=>60),1=>array('w'=>90,'h'=>90),2=>array('w'=>100,'h'=>100),);

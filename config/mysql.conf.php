@@ -3,13 +3,15 @@
 =============================================================
 =============================================================
 MTE - Monster Teaser Engine
-Автор: Алексей Deia
-icq 389336729
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================
 */
+
 $sys['mysql_host'] = 'localhost';
 $sys['mysql_db'] = 'mte';
 $sys['mysql_user'] = 'root';
 $sys['mysql_pass'] = 'pass';
-?>

@@ -3,11 +3,14 @@
 =============================================================
 =============================================================
 MTE - Monster Teaser Engine
-Автор: Алексей Deia
-icq 389336729
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================
 */
+
 $w = array('Sun'=>7,'Mon'=>1,'Tue'=>2,'Wed'=>3,'Thu'=>4,'Fri'=>5,'Sat'=>6);
 require_once('config/config.php');
 require_once(ENGINE_PATH.'security.php');
@@ -35,7 +38,7 @@ if (!$_REQUEST['test']) {
 		if (!$_REQUEST['format']) {
 			$_REQUEST['format'] = $sys['tizer_formats'][0]['w'].'x'.$sys['tizer_formats'][0]['h'];
 		}
-		/* Этот запрос выбирает рекламную компанию по таргетингу из 4х таблиц */
+		/* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 4пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 		$SQL = "SELECT `companies`.*,`tar_cat`.`val` AS category FROM `tar_cat`,`tar_day`,`tar_hrs`,`companies` WHERE ";
 		$SQL .= "`tar_cat`.`val` IN (".implode(',',$site_cats).") AND `tar_day`.`val` = '".$w[date('D')]."' AND `tar_hrs`.`val` = '".date('G')."'";
 		$SQL .= " AND (`tar_cat`.`id` = `tar_day`.`id` AND `tar_cat`.`id` = `tar_hrs`.`id`) AND `companies`.`id` = `tar_cat`.`id` AND ";
@@ -44,7 +47,7 @@ if (!$_REQUEST['test']) {
 		}
 		$SQL .= "ORDER BY RAND() LIMIT 1";
 		$com = $DBM->SingleRowQuery($SQL);
-		if (!$com['id']) {			/* Этот запрос выбирает рекламную компанию по таргетингу из 4х таблиц */
+		if (!$com['id']) {			/* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 4пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 			$SQL = "SELECT `companies`.*,`tar_cat`.`val` AS category FROM `tar_cat`,`tar_day`,`tar_hrs`,`companies` WHERE ";
 			$SQL .= "`tar_cat`.`val` IN (".implode(',',$site_cats).") AND `tar_day`.`val` = '".$w[date('D')]."' AND `tar_hrs`.`val` = '".date('G')."'";
 			$SQL .= " AND (`tar_cat`.`id` = `tar_day`.`id` AND `tar_cat`.`id` = `tar_hrs`.`id`) AND `companies`.`id` = `tar_cat`.`id` AND ";
@@ -159,7 +162,7 @@ if (!$_REQUEST['test']) {
 	for($i=0;$i<intval($_REQUEST['cols']*$_REQUEST['rows']);$i++) {		$tizers[] = array(
 			'image'=>'/images/tizer.jpg',
 			'id'=>0,
-			'text'=>'Пример текста тизера',
+			'text'=>'пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ',
 			'url'=>'/'
 		);
 	}

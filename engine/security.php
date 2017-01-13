@@ -3,27 +3,32 @@
 =============================================================
 =============================================================
 MTE - Monster Teaser Engine
-Автор: Алексей Deia
-icq 389336729
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================
 */
+
 if (file_exists('install')) {
 	require_once('install/delete.php');
 	exit();
 }
 error_reporting(0);
-$part_time = explode (' ', microtime());
-$sys['begin_time'] = $part_time[1].substr($part_time[0],1);
+
+$part_time = explode(' ', microtime());
+$sys['begin_time'] = $part_time[1].substr($part_time[0], 1);
 header("Expires: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 header("Last-Modified: ".gmdate("D, d M Y H:i:s")."GMT");
 header('Content-type: text/html; charset=windows-1251');
-function check_var (&$var,$key) {
+
+function check_var(&$var,$key) {
 	if (is_array($var)) {
-    	array_walk($var, 'check_var');
-    	return TRUE;
+		array_walk($var, 'check_var');
+    return true;
 	}
 	$var = trim(strip_tags($var));
 	$var = str_ireplace("&","&amp;",$var);
