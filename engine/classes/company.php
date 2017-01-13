@@ -284,7 +284,7 @@ class Company extends DBObject{
 					$e++;
 		    	}
 		    	$tar_uniq = '<tr>';
-		    	$tar_uniq .= '<td>������� ������ ?</td><td><input type="checkbox" name="calc_shows"';
+		    	$tar_uniq .= '<td>Считать показы ?</td><td><input type="checkbox" name="calc_shows"';
 		    	if ($this->getVariable('calc_shows')) {		    		$tar_uniq .= ' checked';
 		    	}
 		    	$tar_uniq .= '> </td><td width="50"></td><td> Только уникальные показы</td><td><input type="checkbox" name="uniq_shows"';
@@ -292,7 +292,7 @@ class Company extends DBObject{
 		    	}
 		    	$tar_uniq .= ' /></td></tr>';
 		    	$tar_uniq .= '<tr>';
-		    	$tar_uniq .= '<td>������� ����� ?</td><td><input type="checkbox" name="calc_clicks"';
+		    	$tar_uniq .= '<td>Считать клики ?</td><td><input type="checkbox" name="calc_clicks"';
 		    	if ($this->getVariable('calc_clicks')) {
 		    		$tar_uniq .= ' checked';
 		    	}

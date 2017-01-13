@@ -62,7 +62,7 @@ class User Extends DBObject{
 			$msg .= "Кем-то, возможно Вами, был запрошен новый пароль. Если вы желаете сменить пароль, пройдите по следующей ссылке ".$link."</b><br/>\r\n";
 			$msg .= "Просим вас принять во внимание, что ссылка действительна в течении трех суток, затем вам придется заново запросить пароль<br/>\r\n";
 			$msg .= 'С уважением, администрация '.$this->sys['title'];
-			mail($data['email'],$this->sys['title'].' > ��� ����� ������',$msg,"From: ".$this->sys['massmail_email']."\r\nContent-type: text/html; charset=windows-1251\r\n");
+			mail($data['email'],$this->sys['title'].' > Ваш новый пароль',$msg,"From: ".$this->sys['massmail_email']."\r\nContent-type: text/html; charset=utf-8\r\n");
 			$SQL = "DELETE FROM `pass_rest` WHERE `user` = '".$data['id']."'";
 			$this->DBM->ExecuteQuery($SQL);
 			$SQL = "INSERT DELAYED INTO `pass_rest` SET `id` = '".$code."', `user` = '".$data['id']."', `time` = '".time()."'";
@@ -106,7 +106,7 @@ class User Extends DBObject{
 			$this->session->set_notice('Неправильно введен защитный код',ERROR);
 			$err = TRUE;
 		}
-		/* �������� ������ */
+		/* Проверка логина */
 		if (strlen($_REQUEST['login']) > 6) {
 			if (eregi("^[".$this->sys['login_chars']."]*$",$_REQUEST['login'])) {
 				if ($this->get_by_login($_REQUEST['login'])) {
@@ -121,7 +121,7 @@ class User Extends DBObject{
 			$err = TRUE;
 		}
 
-		/* �������� ������ */
+		/* Проверка пароля */
 		if (strlen($_REQUEST['password']) < 6) {
 			$this->session->set_notice('Длина пароля не может быть менее 6 символов',ERROR);
 			$err = TRUE;
@@ -138,7 +138,7 @@ class User Extends DBObject{
 			$err = TRUE;
 		}
 
-		if ($_REQUEST['type'] <> '1' && $_REQUEST['type'] <> '2') {			$this->session->set_notice('�� ��������� ������',ERROR);			$err = TRUE;
+		if ($_REQUEST['type'] <> '1' && $_REQUEST['type'] <> '2') {			$this->session->set_notice('Не получены данные',ERROR);			$err = true;
 		}
 
 		if ($err) {			return FALSE;
@@ -178,7 +178,7 @@ class User Extends DBObject{
 
 	public function action_save_settings() {
 		$this->have_access();		if ($this->objectId) {
-			$update_pass = false;			if (!empty($_REQUEST['password'])) {				/* �������� ������ */
+			$update_pass = false;			if (!empty($_REQUEST['password'])) {				/* Проверка пароля */
 				if (strlen($_REQUEST['password']) < 6) {
 					$this->session->set_notice('Пароль не может быть короче 6 символов',ERROR);
 					return FALSE;

@@ -209,12 +209,12 @@ class Template {
 		$hours = floor($minutes/60);
 		$seconds = $t;
 		if ($hours > 0) {
-			$str = $hours.' �.';
+			$str = $hours.' ч.';
 			if (($hours*60) < $minutes) {
-				$str .= '&nbsp;'.($minutes-($hours*60)).'���.';
+				$str .= '&nbsp;'.($minutes-($hours*60)).'мин.';
 			}
 		}else{
-			$str = $minutes.' ���.';
+			$str = $minutes.' мин.';
 		}
 		return $str;
 	}
