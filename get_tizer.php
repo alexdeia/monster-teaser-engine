@@ -38,7 +38,7 @@ if (!$_REQUEST['test']) {
 		if (!$_REQUEST['format']) {
 			$_REQUEST['format'] = $sys['tizer_formats'][0]['w'].'x'.$sys['tizer_formats'][0]['h'];
 		}
-		/* ���� ������ �������� ��������� �������� �� ���������� �� 4� ������ */
+		/* Этот запрос выбирает рекламную компанию по таргетингу из 4х таблиц */
 		$SQL = "SELECT `companies`.*,`tar_cat`.`val` AS category FROM `tar_cat`,`tar_day`,`tar_hrs`,`companies` WHERE ";
 		$SQL .= "`tar_cat`.`val` IN (".implode(',',$site_cats).") AND `tar_day`.`val` = '".$w[date('D')]."' AND `tar_hrs`.`val` = '".date('G')."'";
 		$SQL .= " AND (`tar_cat`.`id` = `tar_day`.`id` AND `tar_cat`.`id` = `tar_hrs`.`id`) AND `companies`.`id` = `tar_cat`.`id` AND ";
@@ -47,7 +47,7 @@ if (!$_REQUEST['test']) {
 		}
 		$SQL .= "ORDER BY RAND() LIMIT 1";
 		$com = $DBM->SingleRowQuery($SQL);
-		if (!$com['id']) {			/* ���� ������ �������� ��������� �������� �� ���������� �� 4� ������ */
+		if (!$com['id']) {			/* Этот запрос выбирает рекламную компанию по таргетингу из 4х таблиц  */
 			$SQL = "SELECT `companies`.*,`tar_cat`.`val` AS category FROM `tar_cat`,`tar_day`,`tar_hrs`,`companies` WHERE ";
 			$SQL .= "`tar_cat`.`val` IN (".implode(',',$site_cats).") AND `tar_day`.`val` = '".$w[date('D')]."' AND `tar_hrs`.`val` = '".date('G')."'";
 			$SQL .= " AND (`tar_cat`.`id` = `tar_day`.`id` AND `tar_cat`.`id` = `tar_hrs`.`id`) AND `companies`.`id` = `tar_cat`.`id` AND ";
@@ -162,7 +162,7 @@ if (!$_REQUEST['test']) {
 	for($i=0;$i<intval($_REQUEST['cols']*$_REQUEST['rows']);$i++) {		$tizers[] = array(
 			'image'=>'/images/tizer.jpg',
 			'id'=>0,
-			'text'=>'������ ������ ������',
+			'text'=>'Пример текста тизера',
 			'url'=>'/'
 		);
 	}
