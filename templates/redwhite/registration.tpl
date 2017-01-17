@@ -49,13 +49,7 @@
 				<div class="help">Пожалуйста, введите данные доступа к статистике вашего сайта</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-			<tr>
-				<td valign="top"><label for="name">Защитный код</label></td><td>
-					<img src="/captcha.php" style="border: 0px solid #000000;"/>
-					<br/>
-					<input type="text" name="code" id="code" value="" style=""/>
-				<div class="help">Пожалуйтса, введите защитный код изображеный на картинке</div></td>
-			</tr>
+			
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr><td colspan="2" align="right"><input type="submit" value="Продолжить регистрацию" class="button"></td></tr>
 		</table>

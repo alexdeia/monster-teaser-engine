@@ -24,7 +24,7 @@ function draw() {
 			break;
 		}
 	}
-	session_register('_ste_ccode');
+	//session_register('_ste_ccode');
 	$_SESSION['_ste_ccode'] = $turingCode;
 	$fontPath = 'images/verdana.ttf';
 	$NewImageInfo = imagettfbbox($fontSize, 0,$fontPath,4);
