@@ -1,8 +1,8 @@
 <div class="page_content">
-	<h2 class="title">Настройка системы</h2>
+	<h2 class="title">РќР°СЃС‚СЂРѕР№РєР° СЃРёСЃС‚РµРјС‹</h2>
     <div id="cont">
 	<iframe src="/admin/phpinfo.php" name="iframe" width="100%" height="600" scrolling="yes">
-		Ваш браузер не отображает плавающие фреймы.
+		Р’Р°С€ Р±СЂР°СѓР·РµСЂ РЅРµ РѕС‚РѕР±СЂР°Р¶Р°РµС‚ РїР»Р°РІР°СЋС‰РёРµ С„СЂРµР№РјС‹.
 	</iframe>
 	</div>
 </div>

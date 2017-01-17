@@ -1,14 +1,14 @@
 <div class="page_content">
-	<h2 class="title">Список тизеров</h2>
+	<h2 class="title">РЎРїРёСЃРѕРє С‚РёР·РµСЂРѕРІ</h2>
     <div id="cont">
     <br/>
 	<table width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
 		<tr>
 			<th>ID</th>
-			<th>Владелец</th>
-			<th>Картинка</th>
-			<th>Текст/URL</th>
-			<th>Всего кликов\показов</th>
-			<th>Действия</th>
+			<th>Р’Р»Р°РґРµР»РµС†</th>
+			<th>РљР°СЂС‚РёРЅРєР°</th>
+			<th>РўРµРєСЃС‚/URL</th>
+			<th>Р’СЃРµРіРѕ РєР»РёРєРѕРІ\РїРѕРєР°Р·РѕРІ</th>
+			<th>Р”РµР№СЃС‚РІРёСЏ</th>
 		</tr>
 

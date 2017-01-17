@@ -1,5 +1,5 @@
 		</table>
-		<p align="right"><input type="submit" value="Ôîðìèðîâàòü îò÷åò" class="button"></p>
+		<p align="right"><input type="submit" value="Ð¤Ð¾Ñ€Ð¼Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¾Ñ‚Ñ‡ÐµÑ‚" class="button"></p>
 		</form>
 	</div>
 </div>

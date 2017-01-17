@@ -1,18 +1,18 @@
 <div class="page_content">
-	<h2 class="title">Список сайтов</h2>
+	<h2 class="title">РЎРїРёСЃРѕРє СЃР°Р№С‚РѕРІ</h2>
     <div id="cont">
-  		<strong>Всего сайтов:</strong> <TVAR>total_sites</TVAR>
+  		<strong>Р’СЃРµРіРѕ СЃР°Р№С‚РѕРІ:</strong> <TVAR>total_sites</TVAR>
 		<p align="right">
-			<a href="/admin.php?show=sites&pending=1">Ожидающие модерации</a>&nbsp;|&nbsp;
-			<a href="/admin.php?show=sites">Все сайты</a>
+			<a href="/admin.php?show=sites&pending=1">РћР¶РёРґР°СЋС‰РёРµ РјРѕРґРµСЂР°С†РёРё</a>&nbsp;|&nbsp;
+			<a href="/admin.php?show=sites">Р’СЃРµ СЃР°Р№С‚С‹</a>
 		</p>
 		<table width="100%" bgcolor="#aaaaaa" cellspacing="1">
 			<tr>
-				<th>Статус</th>
+				<th>РЎС‚Р°С‚СѓСЃ</th>
 				<th>ID</th>
 				<th>URL</th>
-				<th>Владелец</th>
-				<th>Действия</th>
-				<th>Модерация</th>
+				<th>Р’Р»Р°РґРµР»РµС†</th>
+				<th>Р”РµР№СЃС‚РІРёСЏ</th>
+				<th>РњРѕРґРµСЂР°С†РёСЏ</th>
 			</tr>
 

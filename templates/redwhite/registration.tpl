@@ -49,7 +49,7 @@
 				<div class="help">Пожалуйста, введите данные доступа к статистике вашего сайта</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-			
+	
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr><td colspan="2" align="right"><input type="submit" value="Продолжить регистрацию" class="button"></td></tr>
 		</table>

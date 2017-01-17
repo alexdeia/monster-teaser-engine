@@ -1,16 +1,16 @@
 <div class="page_content">
-	<h2 class="title">Выплаты вебмастерам</h2>
+	<h2 class="title">Р’С‹РїР»Р°С‚С‹ РІРµР±РјР°СЃС‚РµСЂР°Рј</h2>
     <div id="cont">
-    	<strong>Пользователей готовых к выплатам:</strong> <TVAR>payments_waiting</TVAR>
+    	<strong>РџРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РіРѕС‚РѕРІС‹С… Рє РІС‹РїР»Р°С‚Р°Рј:</strong> <TVAR>payments_waiting</TVAR>
 	    <br/>
-	    <strong>Всего к выплате:</strong> <TVAR>total_money</TVAR> WMZ
+	    <strong>Р’СЃРµРіРѕ Рє РІС‹РїР»Р°С‚Рµ:</strong> <TVAR>total_money</TVAR> WMZ
 	    <form action="/admin.php?action=form_mptf" method="post">
 	    <p align="right">
-	    	<input type="submit" class="button" value="Формировать задачу массовых выплат">
+	    	<input type="submit" class="button" value="Р¤РѕСЂРјРёСЂРѕРІР°С‚СЊ Р·Р°РґР°С‡Сѓ РјР°СЃСЃРѕРІС‹С… РІС‹РїР»Р°С‚">
 	    </p>
 		<TVAR>list</TVAR>
 	    <p align="right">
-	    	<input type="submit" class="button" value="Формировать задачу массовых выплат">
+	    	<input type="submit" class="button" value="Р¤РѕСЂРјРёСЂРѕРІР°С‚СЊ Р·Р°РґР°С‡Сѓ РјР°СЃСЃРѕРІС‹С… РІС‹РїР»Р°С‚">
 	    </p>
 	    </form>
  	</div>

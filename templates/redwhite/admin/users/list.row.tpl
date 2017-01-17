@@ -4,10 +4,10 @@
 	<td><TVAR>user_acc_type</TVAR></td>
 	<td>
 		<a href="/admin.php?show=edit_user&id=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
-		<a onClick="return confirm('Âû óâåğåíû, ÷òî õîòèòå óäàëèòü ïîëüçîâàòåëÿ <TVAR>user_login</TVAR>?');" href="/admin.php?action=delete_user&show=users&id=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
-		<a title="Ñàéòû ïîëüçîâàòåëÿ" href="/admin.php?show=sites&byuserid=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/admin/sites_16.gif" border="0"></a>
-		<a title="Òèçåğû ïîëüçîâàòåëÿ" href="/admin.php?show=tizers&byuserid=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/admin/tizers_16.gif" border="0"></a>
-		<a title="Êîìïàíèè ïîëüçîâàòåëÿ" href="/admin.php?show=companies&byuserid=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/admin/companies_16.gif" border="0"></a>
+		<a onClick="return confirm('Ğ’Ñ‹ ÑƒĞ²ĞµÑ€ĞµĞ½Ñ‹, Ñ‡Ñ‚Ğ¾ Ñ…Ğ¾Ñ‚Ğ¸Ñ‚Ğµ ÑƒĞ´Ğ°Ğ»Ğ¸Ñ‚ÑŒ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ <TVAR>user_login</TVAR>?');" href="/admin.php?action=delete_user&show=users&id=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
+		<a title="Ğ¡Ğ°Ğ¹Ñ‚Ñ‹ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ" href="/admin.php?show=sites&byuserid=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/admin/sites_16.gif" border="0"></a>
+		<a title="Ğ¢Ğ¸Ğ·ĞµÑ€Ñ‹ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ" href="/admin.php?show=tizers&byuserid=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/admin/tizers_16.gif" border="0"></a>
+		<a title="ĞšĞ¾Ğ¼Ğ¿Ğ°Ğ½Ğ¸Ğ¸ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ" href="/admin.php?show=companies&byuserid=<TVAR>user_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/admin/companies_16.gif" border="0"></a>
 
 
 	</td>

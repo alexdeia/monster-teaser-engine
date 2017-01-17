@@ -6,7 +6,7 @@
 	<td><TVAR>cat_price_click</TVAR></td>
 	<td><TVAR>cat_price_click_uniq</TVAR></td>
 	<td>
-		<a onClick="return confirm('Âû óâåðåíû, ÷òî õîòèòå óäàëèòü êàòåãîðèþ <TVAR>cat_name</TVAR>?');" href="/admin.php?action=delete_cat&id=<TVAR>cat_id</TVAR>&show=cats"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
+		<a onClick="return confirm('Â¬Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸ÑŽ <TVAR>cat_name</TVAR>?');" href="/admin.php?action=delete_cat&id=<TVAR>cat_id</TVAR>&show=cats"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
 		<a href="/admin.php?show=edit_cat&id=<TVAR>cat_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
 	</td>
 </tr>
