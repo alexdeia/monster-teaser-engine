@@ -11,10 +11,10 @@
 		<a href="/admin.php?show=companies&bycat=<TVAR>com_cat_id</TVAR>"><TVAR>com_cat</TVAR></a>
 	</td>
 	<td bgcolor="<TVAR>com_row_color</TVAR>">
-		<a onClick="return confirm('Âû óâåðåíû, ÷òî õîòèòå óäàëèòü êîìïàíèþ');" href="/admin.php?show=companies&action=delete_com&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/delete.gif"></a>
-		<a title="Íàñòðîéêà òàðãåòèíãà" href="/admin.php?show=com_tar&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/tar.gif" border="0"></a>
-		<a title="Äîáàâèòü òèçåðû" href="/admin.php?show=com_tizers_add&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/tiz_add.gif" border="0"></a>
-		<a title="Óäàëèòü òèçåðû" href="/admin.php?show=com_tizers_delete&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/tiz_del.gif" border="0"></a>
+		<a onClick="return confirm('Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸ÑŽ');" href="/admin.php?show=companies&action=delete_com&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/delete.gif"></a>
+		<a title="ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Ñ‚Ð°Ñ€Ð³ÐµÑ‚Ð¸Ð½Ð³Ð°" href="/admin.php?show=com_tar&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/tar.gif" border="0"></a>
+		<a title="Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ‚Ð¸Ð·ÐµÑ€Ñ‹" href="/admin.php?show=com_tizers_add&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/tiz_add.gif" border="0"></a>
+		<a title="Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ñ‚Ð¸Ð·ÐµÑ€Ñ‹" href="/admin.php?show=com_tizers_delete&id=<TVAR>com_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/tiz_del.gif" border="0"></a>
 	</td>
 	<td bgcolor="<TVAR>com_row_color</TVAR>">
 		<a href="/admin.php?action=stat_com&stat=0&id=<TVAR>com_id</TVAR>&show=companies<TVAR>pend_app</TVAR>"><img src="/templates/<SYS>template</SYS>/img/status_0.gif" border="0"></a>

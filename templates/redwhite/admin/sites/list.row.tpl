@@ -8,7 +8,7 @@
 	</td>
 	<td>
 		<a href="/admin.php?show=edit_site&id=<TVAR>site_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
-		<a onClick="return confirm('Âû óâåðåíû, ÷òî õîòèòå óäàëèòü ñàéò <TVAR>site_url</TVAR>?');" href="/admin.php?action=delete_site&show=sites&id=<TVAR>site_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
+		<a onClick="return confirm('Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ ÑÐ°Ð¹Ñ‚ <TVAR>site_url</TVAR>?');" href="/admin.php?action=delete_site&show=sites&id=<TVAR>site_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
 		<a href="/admin.php?show=site_reports&id=<TVAR>site_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/reports.gif" border="0"></a>
 	</td>
 	<td>

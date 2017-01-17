@@ -1,3 +1,3 @@
 <tr>
-	<td colspan="4" align="center">Нет записей за этот день</td>
+	<td colspan="4" align="center">РќРµС‚ Р·Р°РїРёСЃРµР№ Р·Р° СЌС‚РѕС‚ РґРµРЅСЊ</td>
 </tr>

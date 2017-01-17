@@ -1,9 +1,21 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 $str = '
 <div class="page_content">
-	<h1 class="title">Контакты</h1>
+	<h1 class="title">РљРѕРЅС‚Р°РєС‚С‹</h1>
     <div id="cont">
-    	Вы всегда можете связаться с нами по следующим координатам:
+    	Р’С‹ РІСЃРµРіРґР° РјРѕР¶РµС‚Рµ СЃРІСЏР·Р°С‚СЊСЃСЏ СЃ РЅР°РјРё РїРѕ СЃР»РµРґСѓСЋС‰РёРј РєРѕРѕСЂРґРёРЅР°С‚Р°Рј:
     	<br/><br/>
     	<div style="padding-left: 20px;">
     		<b>email:</b> <a href="mailto:'.$sys['admin_email'].'">'.$sys['admin_email'].'</a>
@@ -13,25 +25,25 @@ $str = '
 			<b>Webmoney ID:</b> <a href="wmk:msgto?to='.$sys['wmid'].'&amp;subject=contact">'.$sys['wmid'].'</a> BL:<img src="http://stats.wmtransfer.com/Levels/pWMIDLevel.aspx?wmid='.$sys['wmid'].'&amp;w=35&amp;h=18&amp;bg=0XDBE2E9" alt="" border="0" height="18" width="35">
      		<br/>
      	</div>
-     		Вы также можете отправить нам сообщение используя следующую форму:
+     		Р’С‹ С‚Р°РєР¶Рµ РјРѕР¶РµС‚Рµ РѕС‚РїСЂР°РІРёС‚СЊ РЅР°Рј СЃРѕРѕР±С‰РµРЅРёРµ, РёСЃРїРѕР»СЊР·СѓСЏ СЃР»РµРґСѓСЋС‰СѓСЋ С„РѕСЂСѓРјСѓ:
      		<div style="padding-left: 20px;">
 	     		<form action="/send-message.html" method="post">
 				<table cellpadding="0" width="520" cellspacing="5">
 					<tr>
-						<td><label for="name">Ваше имя</label></td><td><input type="text" name="name" id="name" autocomplete="off" style="width: 200px;"></td>
+						<td><label for="name">пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ</label></td><td><input type="text" name="name" id="name" autocomplete="off" style="width: 200px;"></td>
 					</tr>
 					<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 					<tr>
-						<td><label for="email">Ваш email</label></td><td><input type="text" name="email" id="email" autocomplete="off" style="width: 200px;"></td>
+						<td><label for="email">пїЅпїЅпїЅ email</label></td><td><input type="text" name="email" id="email" autocomplete="off" style="width: 200px;"></td>
 					</tr>
 					<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 					<tr>
-						<td valign="top"><label for="email">Ваше сообщение</label></td>
+						<td valign="top"><label for="email">пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</label></td>
 						<td><textarea name="message" id="message" style="width: 400px; height: 200px;"></textarea></td>
 					</tr>
 					<tr>
 						<td></td>
-						<td><input type="submit" class="button" value="Отправить сообщение"></td>
+						<td><input type="submit" class="button" value="РћС‚РїСЂР°РІРёС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ"></td>
 					</tr>
 				</table>
 	     		</form>

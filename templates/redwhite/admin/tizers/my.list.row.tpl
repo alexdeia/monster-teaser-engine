@@ -11,13 +11,13 @@
 		<br/>
 		<a href="http://<TVAR>inf_url</TVAR>" target="_blank"><TVAR>inf_url</TVAR></a></td>
 	<td bgcolor="<TVAR>inf_row_color</TVAR>">
-    	Простых: <TVAR>inf_clicks</TVAR>/<TVAR>inf_shows</TVAR>
+    	РџСЂРѕСЃС‚С‹С…: <TVAR>inf_clicks</TVAR>/<TVAR>inf_shows</TVAR>
     	<br/>
-    	Уникальных: <TVAR>inf_shows_uniq</TVAR>/<TVAR>inf_clicks_uniq</TVAR>
+    	РЈРЅРёРєР°Р»СЊРЅС‹С…: <TVAR>inf_shows_uniq</TVAR>/<TVAR>inf_clicks_uniq</TVAR>
 	</td>
 	<td bgcolor="<TVAR>inf_row_color</TVAR>" align="center">
 		<a href="/admin.php?show=edit_tizer&id=<TVAR>inf_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
-		<a onClick="return confirm('Вы уверены, что хотите удалить тизер?');" href="/admin.php?action=delete_tizer&id=<TVAR>inf_id</TVAR>&show=tizers"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
+		<a onClick="return confirm('Р’С‹ СѓРІРµСЂРµРЅС‹, С‡С‚Рѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ С‚РёР·РµСЂ?');" href="/admin.php?action=delete_tizer&id=<TVAR>inf_id</TVAR>&show=tizers"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
 		<a href="/admin.php?show=tizer_reports&id=<TVAR>inf_id</TVAR>"><img src="/templates/<SYS>template</SYS>/img/reports.gif" border="0"></a>
 	</td>
 </tr>

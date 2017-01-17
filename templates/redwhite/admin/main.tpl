@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
-<title><SYS>title</SYS> - Админ панель</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title><SYS>title</SYS> - РђРґРјРёРЅ РїР°РЅРµР»СЊ</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="/templates/<SYS>template</SYS>/admin/main.css" rel="stylesheet" type="text/css" />
@@ -16,57 +16,57 @@
     		<tr>
     			<td align="center">
     				<a href="/admin.php?show=settings" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/settings.gif" border="0"><br/>Настройки</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/settings.gif" border="0"><br/>РќР°СЃС‚СЂРѕР№РєРё</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=users" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/users.gif" border="0"><br/>Пользователи</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/users.gif" border="0"><br/>РџРѕР»СЊР·РѕРІР°С‚РµР»Рё</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=sites" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/sites.gif" border="0"><br/>Сайты</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/sites.gif" border="0"><br/>РЎР°Р№С‚С‹</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=tizers" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/tizers.gif" border="0"><br/>Тизеры</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/tizers.gif" border="0"><br/>РўРёР·РµСЂС‹</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=payouts" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/funds2.gif" border="0"><br/>Выплаты</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/funds2.gif" border="0"><br/>Р’С‹РїР»Р°С‚С‹</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=payouts_reports" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/funds2.gif" border="0"><br/>Отчеты</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/funds2.gif" border="0"><br/>РћС‚С‡РµС‚С‹</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=payments" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/funds2.gif" border="0"><br/>Пополнения</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/funds2.gif" border="0"><br/>РџРѕРїРѕР»РЅРµРЅРёСЏ</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=news" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/news.gif" border="0"><br/>Новости</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/news.gif" border="0"><br/>РќРѕРІРѕСЃС‚Рё</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=massmail" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/massmail.gif" border="0"><br/>Рассылка</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/massmail.gif" border="0"><br/>Р Р°СЃСЃС‹Р»РєР°</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=cats" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/cats.gif" border="0"><br/>Категории</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/cats.gif" border="0"><br/>РљР°С‚РµРіРѕСЂРёРё</a>
     			</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?exit" class="menu">
-    				<img src="/templates/<SYS>template</SYS>/img/admin/exit.gif" border="0"><br/>Выход</a>
+    				<img src="/templates/<SYS>template</SYS>/img/admin/exit.gif" border="0"><br/>Р’С‹С…РѕРґ</a>
     			</td>
     		</tr>
     	</table>
@@ -87,7 +87,7 @@
 <div id="footer">
 	<p id="legal">Powered by Monster Teaser Engine <a href="http://teaser.admonster.org">- Deia</a>
 	<br/>
-	Все права защищены    <br/>
+	Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹    <br/>
         Support icq 389336729 </p>
 </div>
 </body>

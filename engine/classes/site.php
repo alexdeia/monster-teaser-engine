@@ -1,4 +1,16 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 class Site Extends DBObject{
 
 	public $__table = 'sites';
@@ -30,7 +42,7 @@ class Site Extends DBObject{
    		$this->setVariable('price_show_uniq',$cat['price_show_uniq']);
 		$this->objectId = $this->insert();
 		$this->build_dir_tree();
-		$this->session->set_notice('Ñàéò óñïåøíî äîáàâëåí è îæèäàåò ïðîâåðêè ìîäåðàòîðîì',OK);
+		$this->session->set_notice('Ð¡Ð°Ð¹Ñ‚ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ Ð¸ Ð¾Ð¶Ð¸Ð´Ð°ÐµÑ‚ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ð¼Ð¾Ð´ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ð¾Ð¼',OK);
 		return TRUE;
 	}
 
@@ -45,26 +57,26 @@ class Site Extends DBObject{
     				$this->setVariable('price_show',$cat['price_show']);
     				$this->setVariable('price_show_uniq',$cat['price_show_uniq']);
     				$this->update();
-					$this->session->set_notice('Ñàéò óñïåøíî ñîõðàíåí è îæèäàåò ïðîâåðêè ìîäåðàòîðîì',OK);
+					$this->session->set_notice('Ð¡Ð°Ð¹Ñ‚ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½ Ð¸ Ð¾Ð¶Ð¸Ð´Ð°ÐµÑ‚ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ð¼Ð¾Ð´ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ð¾Ð¼',OK);
 					return TRUE;
-				}else{					$this->session->set_notice('Íå óêàçàííà íè îäíà êaòåãîðèÿ',ERROR);
+				}else{					$this->session->set_notice('ÐÐµ ÑƒÐºÐ°Ð·Ð°Ð½Ð° Ð½Ð¸ Ð¾Ð´Ð½Ð° ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ',ERROR);
 					return FALSE;
 				}
-			}else{				$this->session->set_notice('Âû íå ÿâëÿåòåñü âëàäåëüöåì ñàéòà',ERROR);
+			}else{				$this->session->set_notice('Ð’Ñ‹ Ð½Ðµ ÑÐ²Ð»ÑÐµÑ‚ÐµÑÑŒ Ð²Ð»Ð°Ð´ÐµÐ»ÑŒÑ†ÐµÐ¼ ÑÐ°Ð¹Ñ‚Ð°',ERROR);
 				return FALSE;
 			}
 		}
-		$this->session->set_notice('Íåò òàêîãî ñàéòà',ERROR);
+		$this->session->set_notice('ÐÐµÑ‚ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°',ERROR);
 		return FALSE;
 	}
 
-	public function action_delete() {		$this->user->have_access();		if ($this->get(intval($_REQUEST['id']))) {			if ($this->getVariable('owner') == $this->user->objectId) {				$this->delete_dir_tree('data/sites/'.$this->objectId);				if ($this->delete()) {		        	$this->session->set_notice('Ñàéò óñïåøíî óäàëåí',OK);
+	public function action_delete() {		$this->user->have_access();		if ($this->get(intval($_REQUEST['id']))) {			if ($this->getVariable('owner') == $this->user->objectId) {				$this->delete_dir_tree('data/sites/'.$this->objectId);				if ($this->delete()) {		        	$this->session->set_notice('ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',OK);
 	 		       	return TRUE;
-	 			}else{	 				$this->session->set_notice('Ñàéò íå ìîæåò áûòü óäàëåí',ERROR);
+	 			}else{	 				$this->session->set_notice('Ð¡Ð°Ð¹Ñ‚ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ ÑƒÐ´Ð°Ð»ÐµÐ½',ERROR);
 	 			}
 	 		}
 		}
-		$this->session->set_notice('Íåò òàêîãî ñàéòà',ERROR);
+		$this->session->set_notice('ÐÐµÑ‚ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ ÑÐ°Ð¹Ñ‚Ð°',ERROR);
 		return FALSE;
 	}
 
@@ -235,11 +247,11 @@ class Site Extends DBObject{
 				list($iw,$ih) = explode('x',$_REQUEST['tizer_formats']);
 				$this->tpl->set('tizer_formats',$this->tpl->get_select_form('tizer_formats',$tf,$_REQUEST['tizer_formats']));
 
-				$this->tpl->set('s_rows',$this->tpl->get_select_form('rows',array(1=>1,2=>2,3=>3,4=>4,5=>5,6=>6),$_REQUEST['rows'],'rows'));
-				$this->tpl->set('s_text_dir',$this->tpl->get_select_form('text_dir',array('Ñïðàâà îò êàðòèíêè','Ñëåâà îò êàðòèíêè','Ïîä êàðòèíêîé','Íàä êàðòèíêîé'),$_REQUEST['text_dir'],'text_dir'));
+				$this->tpl->set('s_rows',$this->tpl->get_select_form('rows',array(1=>1, 2=>2, 3=>3, 4=>4, 5=>5, 6=>6),$_REQUEST['rows'],'rows'));
+				$this->tpl->set('s_text_dir',$this->tpl->get_select_form('text_dir',array('Ð¡Ð¿Ñ€Ð°Ð²Ð° Ð¾Ñ‚ ÐºÐ°Ñ€Ñ‚Ð¸Ð½ÐºÐ¸','Ð¡Ð»ÐµÐ²Ð° Ð¾Ñ‚ ÐºÐ°Ñ€Ñ‚Ð¸Ð½ÐºÐ¸','ÐŸÐ¾Ð´ ÐºÐ°Ñ€Ñ‚Ð¸Ð½ÐºÐ¾Ð¹','ÐÐ°Ð´ ÐºÐ°Ñ€Ñ‚Ð¸Ð½ÐºÐ¾Ð¹'),$_REQUEST['text_dir'],'text_dir'));
 				$this->tpl->set('s_font',$this->tpl->get_select_form('font',array('Verdana'=>'Verdana','Arial'=>'Arial','Tahoma'=>'Tahoma','Times New Roman'=>'Times New Roman'),$_REQUEST['font'],'font'));
-				$this->tpl->set('s_font_type',$this->tpl->get_select_form('font_type',array('Regular'=>'Îáû÷íûé','Bold'=>'Ïîëóæèðíûé'),$_REQUEST['font_type'],'font_type'));
-				$this->tpl->set('s_decoration',$this->tpl->get_select_form('decoration',array('underline'=>'Äà','none'=>'íåò'),$_REQUEST['decoration'],'decoration'));
+				$this->tpl->set('s_font_type',$this->tpl->get_select_form('font_type',array('Regular'=>'ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹','Bold'=>'ÐŸÐ¾Ð»ÑƒÐ¶Ð¸Ñ€Ð½Ñ‹Ð¹'),$_REQUEST['font_type'],'font_type'));
+				$this->tpl->set('s_decoration',$this->tpl->get_select_form('decoration',array('underline'=>'Ð”Ð°','none'=>'ÐÐµÑ‚'),$_REQUEST['decoration'],'decoration'));
 				$this->tpl->set('s_font_size',$this->tpl->get_select_form('font_size',array(10=>'10px',11=>'11px',12=>'12px',13=>'13px',14=>'14px',16=>'16px',),$_REQUEST['font_size'],'font_size'));
 				$code = "<!---Tizer Start-->\r\n";
 				$code .= '<iframe src="'.$this->sys['url'].'get_tizer.php?site='.$this->objectId.'&';

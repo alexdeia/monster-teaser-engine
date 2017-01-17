@@ -1,4 +1,16 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 class User Extends DBObject{
 
 	public $__table = 'users';
@@ -46,16 +58,16 @@ class User Extends DBObject{
 		if ($data['id']) {			$code = md5(microtime());
 			$link = '<a href="'.$this->sys['url'].'restore-password/'.$code.'.html" target="_blank">';
 			$link.= $this->sys['url'].'/restore-password/'.$code.'.html</a>';
-			$msg = 'Здравствуйте, '.$data['name']."<br/>\r\n";
-			$msg .= "Кем-то, возможно Вами, был запрошен новый пароль. Если Вы желаете сменить пароль пройдите по следующей ссылке ".$link."</b><br/>\r\n";
-			$msg .= "Просим Вас принять во внимание, что ссылка действительна в течении трех суток, затем Вам придется заново запросить пароль<br/>\r\n";
-			$msg .= 'С уважением, администрация '.$this->sys['title'];
-			mail($data['email'],$this->sys['title'].' > Ваш новый пароль',$msg,"From: ".$this->sys['massmail_email']."\r\nContent-type: text/html; charset=windows-1251\r\n");
+			$msg = 'Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ, '.$data['name']."<br/>\r\n";
+			$msg .= "РљРµРј-С‚Рѕ, РІРѕР·РјРѕР¶РЅРѕ Р’Р°РјРё, Р±С‹Р» Р·Р°РїСЂРѕС€РµРЅ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ. Р•СЃР»Рё РІС‹ Р¶РµР»Р°РµС‚Рµ СЃРјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ, РїСЂРѕР№РґРёС‚Рµ РїРѕ СЃР»РµРґСѓСЋС‰РµР№ СЃСЃС‹Р»РєРµ ".$link."</b><br/>\r\n";
+			$msg .= "РџСЂРѕСЃРёРј РІР°СЃ РїСЂРёРЅСЏС‚СЊ РІРѕ РІРЅРёРјР°РЅРёРµ, С‡С‚Рѕ СЃСЃС‹Р»РєР° РґРµР№СЃС‚РІРёС‚РµР»СЊРЅР° РІ С‚РµС‡РµРЅРёРё С‚СЂРµС… СЃСѓС‚РѕРє, Р·Р°С‚РµРј РІР°Рј РїСЂРёРґРµС‚СЃСЏ Р·Р°РЅРѕРІРѕ Р·Р°РїСЂРѕСЃРёС‚СЊ РїР°СЂРѕР»СЊ<br/>\r\n";
+			$msg .= 'РЎ СѓРІР°Р¶РµРЅРёРµРј, Р°РґРјРёРЅРёСЃС‚СЂР°С†РёСЏ '.$this->sys['title'];
+			mail($data['email'],$this->sys['title'].' > Р’Р°С€ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ',$msg,"From: ".$this->sys['massmail_email']."\r\nContent-type: text/html; charset=utf-8\r\n");
 			$SQL = "DELETE FROM `pass_rest` WHERE `user` = '".$data['id']."'";
 			$this->DBM->ExecuteQuery($SQL);
 			$SQL = "INSERT DELAYED INTO `pass_rest` SET `id` = '".$code."', `user` = '".$data['id']."', `time` = '".time()."'";
 			$this->DBM->ExecuteQuery($SQL);
-			$this->session->set_notice('Новый пароль выслан на email указанный при регистрации',OK);
+			$this->session->set_notice('РќРѕРІС‹Р№ РїР°СЂРѕР»СЊ РІС‹СЃР»Р°РЅ РЅР° СѓРєР°Р·Р°РЅРЅС‹Р№ email РїСЂРё СЂРµРіРёСЃС‚СЂР°С†РёРё',OK);
 		}
 	}
 
@@ -87,46 +99,46 @@ class User Extends DBObject{
 		$err = FALSE;
 		if ($this->session->getVariable('_ste_ccode')) {
 			if ($this->session->getVariable('_ste_ccode') <> $_REQUEST['code']) {
-				$this->session->set_notice('Неправильно введен защитный код',ERROR);
+				$this->session->set_notice('РќРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµРґРµРЅ Р·Р°С‰РёС‚РЅС‹Р№ РєРѕРґ',ERROR);
 				$err = TRUE;
 			}
 		}else{
-			$this->session->set_notice('Неправильно введен защитный код',ERROR);
+			$this->session->set_notice('РќРµРїСЂР°РІРёР»СЊРЅРѕ РІРІРµРґРµРЅ Р·Р°С‰РёС‚РЅС‹Р№ РєРѕРґ',ERROR);
 			$err = TRUE;
 		}
-		/* Проверка логина */
+		/* РџСЂРѕРІРµСЂРєР° Р»РѕРіРёРЅР° */
 		if (strlen($_REQUEST['login']) > 6) {
 			if (eregi("^[".$this->sys['login_chars']."]*$",$_REQUEST['login'])) {
 				if ($this->get_by_login($_REQUEST['login'])) {
-					$this->session->set_notice('Выбранный Вами логин уже занят',ERROR);
+					$this->session->set_notice('Р’С‹Р±СЂР°РЅРЅС‹Р№ РІР°РјРё Р»РѕРіРёРЅ СѓР¶Рµ Р·Р°РЅСЏС‚',ERROR);
 					$err = TRUE;
 				}
 			}else{
-				$this->session->set_notice('Выбранный Вами логин содержит недопустимые символы',ERROR);
+				$this->session->set_notice('Р’С‹Р±СЂР°РЅРЅС‹Р№ РІР°РјРё Р»РѕРіРёРЅ СЃРѕРґРµСЂР¶РёС‚ РЅРµРґРѕРїСѓСЃС‚РёРјС‹Рµ СЃРёРјРІРѕР»С‹',ERROR);
 				$err = TRUE;
 			}
-		}else{			$this->session->set_notice('Длина логина не может быть менее 6 символов',ERROR);
+		}else{			$this->session->set_notice('Р”Р»РёРЅР° Р»РѕРіРёРЅР° РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРµРЅРµРµ 6 СЃРёРјРІРѕР»РѕРІ',ERROR);
 			$err = TRUE;
 		}
 
-		/* Проверка пароля */
+		/* РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ */
 		if (strlen($_REQUEST['password']) < 6) {
-			$this->session->set_notice('Пароль не может быть короче 6 символов',ERROR);
+			$this->session->set_notice('Р”Р»РёРЅР° РїР°СЂРѕР»СЏ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РјРµРЅРµРµ 6 СЃРёРјРІРѕР»РѕРІ',ERROR);
 			$err = TRUE;
 		}elseif($_REQUEST['password'] <> $_REQUEST['password2']) {
-			$this->session->set_notice('Пароль и его подтверждение не совпадают',ERROR);
+			$this->session->set_notice('РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚',ERROR);
 			$err = TRUE;
 		}
 
-		/* Проверка емыла */
+		/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
 		if (!$this->check_email($_REQUEST['email'])) {
-			$this->session->set_notice('Указан некорректный адрес email',ERROR);
+			$this->session->set_notice('РЈРєР°Р·Р°РЅ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ email',ERROR);
 		}elseif ($this->check_is_email_used($_REQUEST['email'],$_REQUEST['type'])) {
-			$this->session->set_notice('Указанный email уже используется в системе',ERROR);
+			$this->session->set_notice('РЈРєР°Р·Р°РЅРЅС‹Р№ email СѓР¶Рµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ СЃРёСЃС‚РµРјРµ',ERROR);
 			$err = TRUE;
 		}
 
-		if ($_REQUEST['type'] <> '1' && $_REQUEST['type'] <> '2') {			$this->session->set_notice('Не полученны данные',ERROR);			$err = TRUE;
+		if ($_REQUEST['type'] <> '1' && $_REQUEST['type'] <> '2') {			$this->session->set_notice('РќРµ РїРѕР»СѓС‡РµРЅС‹ РґР°РЅРЅС‹Рµ',ERROR);			$err = true;
 		}
 
 		if ($err) {			return FALSE;
@@ -140,7 +152,7 @@ class User Extends DBObject{
 			$this->setVariable('referrer',$_REQUEST['referrer']);
 			$this->setVariable('statinf',$_REQUEST['statinf']);
 			$this->insert();
-			$this->session->set_notice('Вы успешно прошли регистрацию.<br/> Теперь Вы можете войти в свой аккаунт и начать работу',OK);
+			$this->session->set_notice('Р’С‹ СѓСЃРїРµС€РЅРѕ РїСЂРѕС€Р»Рё СЂРµРіРёСЃС‚СЂР°С†РёСЋ.<br/> РўРµРїРµСЂСЊ РІС‹ РјРѕР¶РµС‚Рµ РІРѕР№С‚Рё РІ СЃРІРѕР№ Р°РєРєР°СѓРЅС‚ Рё РЅР°С‡Р°С‚СЊ СЂР°Р±РѕС‚Сѓ',OK);
 			$this->action_login();
 		}
 	}
@@ -153,7 +165,7 @@ class User Extends DBObject{
 				}
 				header("Location:/account/index.html");
         	}
-		}else{			$this->session->set_notice('Неправильный логин или пароль',ERROR);
+		}else{			$this->session->set_notice('РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ Р»РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ',ERROR);
 			return FALSE;
 		}
 	}
@@ -166,22 +178,22 @@ class User Extends DBObject{
 
 	public function action_save_settings() {
 		$this->have_access();		if ($this->objectId) {
-			$update_pass = false;			if (!empty($_REQUEST['password'])) {				/* Проверка пароля */
+			$update_pass = false;			if (!empty($_REQUEST['password'])) {				/* РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ */
 				if (strlen($_REQUEST['password']) < 6) {
-					$this->session->set_notice('Пароль не может быть короче 6 символов',ERROR);
+					$this->session->set_notice('РџР°СЂРѕР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РєРѕСЂРѕС‡Рµ 6 СЃРёРјРІРѕР»РѕРІ',ERROR);
 					return FALSE;
 				}elseif($_REQUEST['password'] <> $_REQUEST['password2']) {
-					$this->session->set_notice('Пароль и его подтверждение не совпадают',ERROR);
+					$this->session->set_notice('РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚',ERROR);
 					return FALSE;
 				}
 				$update_pass = true;
 			}
 
-			/* Проверка емыла */
+			/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
 			if (!$this->check_email($_REQUEST['email'])) {
-				$this->session->set_notice('Указан некорректный адрес email',ERROR);
+				$this->session->set_notice('РЈРєР°Р·Р°РЅ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ email',ERROR);
 			}elseif ($this->check_is_email_used($_REQUEST['email'])) {
-				$this->session->set_notice('Указанный email уже используется в системе',ERROR);
+				$this->session->set_notice('РЈРєР°Р·Р°РЅРЅС‹Р№ email СѓР¶Рµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ СЃРёСЃС‚РµРјРµ',ERROR);
 				return FALSE;
 			}
 
@@ -194,7 +206,7 @@ class User Extends DBObject{
 			$this->setVariable('wmz',$_REQUEST['wmz']);
 			$this->setVariable('statinf',$_REQUEST['statinf']);
 			$this->update();
-			$this->session->set_notice('Изменения сохранены',OK);
+			$this->session->set_notice('РР·РјРµРЅРµРЅРёСЏ СЃРѕС…СЂР°РЅРµРЅС‹',OK);
 			header("Location:/account/settings.html");
 			return TRUE;
 		}
@@ -211,13 +223,13 @@ class User Extends DBObject{
                 		break;
                 	}
        			}
-       			mail($_REQUEST['email'],'Восстановление пароля','Здравствуйте. Вот Ваш новый пароль <b>'.$password.'</b>.');
+       			mail($_REQUEST['email'],'Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ','Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ. Р’Р°С€ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ  <b>'.$password.'</b>.');
   			}
 		}
-		$session->setNotice('Новый пароль выслан на указанный email',OK);
+		$session->setNotice('РќРѕРІС‹Р№ РїР°СЂРѕР»СЊ РІС‹СЃР»Р°РЅ РЅР° СѓРєР°Р·Р°РЅРЅС‹Р№ email',OK);
 	}
 
-	public function show_registration() {		$this->tpl->set('acc_type_select',$this->tpl->get_select_form('type',array(1=>'Владелец сайта',2=>'Рекламодатель'),$_REQUEST['type']));		return $this->tpl->out('registration');
+	public function show_registration() {		$this->tpl->set('acc_type_select',$this->tpl->get_select_form('type',array(1=>'Р’Р»Р°РґРµР»РµС† СЃР°Р№С‚Р°',2=>'Р РµРєР»Р°РјРѕРґР°С‚РµР»СЊ'),$_REQUEST['type']));		return $this->tpl->out('registration');
 	}
 
 	public function show_login() {		return $this->tpl->out('login');
@@ -240,18 +252,18 @@ class User Extends DBObject{
 	public function action_order_wm() {
 		$this->have_access();
 		if ($this->getVariable('balance') >= $_REQUEST['summ'] && $_REQUEST['summ'] > '0.01' && strlen($this->getVariable('wmz')) > 5) {
-			$SQL = "INSERT INTO `wm_payout` SET  `type` = 2,`desc`, = 'Автоматический вывод средств', `user` = '".$this->objectId."', `time` = '".time()."', `summ` = '".$_REQUEST['summ']."', `wmz` = '".$this->getVariable('wmz')."'";
+			$SQL = "INSERT INTO `wm_payout` SET  `type` = 2,`desc`, = 'РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ РІС‹РІРѕРґ СЃСЂРµРґСЃС‚РІ', `user` = '".$this->objectId."', `time` = '".time()."', `summ` = '".$_REQUEST['summ']."', `wmz` = '".$this->getVariable('wmz')."'";
 			$this->DBM->ExecuteQuery($SQL);
 			$id = $this->DBM->insert_id();
 			require_once(CLASES_PATH.'wm/wmxml.php');
 			$wm = new WMI();
 			$code = rand(1000,9999);
-			$a = $wm->x2($id,$id,$this->sys['wmz'],$this->getVariable('wmz'),$_REQUEST['summ'],3,$code,'Вывод средств из сервиса '.$this->sys['title'],0);
+			$a = $wm->x2($id,$id,$this->sys['wmz'],$this->getVariable('wmz'),$_REQUEST['summ'],3,$code,'Р’С‹РІРѕРґ СЃСЂРµРґСЃС‚РІ РёР· СЃРµСЂРІРёСЃР° '.$this->sys['title'],0);
 			if ($a['retval'] == 0) {				$this->decreaseVariable('balance',$_REQUEST['summ']);
 				$this->load_tpl_vars();
 				$this->update();
 
-				/* Платим % реферерам */
+				/* РџР»Р°С‚РёРј % СЂРµС„РµСЂРµСЂР°Рј */
 				if ($this->getVariable('referrer')) {
 					$perc = (($_REQUEST['summ']/100)*$this->sys['ref_perc']);
 		  			$SQL = "UPDATE `users` SET `balance`=balance+".(float)$perc.",`ref_balance`=ref_balance+".(float)$perc." WHERE `id` = '".$this->getVariable('referrer')."' LIMIT 1";
@@ -267,7 +279,7 @@ class User Extends DBObject{
 	public function show_referrals() {		$this->have_access();  		$SQL = "SELECT * FROM `users` WHERE `referrer` = '".$this->objectId."'";
   		$rs = $this->DBM->ExecuteQuery($SQL);
   		$refs = $this->DBM->NumberOfRows($rs);
-  		
+
 		$this->tpl->set('total_refs',$refs);
 		#$this->tpl->set('refs_1',(int)$refs[1]);
 		#$this->tpl->set('refs_2',(int)$refs[2]);

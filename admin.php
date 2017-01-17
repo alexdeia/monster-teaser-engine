@@ -2,10 +2,11 @@
 /*
 =============================================================
 =============================================================
-MTE - Monster Teaser Enginedsd
-�����: ������� Deia
-����: http://eternal-web.ru | http://services.eternal-web.ru
-icq 389336729
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================
 */
@@ -18,6 +19,8 @@ require_once(CLASSES_PATH.'storage/mysql.php');
 require_once(CLASSES_PATH.'session.php');
 require_once(CLASSES_PATH.'user.php');
 require_once(CLASSES_PATH.'admin.php');
+
+header('Content-Type: text/html; charset=utf-8');
 
 $tpl = new Template();
 $DBM = new MysqlDBM();
@@ -41,19 +44,19 @@ $tpl->set('left_menu',$tpl->out('left.login'));
 
 if (isset($_REQUEST['action'])) {
 	$action_function = 'action_'.$_REQUEST['action'];
-	if (method_exists(&$admin,$action_function)) {
+	if (method_exists($admin,$action_function)) {
 		$tpl->set('content',call_user_func(array($admin,$action_function)));
 	}else{
-		trigger_error('��������� � ��������������� ������ '.get_class($admin).'::'.$action_function.'()',E_USER_NOTICE);
+		trigger_error('Обращение к несуществующему методу '.get_class($admin).'::'.$action_function.'()',E_USER_NOTICE);
 	}
 }
 
 if (isset($_REQUEST['show'])) {
 	$show_function = 'show_'.$_REQUEST['show'];
-	if (method_exists(&$admin,$show_function)) {
+	if (method_exists($admin,$show_function)) {
 		$tpl->set('content',call_user_func(array($admin,$show_function)));
 	}else{
-		trigger_error('��������� � ��������������� ������ '.get_class($admin).'::'.$show_function.'()',E_USER_NOTICE);
+		trigger_error('Обращение к несуществующему методу '.get_class($admin).'::'.$show_function.'()',E_USER_NOTICE);
 	}
 }
 

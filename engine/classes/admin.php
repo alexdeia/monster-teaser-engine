@@ -1,7 +1,19 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 class Admin{
 
-	public $acc_types = array(1=>'Вебмастер',2=>'Рекламодатель');
+	public $acc_types = array(1=>'Р’РµР±РјР°СЃС‚РµСЂ', 2=>'Р РµРєР»Р°РјРѕРґР°С‚РµР»СЊ');
 
 	public function __construct($id=FALSE) {		global $DBM,$session,$tpl,$sys;
 		$this->sys = $sys;
@@ -11,7 +23,7 @@ class Admin{
 	}
 
 	public function show_settings() {
-		$this->tpl->set('s_pt',$this->tpl->get_select_form('sys[payout_type]',array('mp'=>'MassPay Service','x2'=>'Автоматически через X2 интерфейс'),$this->sys['payout_type']));
+		$this->tpl->set('s_pt',$this->tpl->get_select_form('sys[payout_type]',array('mp'=>'MassPay Service','x2'=>'РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё С‡РµСЂРµР· X2 РёРЅС‚РµСЂС„РµР№СЃ'),$this->sys['payout_type']));
 		foreach($this->sys['tizer_formats'] as $i => $f) {			$tf .= $f['w'].'x'.$f['h']."\r\n";
 		}
 		$this->tpl->set('tizer_formats',$tf);  		return $this->tpl->out('admin/settings');
@@ -382,7 +394,7 @@ class Admin{
 			while($data=$this->DBM->GetNextRow($rs)) {				if (eregi("(Z[0-9]*)",$data['wmz'])) {					$str .= "\t<payment>\r\n";
 					$str .= "\t\t<Destination>".$data['wmz']."</Destination>\r\n";
 					$str .= "\t\t<Amount>".$data['balance']."</Amount>\r\n";
-					$str .= "\t\t<Description>Вывод средств из сервиса ".$this->sys['url']."</Description>\r\n";
+					$str .= "\t\t<Description>Р’С‹РІРѕРґ СЃСЂРµРґСЃС‚РІ РёР· СЃРµСЂРІРёСЃР° ".$this->sys['url']."</Description>\r\n";
 					$str .= "\t\t<Id>".$data['id']."</Id>\r\n";
 					$str .= "\t</payment>\r\n";
 					$SQL = "UPDATE `users` SET `balance` = balance-".$data['balance']." WHERE `id` = '".$data['id']."' LIMIT 1";
@@ -408,7 +420,7 @@ class Admin{
 		}
 		list($fy,$fm,$fd) = explode('-',$_REQUEST['from']);
 		list($ty,$tm,$td) = explode('-',$_REQUEST['to']);
-		$this->tpl->set('s_type',$this->tpl->get_select_form('type',array(2=>'Ввод средств'),$_REQUEST['type']));
+		$this->tpl->set('s_type',$this->tpl->get_select_form('type',array(2=>'Р’РІРѕРґ СЃСЂРµРґСЃС‚РІ'),$_REQUEST['type']));
 		$SQL = "SELECT * FROM `wm_pay` WHERE `time` BETWEEN ".mktime(0,0,0,$fm,$fd,$fy)." AND ".mktime(59,59,23,$tm,$td,$ty)." AND `status` = 2";
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		if ($this->DBM->NumberOfRows($rs)) {			while($data=$this->DBM->GetNextRow($rs)) {				$this->tpl->set('log_time',date('Y-m-d H:i:s',$data['time']));
@@ -432,7 +444,7 @@ class Admin{
 		}
 		list($fy,$fm,$fd) = explode('-',$_REQUEST['from']);
 		list($ty,$tm,$td) = explode('-',$_REQUEST['to']);
-		$this->tpl->set('s_type',$this->tpl->get_select_form('type',array(1=>'MassPay выплаты',2=>'Автоматические выплаты'),$_REQUEST['type']));
+		$this->tpl->set('s_type',$this->tpl->get_select_form('type',array(1=>'MassPay РІС‹РїР»Р°С‚С‹',2=>'РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёРµ РІС‹РїР»Р°С‚С‹'),$_REQUEST['type']));
 		$SQL = "SELECT * FROM `wm_payout` WHERE `type` = ".(int)$_REQUEST['type']." AND `time` BETWEEN ".mktime(0,0,0,$fm,$fd,$fy)." AND ".mktime(59,59,23,$tm,$td,$ty);
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		if ($this->DBM->NumberOfRows($rs)) {
@@ -455,7 +467,7 @@ class Admin{
 			$news = '';
 			while($data=$this->DBM->GetNextRow($rs)) {
 				$news .= '<li><b>'.date('Y.m.d',$data['time']).'</b><br/>'.$data['short'];
-				$news .= '<a href="admin.php?action=delete_news&show=news&id='.$data['id'].'">[Удалить]</a></li><br>';
+				$news .= '<a href="admin.php?action=delete_news&show=news&id='.$data['id'].'">[РЈРґР°Р»РёС‚СЊ]</a></li><br>';
 			}
 		}
 		$this->tpl->set('news',$news);
@@ -653,12 +665,12 @@ class Admin{
 				$e++;
 		 	}
 		  	$tar_uniq = '<tr>';
-		  	$tar_uniq .= '<td>Только уникальные показы</td><td><input type="checkbox" name="uniq_shows"';
+		  	$tar_uniq .= '<td>РўРѕР»СЊРєРѕ СѓРЅРёРєР°Р»СЊРЅС‹Рµ РїРѕРєР°Р·С‹</td><td><input type="checkbox" name="uniq_shows"';
 			if ($com->getVariable('uniq_shows') == 1) {
 				$tar_uniq .= ' checked';
 		  	}
 		   	$tar_uniq .= ' /></td><td width="50"></td>';
-		    $tar_uniq .= '<td>Только уникальные клики</td><td><input type="checkbox" name="uniq_clicks"';
+		    $tar_uniq .= '<td>РўРѕР»СЊРєРѕ СѓРЅРёРєР°Р»СЊРЅС‹Рµ РєР»РёРєРё</td><td><input type="checkbox" name="uniq_clicks"';
 		    if ($com->getVariable('uniq_clicks') == 1) {
 				$tar_uniq .= ' checked';
 		  	}

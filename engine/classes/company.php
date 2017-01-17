@@ -1,5 +1,17 @@
 <?php
-class Company Extends DBObject{
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
+class Company extends DBObject{
 
 	public $__table = 'companies';
 	public $__keyColumn = 'id';
@@ -69,10 +81,10 @@ class Company Extends DBObject{
 				$this->user->update();
 				$this->delete();
 				header("Location:/account/companies/index.html");
-				$this->session->set_notice('Компания удалена',OK);
+				$this->session->set_notice('РљРѕРјРїР°РЅРёСЏ СѓРґР°Р»РµРЅР°',OK);
 			}
 		}
-		$this->session->set_notice('Нет такой компании',ERROR);
+		$this->session->set_notice('РќРµС‚ С‚Р°РєРѕР№ РєРѕРјРїР°РЅРёРё',ERROR);
 	}
 
 	public function action_save() {
@@ -82,9 +94,9 @@ class Company Extends DBObject{
 				$this->setVariable('name',$_REQUEST['name']);
 				$this->setVariable('format',$_REQUEST['tizer_formats']);
 				$this->update();
-				$this->session->set_notice('Изменения сохранены',OK);
+				$this->session->set_notice('РР·РјРµРЅРµРЅРёСЏ СЃРѕС…СЂР°РЅРµРЅС‹',OK);
 			}
-		}else{			$this->session->set_notice('Нет такой компании',ERROR);
+		}else{			$this->session->set_notice('РќРµС‚ С‚Р°РєРѕР№ РєРѕРјРїР°РЅРёРё',ERROR);
 		}
 	}
 
@@ -99,23 +111,32 @@ class Company Extends DBObject{
 	}
 
 	public function show_add_informers() {		$this->user->have_access();
-		if ($this->get(intval($_REQUEST['id']))) {			if ($this->user->objectId == $this->getVariable('owner')) {				$this->load_tpl_vars();				$SQL = "SELECT * FROM `informers` WHERE `owner` = '".$this->user->objectId."'";
+		if ($this->get(intval($_REQUEST['id']))) {
+			if ($this->user->objectId == $this->getVariable('owner')) {
+				$this->load_tpl_vars();
+				$SQL = "SELECT * FROM `informers` WHERE `owner` = '".$this->user->objectId."'";
 				$infz = unserialize($this->getVariable('informers'));
-				if (count($infz)>1) {					$SQL .= " AND `id` NOT IN (".implode(',',$infz).")";
-				}
+					if (count($infz)>1) {
+						$SQL .= " AND `id` NOT IN (".implode(',',$infz).")";
+					}
 				$SQL .= " AND `format` = '".$this->getVariable('format')."'";
 				$rs = $this->DBM->ExecuteQuery($SQL);
 				$str = $this->tpl->out('account/companies/informers/list.start');
-				if ($this->DBM->NumberOfRows($rs)) {					$i=0;					while($data=$this->DBM->GetNextRow($rs)) {						if ($i%2==0) {
+				if ($this->DBM->NumberOfRows($rs)) {
+					$i=0;
+					while($data=$this->DBM->GetNextRow($rs)) {
+						if ($i%2==0) {
 							$this->tpl->set('inf_row_color','#F8F8F8');
-						}else{
-		                	$this->tpl->set('inf_row_color','#F0F0F0');
+						} else {
+							$this->tpl->set('inf_row_color','#F0F0F0');
 						}
-						$i++;						foreach ($data as $key => $val) {
-							$this->tpl->set('inf_'.$key,$val);
-						}		            	$str .= $this->tpl->out('account/companies/informers/list.row');
-		    		}
+						$i++;
+							foreach ($data as $key => $val) {
+								$this->tpl->set('inf_'.$key,$val);
+							}
+						$str .= $this->tpl->out('account/companies/informers/list.row');
 		    	}
+		    }
 				$str .= $this->tpl->out('account/companies/informers/list.end');
 			}
 		}
@@ -263,19 +284,19 @@ class Company Extends DBObject{
 					$e++;
 		    	}
 		    	$tar_uniq = '<tr>';
-		    	$tar_uniq .= '<td>Считать показы ?</td><td><input type="checkbox" name="calc_shows"';
+		    	$tar_uniq .= '<td>РЎС‡РёС‚Р°С‚СЊ РїРѕРєР°Р·С‹ ?</td><td><input type="checkbox" name="calc_shows"';
 		    	if ($this->getVariable('calc_shows')) {		    		$tar_uniq .= ' checked';
 		    	}
-		    	$tar_uniq .= '> </td><td width="50"></td><td> Только уникальные показы</td><td><input type="checkbox" name="uniq_shows"';
+		    	$tar_uniq .= '> </td><td width="50"></td><td> РўРѕР»СЊРєРѕ СѓРЅРёРєР°Р»СЊРЅС‹Рµ РїРѕРєР°Р·С‹</td><td><input type="checkbox" name="uniq_shows"';
 		    	if ($this->getVariable('uniq_shows') == 1) {					$tar_uniq .= ' checked';
 		    	}
 		    	$tar_uniq .= ' /></td></tr>';
 		    	$tar_uniq .= '<tr>';
-		    	$tar_uniq .= '<td>Считать клики ?</td><td><input type="checkbox" name="calc_clicks"';
+		    	$tar_uniq .= '<td>РЎС‡РёС‚Р°С‚СЊ РєР»РёРєРё ?</td><td><input type="checkbox" name="calc_clicks"';
 		    	if ($this->getVariable('calc_clicks')) {
 		    		$tar_uniq .= ' checked';
 		    	}
-		    	$tar_uniq .= '> </td><td width="50"></td><td> Только уникальные клики</td><td><input type="checkbox" name="uniq_shows"';
+		    	$tar_uniq .= '> </td><td width="50"></td><td> РўРѕР»СЊРєРѕ СѓРЅРёРєР°Р»СЊРЅС‹Рµ РєР»РёРєРё</td><td><input type="checkbox" name="uniq_shows"';
 		    	if ($this->getVariable('uniq_shows') == 1) {
 					$tar_uniq .= ' checked';
 		    	}
@@ -332,11 +353,11 @@ class Company Extends DBObject{
 
 				$this->update_tar_tables();
 
-				$this->session->set_notice('Рекламная компания успешно создана',OK);
+				$this->session->set_notice('Р РµРєР»Р°РјРЅР°СЏ РєРѕРјРїР°РЅРёСЏ СѓСЃРїРµС€РЅРѕ СЃРѕР·РґР°РЅР°',OK);
 				header("Location:/account/companies/index.html");
 			}
 		}
-		$this->session->set_notice('Нет такой компании',ERROR);
+		$this->session->set_notice('РќРµС‚ С‚Р°РєРѕР№ РєРѕРјРїР°РЅРёРё',ERROR);
 	}
 
 	public function update_tar_tables() {		$tar_day = unserialize($this->getVariable('tar_days'));
@@ -437,18 +458,18 @@ class Company Extends DBObject{
                 		list($ex) = $this->DBM->SingleRowQuery($SQL);
                 		if(!$ex) {                        	$this->update_tar_tables();
                 		}
-	               	}else{                		$this->session->set_notice('Запрошенная сумма превышает Ваш баланс',ERROR);
+	               	} else {                		$this->session->set_notice('Р—Р°РїСЂРѕС€РµРЅРЅР°СЏ СЃСѓРјРјР° РїСЂРµРІС‹С€Р°РµС‚ РІР°С€ Р±Р°Р»Р°РЅСЃ',ERROR);
                 	}
-                }elseif($_REQUEST['funds_take'] > 0) {                	$f = $_REQUEST['funds_take'];
-                	if ($this->getVariable('funds') >= $f) {
-                		$this->decreaseVariable('funds',$f);
-                		$this->user->increaseVariable('balance',$f);
-                		$this->update();
-                		$this->user->update();
-                	}else{
-                		$this->session->set_notice('Запрошенная сумма превышает Ваш баланс',ERROR);
+                } elseif($_REQUEST['funds_take'] > 0) {                	$f = $_REQUEST['funds_take'];
+                		if ($this->getVariable('funds') >= $f) {
+	                		$this->decreaseVariable('funds',$f);
+	                		$this->user->increaseVariable('balance',$f);
+	                		$this->update();
+	                		$this->user->update();
+                	} else {
+                		$this->session->set_notice('Р—Р°РїСЂРѕС€РµРЅРЅР°СЏ СЃСѓРјРјР° РїСЂРµРІС‹С€Р°РµС‚ РІР°С€ Р±Р°Р»Р°РЅСЃ',ERROR);
                 	}
-                }else{                	$this->session->set_notice('Недопустимая операция',ERROR);
+                } else {                	$this->session->set_notice('РќРµРґРѕРїСѓСЃС‚РёРјР°СЏ РѕРїРµСЂР°С†РёСЏ',ERROR);
                 }
 			}
 		}

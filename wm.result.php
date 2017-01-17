@@ -10,7 +10,7 @@ if ($data['user']) {	if ($data['summ'] == $_REQUEST['LMI_PAYMENT_AMOUNT']) {		if
 			$SQL = "UPDATE `wm_pay` SET `status` = 2 WHERE `id` = '".$data['id']."' LIMIT 1";
 			$DBM->ExecuteQuery($SQL);
 
-			/* Ïëàòèì % ðåôåðåðàì */
+			/* ÐŸÐ»Ð°Ñ‚Ð¸Ð¼ % Ñ€ÐµÑ„ÐµÑ€ÐµÑ€Ð°Ð¼ */
 			$SQL = "SELECT `referrer` FROM `users` WHERE `id` = '".$data['user']."' LIMIT 1";
 			list($referrer) = $DBM->SingleRowQuery($SQL);
 			if ($referrer > 0) {				$perc = (($_REQUEST['summ']/100)*$sys['ref_perc']);

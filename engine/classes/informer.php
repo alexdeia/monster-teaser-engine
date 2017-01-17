@@ -1,11 +1,23 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 class Informer Extends DBObject{
 
 	public $__table = 'informers';
 	public $__keyColumn = 'id';
 	public $tpl_prefix = 'inf';
 
-	public function __construct($id=FALSE) {		global $DBM,$session,$user,$tpl;
+	public function __construct($id = false) {		global $DBM,$session,$user,$tpl;
 		$this->tpl = $tpl;
 		$this->user = $user;
 		$this->DBM = $DBM;
@@ -59,11 +71,11 @@ class Informer Extends DBObject{
 		if ($this->get(intval($_REQUEST['id']))) {
 			if ($this->getVariable('owner') == $this->user->objectId) {				$this->delete_dir_tree('data/informers/'.$this->objectId);
 				$this->delete();
-				$this->session->set_notice('Информер удален',OK);
+				$this->session->set_notice('РРЅС„РѕСЂРјРµСЂ СѓРґР°Р»РµРЅ',OK);
 				return TRUE;
 			}
 		}
-		$this->session->set_notice('Нет такого информера',ERROR);
+		$this->session->set_notice('РќРµС‚ С‚Р°РєРѕРіРѕ РёРЅС„РѕСЂРјРµСЂР°',ERROR);
 		return FALSE;
 	}
 
@@ -75,15 +87,15 @@ class Informer Extends DBObject{
 				$this->setVariable('url',str_ireplace('http://','',str_ireplace('https://','',$_REQUEST['url'])));
 				$this->build_dir_tree();
 				if (isset($_FILES['image']['name']) && $_FILES['image']['name']) {					if ($this->upload_image()) {						$this->setVariable('image',$_FILES['image']['name']);						@unlink($_SERVER['DOCUMENT_ROOT'].'/data/informers/'.$this->objectId.'/'.$this->previous_image);
-						$this->session->set_notice('Изображение загруженно',OK);
-						$this->session->set_notice('Информер успешно сохранен',OK);
+						$this->session->set_notice('РР·РѕР±СЂР°Р¶РµРЅРёРµ Р·Р°РіСЂСѓР¶РµРЅРѕ',OK);
+						$this->session->set_notice('РРЅС„РѕСЂРјРµСЂ СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅ',OK);
 					}
 				}
 				$this->update();
 				return TRUE;
 			}
 		}
-		$this->session->set_notice('Нет такого информера',ERROR);
+		$this->session->set_notice('РќРµС‚ С‚Р°РєРѕРіРѕ РёРЅС„РѕСЂРјРµСЂР°',ERROR);
 		return FALSE;
 	}
 
@@ -96,7 +108,7 @@ class Informer Extends DBObject{
 		$this->setVariable('format',$_REQUEST['tizer_formats']);
 		$this->objectId = $this->insert();
 		$this->build_dir_tree();
-		if ($this->upload_image()) {			$this->session->set_notice('Информер успешно добавлен',OK);
+		if ($this->upload_image()) {			$this->session->set_notice('РРЅС„РѕСЂРјРµСЂ СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ',OK);
 		}
 		return TRUE;
 	}
@@ -117,16 +129,16 @@ class Informer Extends DBObject{
 						imagegif($new,$_FILES['image']['tmp_name']);
 					}
         		}
-				if (!copy($_FILES['image']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/data/informers/'.$this->objectId.'/'.$_FILES['image']['name'])) {					$this->session->set_notice('Невозможно загрузить картинку',ERROR);
+				if (!copy($_FILES['image']['tmp_name'],$_SERVER['DOCUMENT_ROOT'].'/data/informers/'.$this->objectId.'/'.$_FILES['image']['name'])) {					$this->session->set_notice('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ',ERROR);
 					return FALSE;
 				}
         		@unlink($_FILES['image']['tmp_name']);
         		return TRUE;
         	}else{
-				$this->session->set_notice('Изображение имеет неподдерживаемый формат',ERROR);
+				$this->session->set_notice('РР·РѕР±СЂР°Р¶РµРЅРёРµ РёРјРµРµС‚ РЅРµРїРѕРґРґРµСЂР¶РёРІР°РµРјС‹Р№ С„РѕСЂРјР°С‚',ERROR);
 				return FALSE;
         	}
-    	}else{        	$this->session->set_notice('Нет картинки',ERROR);
+    	}else{        	$this->session->set_notice('РќРµС‚ РєР°СЂС‚РёРЅРєРё',ERROR);
         	return FALSE;
     	}
 	}

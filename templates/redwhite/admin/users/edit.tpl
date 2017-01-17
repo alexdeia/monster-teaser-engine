@@ -1,49 +1,49 @@
-<h2>Редактировение пользователя</h2>
+<h2>Р РµРґР°РєС‚РёСЂРѕРІРµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ</h2>
 <form action="/admin.php?action=save_user&show=users&id=<TVAR>user_id</TVAR>" method="post">
 <table cellpadding="0" width="100%" cellspacing="5">
 	<tr>
-		<td><label for="login">Логин</label></td><td><b><input type="text" name="login" id="login" value="<TVAR>user_login</TVAR>"></b>
-		<div class="help">Выбранное имя пользователя</div></td>
+		<td><label for="login">Р›РѕРіРёРЅ</label></td><td><b><input type="text" name="login" id="login" value="<TVAR>user_login</TVAR>"></b>
+		<div class="help">Р’С‹Р±СЂР°РЅРЅРѕРµ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ</div></td>
 	</tr>
 	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 	<tr>
-		<td><label for="password">Пароль</label></td><td><input type="password" name="password" id="password" autocomplete="off">
-		<div class="help">Заполняйте ТОЛЬКО в случае, если желаете изменить текущий пароль!</div></td>
+		<td><label for="password">РџР°СЂРѕР»СЊ</label></td><td><input type="password" name="password" id="password" autocomplete="off">
+		<div class="help">Р—Р°РїРѕР»РЅСЏР№С‚Рµ РўРћР›Р¬РљРћ РІ СЃР»СѓС‡Р°Рµ, РµСЃР»Рё Р¶РµР»Р°РµС‚Рµ РёР·РјРµРЅРёС‚СЊ С‚РµРєСѓС‰РёР№ РїР°СЂРѕР»СЊ!</div></td>
 	</tr>
 	<tr>
-		<td><label for="password2">Повторите пароль</label></td><td><input type="password" name="password2" id="password2">
-		<div class="help">Во избежание ошибок, повторите введеный выше пароль если Вы желаете сменить его</div></td>
-	</tr>
-	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-	<tr>
-		<td><label for="email">Адрес email</label></td><td><input type="text" name="email" id="email" value="<TVAR>user_email</TVAR>">
-		<div class="help">Пожалуйста, вводите корректный адрес</div></td>
+		<td><label for="password2">РџРѕРІС‚РѕСЂРёС‚Рµ РїР°СЂРѕР»СЊ</label></td><td><input type="password" name="password2" id="password2">
+		<div class="help">Р’Рѕ РёР·Р±РµР¶Р°РЅРёРµ РѕС€РёР±РѕРє, РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРµРґРµРЅС‹Р№ РІС‹С€Рµ РїР°СЂРѕР»СЊ РµСЃР»Рё Р’С‹ Р¶РµР»Р°РµС‚Рµ СЃРјРµРЅРёС‚СЊ РµРіРѕ</div></td>
 	</tr>
 	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 	<tr>
-		<td><label for="name">Ваше имя</label></td><td><input type="text" name="name" id="name" value="<TVAR>user_name</TVAR>">
-		<div class="help">Ваше настоящее имя</div></td>
+		<td><label for="email">РђРґСЂРµСЃ email</label></td><td><input type="text" name="email" id="email" value="<TVAR>user_email</TVAR>">
+		<div class="help">РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРѕРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ Р°РґСЂРµСЃ</div></td>
+	</tr>
+	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
+	<tr>
+		<td><label for="name">Р’Р°С€Рµ РёРјСЏ</label></td><td><input type="text" name="name" id="name" value="<TVAR>user_name</TVAR>">
+		<div class="help">Р’Р°С€Рµ РЅР°СЃС‚РѕСЏС‰РµРµ РёРјСЏ</div></td>
 	</tr>
 	<tr>
-		<td><label for="name">Текущий баланс</label></td><td><input type="text" name="balance" id="balance" value="<TVAR>user_balance</TVAR>">
-		<div class="help">Баланс пользователя, без учета баланса в компаниях</div></td>
+		<td><label for="name">РўРµРєСѓС‰РёР№ Р±Р°Р»Р°РЅСЃ</label></td><td><input type="text" name="balance" id="balance" value="<TVAR>user_balance</TVAR>">
+		<div class="help">Р‘Р°Р»Р°РЅСЃ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ, Р±РµР· СѓС‡РµС‚Р° Р±Р°Р»Р°РЅСЃР° РІ РєРѕРјРїР°РЅРёСЏС…</div></td>
 	</tr>
 	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 	<tr>
 		<td><label for="wmid">WMID</label></td><td><input type="text" name="wmid" id="wmid" value="<TVAR>user_wmid</TVAR>">
-		<div class="help">WebMoney идентификатор</div></td>
+		<div class="help">WebMoney РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ</div></td>
 	</tr>
 	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 	<tr>
 		<td><label for="wmz">WMZ</label></td><td><input type="text" name="wmz" id="wmz" value="<TVAR>user_wmz</TVAR>">
-		<div class="help">Ваш Z кошелек в системе WebMoney</div></td>
+		<div class="help">Р’Р°С€ Z РєРѕС€РµР»РµРє РІ СЃРёСЃС‚РµРјРµ WebMoney</div></td>
 	</tr>
 	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 	<tr>
-		<td valign="top"><label for="statinf">Информация о статистике</label></td><td><textarea cols="60" eows="4" name="statinf" id="statinf"><TVAR>user_statinf</TVAR></textarea>
-		<div class="help">Пожалуйста, введите данные доступа к статистике вашего сайта</div></td>
+		<td valign="top"><label for="statinf">РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃС‚Р°С‚РёСЃС‚РёРєРµ</label></td><td><textarea cols="60" eows="4" name="statinf" id="statinf"><TVAR>user_statinf</TVAR></textarea>
+		<div class="help">РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ РґРѕСЃС‚СѓРїР° Рє СЃС‚Р°С‚РёСЃС‚РёРєРµ РІР°С€РµРіРѕ СЃР°Р№С‚Р°</div></td>
 	</tr>
 	<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-	<tr><td colspan="2" align="right"><input type="submit" value="Сохранить изменения" class="button"></td></tr>
+	<tr><td colspan="2" align="right"><input type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ" class="button"></td></tr>
 </table>
 </form>

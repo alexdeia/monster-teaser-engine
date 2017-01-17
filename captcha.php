@@ -1,4 +1,16 @@
 <?php
+/*
+=============================================================
+=============================================================
+MTE - Monster Teaser Engine
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
+=============================================================
+=============================================================
+*/
+
 session_start();
 function draw() {
 	$fontSize = 14;
@@ -12,7 +24,7 @@ function draw() {
 			break;
 		}
 	}
-	session_register('_ste_ccode');
+	//session_register('_ste_ccode');
 	$_SESSION['_ste_ccode'] = $turingCode;
 	$fontPath = 'images/verdana.ttf';
 	$NewImageInfo = imagettfbbox($fontSize, 0,$fontPath,4);

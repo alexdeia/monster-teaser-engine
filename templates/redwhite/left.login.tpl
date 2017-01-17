@@ -1,21 +1,21 @@
 <form id="form1" method="post" action="/account/login.html">
 	<fieldset>
 	<legend>Login</legend>
-	<label for="login">Логин:&nbsp;&nbsp;</label>
+	<label for="login">Р›РѕРіРёРЅ:&nbsp;&nbsp;</label>
 	<input id="login" type="text" name="login" value="" />
-	<label for="password">Пароль:</label>
+	<label for="password">РџР°СЂРѕР»СЊ:</label>
 	<input id="password" type="password" name="password" value="" />
 	<br />
 	<br />
-	<input type="submit" class="button" value="Вход" />
+	<input type="submit" class="button" value="Р’С…РѕРґ" />
 
 <table class="b3">
 	<tr>
-		<td><a href="/index.php?handler=user&show=registration">Регистрация</a></td>
+		<td><a href="/index.php?handler=user&show=registration">Р РµРіРёСЃС‚СЂР°С†РёСЏ</a></td>
 	</tr>
 
 	<tr>
-		<td><a href="/index.php?handler=user&show=restore_password">Восстановление пароля</a></td>
+		<td><a href="/index.php?handler=user&show=restore_password">Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ</a></td>
 	</tr>
 </table>
 	</fieldset>

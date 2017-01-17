@@ -1,19 +1,19 @@
 <div class="page_content">
-	<h2 class="title">Отчеты о выплатах</h2>
+	<h2 class="title">РћС‚С‡РµС‚С‹ Рѕ РІС‹РїР»Р°С‚Р°С…</h2>
     <div id="cont">
     	<center>
 		<form action="/admin.php?show=payouts_reports" method="post">
-        Показать <TVAR>s_type</TVAR> c <input type="text" name="from" value="<REQ>from</REQ>" size="10">
-        по <input type="text" name="to" value="<REQ>to</REQ>" size="10">
-        <input type="submit" class="button" value="Формировать отчеты">
+        РџРѕРєР°Р·Р°С‚СЊ <TVAR>s_type</TVAR> c <input type="text" name="from" value="<REQ>from</REQ>" size="10">
+        РїРѕ <input type="text" name="to" value="<REQ>to</REQ>" size="10">
+        <input type="submit" class="button" value="Р¤РѕСЂРјРёСЂРѕРІР°С‚СЊ РѕС‚С‡РµС‚С‹">
         </form>
         </center>
         <br/>
 		<table width="100%" bgcolor="#aaaaaa" cellspacing="1">
 			<tr>
-				<th width="20" align="center">Дата</th>
-				<th width="50" align="center">Пользователь</th>
-				<th width="200" align="center">Сумма</th>
+				<th width="20" align="center">Р”Р°С‚Р°</th>
+				<th width="50" align="center">РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</th>
+				<th width="200" align="center">РЎСѓРјРјР°</th>
 			</tr>
            <TVAR>reports</TVAR>
 		</table>

@@ -3,11 +3,14 @@
 =============================================================
 =============================================================
 MTE - Monster Teaser Engine
-Àâòîð: Àëåêñåé Deia
-icq 389336729
+Author: unknown
+Refactoring: Alexey Klykov
+Contacts: http://chronodev.ru
+E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================
 */
+
 require_once('config/config.php');
 require_once(ENGINE_PATH.'security.php');
 require_once(CLASSES_PATH.'storage/mysql.php');
@@ -50,7 +53,7 @@ if ($url) {	$tizers = unserialize($session->getVariable('_ste_last_tizers'));
 			$site_log .= time()."\tclick\t0\t1\t".$IP."\t".$referer."\n";
 			$inf_log = time()."\tclick\t0\t1\t".$_REQUEST['com_id']."\t".$IP."\t".$IP."\t".$referer."\n";
 			$com_log = time()."\tclick\t0\t1\t".$IP."\t".$referer."\n";
-		}else{			/* Óíèêàëüíûé êëèê */
+		}else{			/* Ð£Ð½Ð¸ÐºÐ°Ð»ÑŒÐ½Ñ‹Ð¹ ÐºÐ»Ð¸Ðº */
 			$SQL = "UPDATE `sites` SET `clicks` = clicks+1, `clicks_uniq` = clicks_uniq+1 WHERE `id` = '".intval($_REQUEST['site_id'])."' LIMIT 1";
 			$DBM->ExecuteQuery($SQL);
 			$SQL = "UPDATE `informers` SET `clicks` = clicks+1, `clicks_uniq` = clicks_uniq+1 WHERE `id` = '".$_REQUEST['inf_id']."' LIMIT 1";
