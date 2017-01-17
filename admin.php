@@ -20,6 +20,8 @@ require_once(CLASSES_PATH.'session.php');
 require_once(CLASSES_PATH.'user.php');
 require_once(CLASSES_PATH.'admin.php');
 
+header('Content-Type: text/html; charset=utf-8');
+
 $tpl = new Template();
 $DBM = new MysqlDBM();
 $session = new Session();
