@@ -1,15 +1,15 @@
 <div class="page_content">
-	<h2 class="title">Мои информеры</h2>
+	<h2 class="title">РњРѕРё РёРЅС„РѕСЂРјРµСЂС‹</h2>
     <div id="cont">
     <div style="text-align: right;">
-    	<a href="/account/informers/add.html"><img src="/templates/<SYS>template</SYS>/img/plus.gif" border="0" align="top">&nbsp;&nbsp;Добавить новый информер</a>
+    	<a href="/account/informers/add.html"><img src="/templates/<SYS>template</SYS>/img/plus.gif" border="0" align="top">&nbsp;&nbsp;Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ РёРЅС„РѕСЂРјРµСЂ</a>
     </div>
     <br/>
 	<table width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
 		<tr>
-			<th>Картинка</th>
-			<th>Текст/URL</th>
-			<th>Всего кликов\показов</th>
-			<th>Действия</th>
+			<th>РљР°СЂС‚РёРЅРєР°</th>
+			<th>РўРµРєСЃС‚/URL</th>
+			<th>Р’СЃРµРіРѕ РєР»РёРєРѕРІ\РїРѕРєР°Р·РѕРІ</th>
+			<th>Р”РµР№СЃС‚РІРёСЏ</th>
 		</tr>
 

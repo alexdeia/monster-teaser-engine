@@ -1,36 +1,36 @@
 <div class="page_content">
-	<h2 class="title">Настрока таргетинга рекламной компании</h2>
+	<h2 class="title">РќР°СЃС‚СЂРѕРєР° С‚Р°СЂРіРµС‚РёРЅРіР° СЂРµРєР»Р°РјРЅРѕР№ РєРѕРјРїР°РЅРёРё</h2>
     <div id="cont">
 		<form action="/account/informers/<TVAR>inf_id</TVAR>/targeting.html" method="post">
 		<input type="hidden" name="action" value="targeting_save">
-		<h4>Таргетинг по категории рекламы</h4>
+		<h4>РўР°СЂРіРµС‚РёРЅРі РїРѕ РєР°С‚РµРіРѕСЂРёРё СЂРµРєР»Р°РјС‹</h4>
 					<table border="0" width="80%">
 						<tr>
 							<th width="20"></th>
-							<th width="200">Категория</th>
-							<th width="150">Цена показов</th>
-							<th width="150">Цена кликов</th>
+							<th width="200">РљР°С‚РµРіРѕСЂРёСЏ</th>
+							<th width="150">Р¦РµРЅР° РїРѕРєР°Р·РѕРІ</th>
+							<th width="150">Р¦РµРЅР° РєР»РёРєРѕРІ</th>
 						<TVAR>tar_cat</TVAR>
 					</table>
 		<br/>
         <br/>
-        <h4>Таргетинг по дням недели(<a href="javascript:;" onClick="select_all_days();">Выбрать все</a> | <a href="javascript:;" onClick="deselect_all_days();">Убрать все</a>)</h4>
+        <h4>РўР°СЂРіРµС‚РёРЅРі РїРѕ РґРЅСЏРј РЅРµРґРµР»Рё(<a href="javascript:;" onClick="select_all_days();">Р’С‹Р±СЂР°С‚СЊ РІСЃРµ</a> | <a href="javascript:;" onClick="deselect_all_days();">РЈР±СЂР°С‚СЊ РІСЃРµ</a>)</h4>
         <br/>
 		<TVAR>tar_day</TVAR>
 		<br/><br/>
-		<h4>Таргетинг по времени суток(<a href="javascript:;" onClick="select_all_hours();">Выбрать все</a> | <a href="javascript:;" onClick="deselect_all_hours();">Убрать все</a>)</h4>
+		<h4>РўР°СЂРіРµС‚РёРЅРі РїРѕ РІСЂРµРјРµРЅРё СЃСѓС‚РѕРє(<a href="javascript:;" onClick="select_all_hours();">Р’С‹Р±СЂР°С‚СЊ РІСЃРµ</a> | <a href="javascript:;" onClick="deselect_all_hours();">РЈР±СЂР°С‚СЊ РІСЃРµ</a>)</h4>
 		<br/>
 		<table border="0">
 	        <TVAR>tar_time</TVAR>
 		</table>
 		<br/><br/>
-		<h4>Каких посетителей считать?</h4>
+		<h4>РљР°РєРёС… РїРѕСЃРµС‚РёС‚РµР»РµР№ СЃС‡РёС‚Р°С‚СЊ?</h4>
 		<br/>
 		<table border="0">
 	        <TVAR>tar_uniq</TVAR>
 		</table>
 		<div style="text-align: right; margin-top: 10px; padding-bottom: 30px;">
-			<input type="submit" value="Сохранить изменения" class="button">
+			<input type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ" class="button">
 		</div>
 		</form>
 	</div>

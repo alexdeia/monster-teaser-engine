@@ -1,22 +1,22 @@
 <div class="page_content">
-	<h2 class="title">Моя бухгалтерия</h2>
+	<h2 class="title">РњРѕСЏ Р±СѓС…РіР°Р»С‚РµСЂРёСЏ</h2>
     <div id="cont">
 		<input type="hidden" name="action" value="save_settings">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td><label for="login">Текущий баланс</label></td><td>$ <TVAR>user_balance</TVAR>
-				<div class="help">Ваш текущий баланс</div></td>
+				<td><label for="login">РўРµРєСѓС‰РёР№ Р±Р°Р»Р°РЅСЃ</label></td><td>$ <TVAR>user_balance</TVAR>
+				<div class="help">Р’Р°С€ С‚РµРєСѓС‰РёР№ Р±Р°Р»Р°РЅСЃ</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr><td height="50"></td></tr>
 			<tr>
 				<td>
-					<label for="summ">Пополнить баланс</label>
+					<label for="summ">РџРѕРїРѕР»РЅРёС‚СЊ Р±Р°Р»Р°РЅСЃ</label>
 				</td><td>
                     <form action="/account/funds/add-wm.html" method="post">
 					<input type="text" name="summ" id="summ">
-					<input type="submit" value="Продолжить" class="button">
-					<div class="help">Введите сумму которую Вы хотите внести на баланс.</div>
+					<input type="submit" value="РџСЂРѕРґРѕР»Р¶РёС‚СЊ" class="button">
+					<div class="help">Р’РІРµРґРёС‚Рµ СЃСѓРјРјСѓ РєРѕС‚РѕСЂСѓСЋ Р’С‹ С…РѕС‚РёС‚Рµ РІРЅРµСЃС‚Рё РЅР° Р±Р°Р»Р°РЅСЃ.</div>
 					</form>
 				</td>
 			</tr>

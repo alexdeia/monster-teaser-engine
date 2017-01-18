@@ -1,16 +1,16 @@
 <div class="page_content">
-	<h2 class="title">Мои сайты</h2>
+	<h2 class="title">РњРѕРё СЃР°Р№С‚С‹</h2>
     <div id="cont">
     <div style="text-align: right;">
-    	<a href="/account/sites/add.html"><img src="/templates/<SYS>template</SYS>/img/plus.gif" border="0" align="top">&nbsp;&nbsp;Добавить новый сайт</a>
+    	<a href="/account/sites/add.html"><img src="/templates/<SYS>template</SYS>/img/plus.gif" border="0" align="top">&nbsp;&nbsp;Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ СЃР°Р№С‚</a>
     </div>
     <br/>
 	<table width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
 		<tr>
-			<th>Статус</th>
-			<th>Адрес</th>
-			<th>Показы</th>
-			<th>Клики</th>
-			<th>Действия</th>
+			<th>РЎС‚Р°С‚СѓСЃ</th>
+			<th>РђРґСЂРµСЃ</th>
+			<th>РџРѕРєР°Р·С‹</th>
+			<th>РљР»РёРєРё</th>
+			<th>Р”РµР№СЃС‚РІРёСЏ</th>
 		</tr>
 

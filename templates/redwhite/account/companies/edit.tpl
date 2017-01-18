@@ -1,16 +1,16 @@
 <div class="page_content">
-	<h2 class="title">Редактирование компании</h2>
+	<h2 class="title">Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ РєРѕРјРїР°РЅРёРё</h2>
     <div id="cont">
 		<form action="/account/companies/<TVAR>com_id</TVAR>/edit.html" method="post">
 		<input type="hidden" name="action" value="save">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td valign="top"><label for="name">Название</label></td><td>
+				<td valign="top"><label for="name">РќР°Р·РІР°РЅРёРµ</label></td><td>
 					<input type="text" name="name" id="name" value="<TVAR>com_name</TVAR>">
-				<div class="help">Введите краткое название рекламной компании. Оно будет отображаться только Вам.</div></td>
+				<div class="help">Р’РІРµРґРёС‚Рµ РєСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ СЂРµРєР»Р°РјРЅРѕР№ РєРѕРјРїР°РЅРёРё. РћРЅРѕ Р±СѓРґРµС‚ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ С‚РѕР»СЊРєРѕ Р’Р°Рј.</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-			<tr><td colspan="2" align="right"><input type="submit" value="Сохранить изменения" class="button"></td></tr>
+			<tr><td colspan="2" align="right"><input type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ" class="button"></td></tr>
 		</table>
 		</form>
 	</div>

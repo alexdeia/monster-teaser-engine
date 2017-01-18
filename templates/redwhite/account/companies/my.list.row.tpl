@@ -12,14 +12,14 @@
 		<TVAR>com_spent</TVAR>
 	</td>
 	<td bgcolor="<TVAR>com_row_color</TVAR>" align="center">
-		<a title="Ðåäàêòèðîâàòü êîìïàíèþ" href="/account/companies/<TVAR>com_id</TVAR>/edit.html"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
-		<a title="Íàñòðîéêà òàðãåòèíãà" href="/account/companies/<TVAR>com_id</TVAR>/targeting.html"><img src="/templates/<SYS>template</SYS>/img/tar.gif" border="0"></a>
-		<a title="Äîáàâèòü òèçåðû" href="/account/companies/<TVAR>com_id</TVAR>/add-informers.html"><img src="/templates/<SYS>template</SYS>/img/tiz_add.gif" border="0"></a>
-		<a title="Óäàëèòü òèçåðû" href="/account/companies/<TVAR>com_id</TVAR>/delete-informers.html"><img src="/templates/<SYS>template</SYS>/img/tiz_del.gif" border="0"></a>
-		<a title="Óäàëèòü êîìïàíèþ" onClick="return confirm('Âû óâåðåíû, ÷òî õîòèòå óäàëèòü êîìïàíèþ?');" href="/account/companies/<TVAR>com_id</TVAR>/delete.html"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
-		<a title="Îò÷åòû" href="/account/companies/<TVAR>com_id</TVAR>/reports.html"><img src="/templates/<SYS>template</SYS>/img/reports.gif" border="0"></a>
+		<a title="Ð ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸ÑŽ" href="/account/companies/<TVAR>com_id</TVAR>/edit.html"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
+		<a title="ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ° Ñ‚Ð°Ñ€Ð³ÐµÑ‚Ð¸Ð½Ð³Ð°" href="/account/companies/<TVAR>com_id</TVAR>/targeting.html"><img src="/templates/<SYS>template</SYS>/img/tar.gif" border="0"></a>
+		<a title="Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ‚Ð¸Ð·ÐµÑ€Ñ‹" href="/account/companies/<TVAR>com_id</TVAR>/add-informers.html"><img src="/templates/<SYS>template</SYS>/img/tiz_add.gif" border="0"></a>
+		<a title="Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ñ‚Ð¸Ð·ÐµÑ€Ñ‹" href="/account/companies/<TVAR>com_id</TVAR>/delete-informers.html"><img src="/templates/<SYS>template</SYS>/img/tiz_del.gif" border="0"></a>
+		<a title="Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸ÑŽ" onClick="return confirm('Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸ÑŽ?');" href="/account/companies/<TVAR>com_id</TVAR>/delete.html"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
+		<a title="ÐžÑ‚Ñ‡ÐµÑ‚Ñ‹" href="/account/companies/<TVAR>com_id</TVAR>/reports.html"><img src="/templates/<SYS>template</SYS>/img/reports.gif" border="0"></a>
 		<IF <TVAR>com_status</TVAR> == 1>
-			<a title="Áàëàíñ êîìïàíèè" href="/account/companies/<TVAR>com_id</TVAR>/balance.html"><img src="/templates/<SYS>template</SYS>/img/bucks_<TVAR>com_status</TVAR>.gif" border="0"></a>
+			<a title="Ð‘Ð°Ð»Ð°Ð½Ñ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸" href="/account/companies/<TVAR>com_id</TVAR>/balance.html"><img src="/templates/<SYS>template</SYS>/img/bucks_<TVAR>com_status</TVAR>.gif" border="0"></a>
 		<ELSE>
 			<img src="/templates/<SYS>template</SYS>/img/bucks_<TVAR>com_status</TVAR>.gif" border="0">
 		</IF>

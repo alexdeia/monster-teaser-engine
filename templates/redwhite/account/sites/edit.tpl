@@ -1,40 +1,40 @@
 <div class="page_content">
-	<h2 class="title">Редактирование сайта</h2>
+	<h2 class="title">Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЃР°Р№С‚Р°</h2>
     <div id="cont">
 		<form action="/account/sites/<TVAR>site_id</TVAR>/save.html" method="post">
 		<input type="hidden" name="action" value="save">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td><label for="url">URL сайта</label></td><td><input type="text" name="url" id="url" value="<TVAR>site_url</TVAR>">
-				<div class="help">Адрес Вашего сайта, без http:// и www</div></td>
+				<td><label for="url">URL СЃР°Р№С‚Р°</label></td><td><input type="text" name="url" id="url" value="<TVAR>site_url</TVAR>">
+				<div class="help">РђРґСЂРµСЃ Р’Р°С€РµРіРѕ СЃР°Р№С‚Р°, Р±РµР· http:// Рё www</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
 				<td valign="top">
-					<label>Выберите какие категории<br/>показывать на своем сайте</label>
+					<label>Р’С‹Р±РµСЂРёС‚Рµ РєР°РєРёРµ РєР°С‚РµРіРѕСЂРёРё<br/>РїРѕРєР°Р·С‹РІР°С‚СЊ РЅР° СЃРІРѕРµРј СЃР°Р№С‚Рµ</label>
 					<br/>
-					<a href="javascript:;" onClick="select_all_cats();">Выбрать все</a>
+					<a href="javascript:;" onClick="select_all_cats();">Р’С‹Р±СЂР°С‚СЊ РІСЃРµ</a>
 					<br/>
-					<a href="javascript:;" onClick="deselect_all_cats();">Убрать все</a>
+					<a href="javascript:;" onClick="deselect_all_cats();">РЈР±СЂР°С‚СЊ РІСЃРµ</a>
 
 				</td>
 				<td>
 					<table border="0" width="80%">
 						<tr>
 							<th width="20"></th>
-							<th width="200">Категория</th>
-							<th width="150">Цена показов</th>
-							<th width="150">Цена кликов</th>
+							<th width="200">РљР°С‚РµРіРѕСЂРёСЏ</th>
+							<th width="150">Р¦РµРЅР° РїРѕРєР°Р·РѕРІ</th>
+							<th width="150">Р¦РµРЅР° РєР»РёРєРѕРІ</th>
 						<TVAR>cats</TVAR>
 					</table>
-					<div class="help">В поле "Цена показов" указанны цена для простого и уникального показа, в поле "Цена кликов" соответственно также. Выбирайте как можно больше категорий, это повысит количество показываемых тизеров на Вашем сайте</div>
+					<div class="help">Р’ РїРѕР»Рµ "Р¦РµРЅР° РїРѕРєР°Р·РѕРІ" СѓРєР°Р·Р°РЅРЅС‹ С†РµРЅР° РґР»СЏ РїСЂРѕСЃС‚РѕРіРѕ Рё СѓРЅРёРєР°Р»СЊРЅРѕРіРѕ РїРѕРєР°Р·Р°, РІ РїРѕР»Рµ "Р¦РµРЅР° РєР»РёРєРѕРІ" СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ С‚Р°РєР¶Рµ. Р’С‹Р±РёСЂР°Р№С‚Рµ РєР°Рє РјРѕР¶РЅРѕ Р±РѕР»СЊС€Рµ РєР°С‚РµРіРѕСЂРёР№, СЌС‚Рѕ РїРѕРІС‹СЃРёС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРєР°Р·С‹РІР°РµРјС‹С… С‚РёР·РµСЂРѕРІ РЅР° Р’Р°С€РµРј СЃР°Р№С‚Рµ</div>
 				</td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-			<tr><td colspan="2" align="right"><input type="submit" value="Сохранить изменения" class="button"></td></tr>
+			<tr><td colspan="2" align="right"><input type="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ" class="button"></td></tr>
 		</table>
 		<br/>
-		<b>Внимание!!!</b> Перед сохранением изменений внимательно прочитайте "<a href="/rules.html">Правила</a>". Если Ваш сайт не соответствует им, модератор не одобрит Ваш сайт.
+		<b>Р’РЅРёРјР°РЅРёРµ!!!</b> РџРµСЂРµРґ СЃРѕС…СЂР°РЅРµРЅРёРµРј РёР·РјРµРЅРµРЅРёР№ РІРЅРёРјР°С‚РµР»СЊРЅРѕ РїСЂРѕС‡РёС‚Р°Р№С‚Рµ "<a href="/rules.html">РџСЂР°РІРёР»Р°</a>". Р•СЃР»Рё Р’Р°С€ СЃР°Р№С‚ РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ РёРј, РјРѕРґРµСЂР°С‚РѕСЂ РЅРµ РѕРґРѕР±СЂРёС‚ Р’Р°С€ СЃР°Р№С‚.
 		</form>
 	</div>
 </div>

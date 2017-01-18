@@ -1,8 +1,8 @@
 <ul>
-	<li><a href="/index.php?handler=user&show=settings">Мои настройки</a></li>
-	<li><a href="/index.php?handler=informer&show=my_list">Мои тизеры</a></li>
-	<li><a href="/index.php?handler=company&show=my_list">Рекламные Компании</a></li>
-	<li><a href="/index.php?handler=user&show=funds">Бухгалтерия</a></li>
-	<li><a href="/index.php?handler=user&show=referrals">Рефералы</a></li>
-	<li><a href="/index.php?handler=user&action=logout"><strong>Выход</strong></a></li>
+	<li><a href="/index.php?handler=user&show=settings">РњРѕРё РЅР°СЃС‚СЂРѕР№РєРё</a></li>
+	<li><a href="/index.php?handler=informer&show=my_list">РњРѕРё С‚РёР·РµСЂС‹</a></li>
+	<li><a href="/index.php?handler=company&show=my_list">Р РµРєР»Р°РјРЅС‹Рµ РљРѕРјРїР°РЅРёРё</a></li>
+	<li><a href="/index.php?handler=user&show=funds">Р‘СѓС…РіР°Р»С‚РµСЂРёСЏ</a></li>
+	<li><a href="/index.php?handler=user&show=referrals">Р РµС„РµСЂР°Р»С‹</a></li>
+	<li><a href="/index.php?handler=user&action=logout"><strong>Р’С‹С…РѕРґ</strong></a></li>
 </ul>

@@ -1,5 +1,5 @@
 <form action="/account/funds/wm/order.html" method="post">
 					<input type="text" name="summ" id="summ">
-					<input type="submit" value="Продолжить" class="button">
-					<div class="help">Введите сумму которую Вы хотите получить.</div>
+					<input type="submit" value="РџСЂРѕРґРѕР»Р¶РёС‚СЊ" class="button">
+					<div class="help">Р’РІРµРґРёС‚Рµ СЃСѓРјРјСѓ РєРѕС‚РѕСЂСѓСЋ Р’С‹ С…РѕС‚РёС‚Рµ РїРѕР»СѓС‡РёС‚СЊ.</div>
 					</form>

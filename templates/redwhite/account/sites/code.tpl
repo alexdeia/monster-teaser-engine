@@ -1,42 +1,42 @@
 <div class="page_content">
-	<h2 class="title">Выбор и получение кода для сайта</h2>
+	<h2 class="title">Р’С‹Р±РѕСЂ Рё РїРѕР»СѓС‡РµРЅРёРµ РєРѕРґР° РґР»СЏ СЃР°Р№С‚Р°</h2>
     <div id="cont">
 		<form action="/account/sites/<TVAR>site_id</TVAR>/code.html" method="post">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td><label for="cols">Количество столбцов</label></td><td><TVAR>s_cols</TVAR></td>
+				<td><label for="cols">РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ</label></td><td><TVAR>s_cols</TVAR></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="rows">Количество строк</label></td><td><TVAR>s_rows</TVAR></td>
+				<td><label for="rows">РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє</label></td><td><TVAR>s_rows</TVAR></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="text_dir">Расположение текста</label></td><td><TVAR>s_text_dir</TVAR></td>
+				<td><label for="text_dir">Р Р°СЃРїРѕР»РѕР¶РµРЅРёРµ С‚РµРєСЃС‚Р°</label></td><td><TVAR>s_text_dir</TVAR></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="bgcolor">Цвет фона блока</label></td><td><input id="c_bgcolor" type="text" name="bgcolor" value="<REQ>bgcolor</REQ>"></td>
+				<td><label for="bgcolor">Р¦РІРµС‚ С„РѕРЅР° Р±Р»РѕРєР°</label></td><td><input id="c_bgcolor" type="text" name="bgcolor" value="<REQ>bgcolor</REQ>"></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="acolor">Цвет ссылки</label></td><td><input type="text" name="acolor" value="<REQ>acolor</REQ>"></td>
+				<td><label for="acolor">Р¦РІРµС‚ СЃСЃС‹Р»РєРё</label></td><td><input type="text" name="acolor" value="<REQ>acolor</REQ>"></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="ahover">Цвет ссылки при наведении</label></td><td><input type="text" name="ahover" value="<REQ>ahover</REQ>"></td>
+				<td><label for="ahover">Р¦РІРµС‚ СЃСЃС‹Р»РєРё РїСЂРё РЅР°РІРµРґРµРЅРёРё</label></td><td><input type="text" name="ahover" value="<REQ>ahover</REQ>"></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="ahover">Рамка вокруг картинки</label></td><td><input type="text" name="iborder" value="<REQ>iborder</REQ>"></td>
+				<td><label for="ahover">Р Р°РјРєР° РІРѕРєСЂСѓРі РєР°СЂС‚РёРЅРєРё</label></td><td><input type="text" name="iborder" value="<REQ>iborder</REQ>"></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="ahover">Формат тиеров</label></td><td><TVAR>tizer_formats</TVAR></td>
+				<td><label for="ahover">Р¤РѕСЂРјР°С‚ С‚РёРµСЂРѕРІ</label></td><td><TVAR>tizer_formats</TVAR></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="cols">Шрифт и начертание</label></td><td>
+				<td><label for="cols">РЁСЂРёС„С‚ Рё РЅР°С‡РµСЂС‚Р°РЅРёРµ</label></td><td>
 					<TVAR>s_font</TVAR>
 					<TVAR>s_font_type</TVAR>
 					<TVAR>s_font_size</TVAR>
@@ -44,17 +44,17 @@
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="cols">Подчеркивание текста</label></td><td>
+				<td><label for="cols">РџРѕРґС‡РµСЂРєРёРІР°РЅРёРµ С‚РµРєСЃС‚Р°</label></td><td>
 					<TVAR>s_decoration</TVAR>
 				</td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-			<tr><td colspan="2" align="right"><input type="submit" value="Получить код" class="button"></td></tr>
+			<tr><td colspan="2" align="right"><input type="submit" value="РџРѕР»СѓС‡РёС‚СЊ РєРѕРґ" class="button"></td></tr>
 		</table>
 		</form>
-		<h4>Код для установки на сайте</h4>
+		<h4>РљРѕРґ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РЅР° СЃР°Р№С‚Рµ</h4>
 		<textarea style="width: 100%; height: 120px;"><TVAR>code</TVAR></textarea>
-		<h4>Образец тизерного блока</h4>
+		<h4>РћР±СЂР°Р·РµС† С‚РёР·РµСЂРЅРѕРіРѕ Р±Р»РѕРєР°</h4>
 		<TVAR>code2</TVAR>
 	</div>
 </div>

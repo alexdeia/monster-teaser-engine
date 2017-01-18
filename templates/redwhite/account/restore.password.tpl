@@ -1,14 +1,14 @@
 <div class="page_content">
-	<h2 class="title">Восстановление пароля</h2>
+	<h2 class="title">Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ</h2>
     <div id="cont">
 		<form action="/restore-password.html" method="post">
 		<input type="hidden" name="action" value="send_password">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td><label for="name">Введите Ваш логин</label></td>
+				<td><label for="name">Р’РІРµРґРёС‚Рµ Р’Р°С€ Р»РѕРіРёРЅ</label></td>
 				<td>
 					<input type="text" name="login" id="login" autocomplete="off" style="width: 200px;">
-					<input type="submit" class="button" value="Выслать новый пароль">
+					<input type="submit" class="button" value="Р’С‹СЃР»Р°С‚СЊ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ">
 				</td>
 			</tr>
 		</table>

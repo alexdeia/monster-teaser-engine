@@ -7,9 +7,9 @@
 		<br/>
 		<a href="http://<TVAR>inf_url</TVAR>" target="_blank"><TVAR>inf_url</TVAR></a></td>
 	<td bgcolor="<TVAR>inf_row_color</TVAR>">
-    	Простых: <TVAR>inf_clicks</TVAR>/<TVAR>inf_shows</TVAR>
+    	РџСЂРѕСЃС‚С‹С…: <TVAR>inf_clicks</TVAR>/<TVAR>inf_shows</TVAR>
     	<br/>
-    	Уникальных: <TVAR>inf_clicks_uniq</TVAR>/<TVAR>inf_shows_uniq</TVAR>
+    	РЈРЅРёРєР°Р»СЊРЅС‹С…: <TVAR>inf_clicks_uniq</TVAR>/<TVAR>inf_shows_uniq</TVAR>
 	</td>
 	<td bgcolor="<TVAR>inf_row_color</TVAR>" align="center">
 		<a href="/account/informers/<TVAR>inf_id</TVAR>/edit.html"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
