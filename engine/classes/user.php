@@ -97,17 +97,8 @@ class User Extends DBObject{
 
 	public function action_register() {
 		$err = FALSE;
-		if ($this->session->getVariable('_ste_ccode')) {
-			if ($this->session->getVariable('_ste_ccode') <> $_REQUEST['code']) {
-				$this->session->set_notice('Неправильно введен защитный код',ERROR);
-				$err = TRUE;
-			}
-		}else{
-			$this->session->set_notice('Неправильно введен защитный код',ERROR);
-			$err = TRUE;
-		}
 		/* Проверка логина */
-		if (strlen($_REQUEST['login']) > 6) {
+		if (strlen($_REQUEST['login']) >= 4) {
 			if (eregi("^[".$this->sys['login_chars']."]*$",$_REQUEST['login'])) {
 				if ($this->get_by_login($_REQUEST['login'])) {
 					$this->session->set_notice('Выбранный вами логин уже занят',ERROR);
@@ -117,7 +108,7 @@ class User Extends DBObject{
 				$this->session->set_notice('Выбранный вами логин содержит недопустимые символы',ERROR);
 				$err = TRUE;
 			}
-		}else{			$this->session->set_notice('Длина логина не может быть менее 6 символов',ERROR);
+		}else{			$this->session->set_notice('Длина логина не может быть менее 4 символов',ERROR);
 			$err = TRUE;
 		}
 
@@ -130,7 +121,7 @@ class User Extends DBObject{
 			$err = TRUE;
 		}
 
-		/* �������� ����� */
+		/* Проверка почты */
 		if (!$this->check_email($_REQUEST['email'])) {
 			$this->session->set_notice('Указан некорректный email',ERROR);
 		}elseif ($this->check_is_email_used($_REQUEST['email'],$_REQUEST['type'])) {
