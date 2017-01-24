@@ -22,11 +22,12 @@ class MysqlDBM {
 		$this->connect();
 	}
 
-	function connect() {
+	function connect()
+	{
 		$this->db = mysqli_connect($this->sys['mysql_host'], $this->sys['mysql_user'], $this->sys['mysql_pass'], $this->sys['mysql_db']);
 		//	if ($this->db) {
-				mysqli_query($this->db, "SET NAMES UTF8");
-				mysqli_set_charset($this->db, "UTF8");
+		mysqli_query($this->db, "SET NAMES UTF8");
+		mysqli_set_charset($this->db, "UTF8");
 			//} else {
 		//		trigger_error('Невозможно выбрать базу данных <b>"'.$this->sys['mysql_db'].'"</b>');
 	//		}
@@ -39,8 +40,9 @@ class MysqlDBM {
 		}
 		$this->queries++;
 		$rs = mysqli_query($this->db, $SQL);
-#		echo $this->queries.'. '.$SQL.'<br/><br/>';
-	return $rs;
+		#echo $this->queries.'. '.$SQL.'<br/><br/>';
+
+		return $rs;
 	}
 
 	function insert_id()
@@ -48,32 +50,38 @@ class MysqlDBM {
   	return mysqli_insert_id($this->db, $rs);
 	}
 
-	function SingleRowQuery($SQL)	{
+	function SingleRowQuery($SQL)
+	{
 		$rs = $this->ExecuteQuery($SQL);
 		if ($rs) {
 			return $this->GetNextRow($rs);
 		}
 	}
 
-	function NumberOfRows($rs) {
+	function NumberOfRows($rs)
+	{
 		return mysqli_num_rows($rs);
 	}
 
-	function free($rs) {
+	function free($rs)
+	{
 		mysqli_free_result($rs);
 	}
 
-	function GetNextRow($rs) {
+	function GetNextRow($rs)
+	{
 		return mysqli_fetch_array($rs);
 	}
 
-	public function affected() {
+	public function affected()
+	{
 		return mysqli_affected_rows($this->db);
 	}
 
-	public function GetArray($rs) {
+	public function GetArray($rs)
+	{
 		if (mysqli_num_rows($rs)) {
-			while($row=mysqli_fetch_array($rs, MYSQL_ASSOC)) {
+			while ($row=mysqli_fetch_array($rs, MYSQL_ASSOC)) {
 				$data[] = $row;
 			}
 			return $data;
@@ -81,7 +89,8 @@ class MysqlDBM {
 		return FALSE;
 	}
 
-	function __destruct() {
+	function __destruct()
+	{
 		mysqli_close();
 		$this->db = null;
 	}
