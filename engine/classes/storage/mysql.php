@@ -14,39 +14,38 @@ E-mail: alexk.deia@gmail.com
 class MysqlDBM {
 	private $db = null;
 	public $queries = 0;
-	private $showQueries = FALSE;
+	private $showQueries = false;
 
-	public function __construct() {		global $sys;
-		$this->sys = $sys;		$this->connect();
+	public function __construct() {
+		global $sys;
+		$this->sys = $sys;
+		$this->connect();
 	}
 
 	function connect() {
-		$this->db = mysql_connect($this->sys['mysql_host'],$this->sys['mysql_user'],$this->sys['mysql_pass']);
-		if ($this->db) {
-			if (mysql_select_db($this->sys['mysql_db'],$this->db)) {
-				mysql_query("SET NAMES CP1251");
-				mysql_query("SET COLLATION_CONNECTION=CP1251_GENERAL_CI");
-			}else{
-				trigger_error('Невозможно выбрать базу данных <b>"'.$this->sys['mysql_db'].'"</b>');
-			}
-		}
+		$this->db = mysqli_connect($this->sys['mysql_host'], $this->sys['mysql_user'], $this->sys['mysql_pass'], $this->sys['mysql_db']);
+		//	if ($this->db) {
+				mysqli_query($this->db, "SET NAMES UTF8");
+				mysqli_set_charset($this->db, "UTF8");
+			//} else {
+		//		trigger_error('Невозможно выбрать базу данных <b>"'.$this->sys['mysql_db'].'"</b>');
+	//		}
 	}
 
-	function ExecuteQuery($SQL) {
+	function ExecuteQuery($SQL)
+	{
 		if ($this->db == null) {
 			$this->__construct();
 		}
 		$this->queries++;
-		$rs = mysql_query($SQL);
+		$rs = mysqli_query($this->db, $SQL);
 #		echo $this->queries.'. '.$SQL.'<br/><br/>';
-		if ($rs) {			return $rs;
-		}else{
-			trigger_error('Ошибка SQL запроса<br><b>Запрос:</b> '.$SQL.'<br><b>Ошибка:</b> '.mysql_error(),E_USER_NOTICE);
-		}
+	return $rs;
 	}
 
-	function insert_id() {
-      	return mysql_insert_id();
+	function insert_id()
+	{
+  	return mysqli_insert_id($this->db, $rs);
 	}
 
 	function SingleRowQuery($SQL)	{
@@ -56,22 +55,26 @@ class MysqlDBM {
 		}
 	}
 
-	function NumberOfRows($rs){
-		return mysql_num_rows($rs);
+	function NumberOfRows($rs) {
+		return mysqli_num_rows($rs);
 	}
 
 	function free($rs) {
-		 mysql_free_result($rs);
+		mysqli_free_result($rs);
 	}
 
 	function GetNextRow($rs) {
-		return mysql_fetch_array($rs);
+		return mysqli_fetch_array($rs);
 	}
 
-	public function affected() {		return mysql_affected_rows();
+	public function affected() {
+		return mysqli_affected_rows($this->db);
 	}
 
-	public function GetArray($rs) {		if (mysql_num_rows($rs)) {			while($row=mysql_fetch_array($rs,MYSQL_ASSOC)) {  	 			$data[] = $row;
+	public function GetArray($rs) {
+		if (mysqli_num_rows($rs)) {
+			while($row=mysqli_fetch_array($rs, MYSQL_ASSOC)) {
+				$data[] = $row;
 			}
 			return $data;
 		}
@@ -79,7 +82,7 @@ class MysqlDBM {
 	}
 
 	function __destruct() {
-		mysql_close();
+		mysqli_close();
 		$this->db = null;
 	}
 }

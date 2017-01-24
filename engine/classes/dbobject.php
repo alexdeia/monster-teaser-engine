@@ -19,7 +19,7 @@ abstract class DBObject {
 
     }
 
-    public function get($objectId=null,$SQL=null) {
+    public function get($objectId=null, $SQL=null) {
         if ($objectId !== null) {
             $this->objectId = $objectId;
         }
@@ -65,7 +65,7 @@ abstract class DBObject {
         $setClause = $this->_prepareSetClause($debug);
         if (strlen($setClause)>0) {
 			$SQL = "INSERT INTO `".$this->__table."` SET ".$keyClause." ".$setClause;
-	 		if ($this->DBM->ExecuteQuery($SQL)) {	 			$insertId = mysql_insert_id();
+	 		if ($this->DBM->ExecuteQuery($SQL)) {	 			$insertId = mysqli_insert_id();
 	 			return $insertId;
 	 		}
         }
@@ -120,7 +120,7 @@ abstract class DBObject {
         if ($this->_isLoaded) {            if (sizeof($this->_changedColumns)>0) {
                 foreach ($this->_changedColumns as $columnName) {
                     if ($columnName != $this->__keyColumn && strval(intval($columnName))!=$columnName) {
-                        $setClause .= "`".$columnName."` = '".mysql_escape_string($this->getVariable($columnName))."', ";
+                        $setClause .= "`".$columnName."` = '".mysqli_escape_string($this->getVariable($columnName))."', ";
                     }
                 }
                 $setClause = substr($setClause,0,-2);
@@ -129,7 +129,7 @@ abstract class DBObject {
             if (sizeof($this->data)>0) {
                 foreach ($this->data as $columnName=>$columnValue) {
                     if ($columnName != $this->__keyColumn && strval(intval($columnName))!=$columnName) {
-                        $setClause .= "`".$columnName."` = '".mysql_escape_string($columnValue)."', ";
+                        $setClause .= "`".$columnName."` = '".mysqli_escape_string($columnValue)."', ";
                     }
                 }
                 $setClause = substr($setClause,0,-2);
