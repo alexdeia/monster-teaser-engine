@@ -20,7 +20,7 @@ require_once(CLASSES_PATH.'storage/mysql.php');
 require_once(CLASSES_PATH.'session.php');
 require_once(CLASSES_PATH.'user.php');
 
-header('Content-Type: text/html; charset=utf-8');
+//header('Content-Type: text/html; charset=utf-8');
 
 $tpl = new Template();
 $DBM = new MysqlDBM();
