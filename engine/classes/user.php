@@ -17,27 +17,33 @@ class User Extends DBObject{
 	public $__keyColumn = 'id';
 	public $tpl_prefix = 'user';
 
-	public function __construct($id=FALSE) {		global $DBM,$session;
+	public function __construct($id=false) {
+		global $DBM, $session;
 		$this->DBM = $DBM;
 		$this->session = $session;
 		$this->DBObject($DBM,$id);
 	}
 
-	public function check_email($email) {		if (!eregi("[a-zA-Z0-9\_]+@[a-zA-Z0-9\-]+\.[a-z]{2,4}",$email)) {
-			return FALSE;
+	/* Проверка корректности e-mail */
+	public function check_email($email) {
+		if (!preg_match("/[a-zA-Z0-9\_]+@[a-zA-Z0-9\-]+\.[a-z]{2,4}/i", $email)) {
+			return false;
 		}
-		return TRUE;
+		return true;
 	}
 
-	public function check_is_email_used($email,$type=0) {		$SQL = "SELECT `id` FROM `".$this->__table."` WHERE `email` = '".$email."' AND `id` <> '".$this->objectId."'";
+	public function check_is_email_used($email,$type=0)
+	{
+		$SQL = "SELECT `id` FROM `".$this->__table."` WHERE `email` = '".$email."' AND `id` <> '".$this->objectId."'";
 		if ($type > 0) {
 			$SQL .= " AND `type` = '".$type."'";
 		}
 		$SQL .= " LIMIT 1";
 		list($id) = $this->DBM->SingleRowQuery($SQL);
-  		if ($id > 0) {  			return TRUE;
+  		if ($id > 0) {
+				return true;
   		}
-  		return FALSE;
+  		return false;
 	}
 
 	public function get_password_hash($password) {		return md5($password);
@@ -96,27 +102,27 @@ class User Extends DBObject{
 	}
 
 	public function action_register() {
-		$err = FALSE;
+		$err = false;
 		/* Проверка логина */
 		if (strlen($_REQUEST['login']) >= 4) {
-			if (eregi("^[".$this->sys['login_chars']."]*$",$_REQUEST['login'])) {
+			if (preg_match("/^[".$this->sys['login_chars']."]*$/i", $_REQUEST['login'])) {
 				if ($this->get_by_login($_REQUEST['login'])) {
 					$this->session->set_notice('Выбранный вами логин уже занят',ERROR);
-					$err = TRUE;
+					$err = true;
 				}
 			}else{
-				$this->session->set_notice('Выбранный вами логин содержит недопустимые символы',ERROR);
-				$err = TRUE;
+				$this->session->set_notice('Выбранный вами логин содержит недопустимые символы', ERROR);
+				$err = true;
 			}
-		}else{			$this->session->set_notice('Длина логина не может быть менее 4 символов',ERROR);
-			$err = TRUE;
+		}else{			$this->session->set_notice('Длина логина не может быть менее 4 символов', ERROR);
+			$err = true;
 		}
 
 		/* Проверка пароля */
-		if (strlen($_REQUEST['password']) < 6) {
-			$this->session->set_notice('Длина пароля не может быть менее 6 символов',ERROR);
+		if (strlen($_REQUEST['password']) <= 6) {
+			$this->session->set_notice('Длина пароля не может быть менее 6 символов', ERROR);
 			$err = TRUE;
-		}elseif($_REQUEST['password'] <> $_REQUEST['password2']) {
+		} elseif ($_REQUEST['password'] <> $_REQUEST['password2']) {
 			$this->session->set_notice('Пароли не совпадают',ERROR);
 			$err = TRUE;
 		}

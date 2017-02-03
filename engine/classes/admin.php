@@ -391,7 +391,7 @@ class Admin{
 	public function action_form_mptf() {		$SQL = "SELECT * FROM `users` WHERE `balance` > 1 AND `type` = 1";
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		if ($this->DBM->NumberOfRows($rs)) {
-			while($data=$this->DBM->GetNextRow($rs)) {				if (eregi("(Z[0-9]*)",$data['wmz'])) {					$str .= "\t<payment>\r\n";
+			while($data=$this->DBM->GetNextRow($rs)) {				if (preg_match("/(Z[0-9]*)/i",$data['wmz'])) {					$str .= "\t<payment>\r\n";
 					$str .= "\t\t<Destination>".$data['wmz']."</Destination>\r\n";
 					$str .= "\t\t<Amount>".$data['balance']."</Amount>\r\n";
 					$str .= "\t\t<Description>Вывод средств из сервиса ".$this->sys['url']."</Description>\r\n";
