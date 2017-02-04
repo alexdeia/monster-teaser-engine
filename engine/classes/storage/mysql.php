@@ -47,7 +47,7 @@ class MysqlDBM {
 
 	function insert_id()
 	{
-  	return mysqli_insert_id($this->db, $rs);
+  	return mysqli_insert_id($this->db);
 	}
 
 	function SingleRowQuery($SQL)
@@ -91,7 +91,7 @@ class MysqlDBM {
 
 	function __destruct()
 	{
-		mysqli_close();
+		mysqli_close($this->db);
 		$this->db = null;
 	}
 }
