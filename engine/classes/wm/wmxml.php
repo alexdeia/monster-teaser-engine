@@ -92,7 +92,7 @@ class WMI {	public $wmsign_dir = "/home/inf.loc/wmsign/";
 		return $result;
 	}
 }
-require_once('../../../config/config.php');
+require_once(CONFIG_PATH . 'config.php');
 $wm = new WMI();
 $tranid="1";
 $purse="кошелек_отправитель";

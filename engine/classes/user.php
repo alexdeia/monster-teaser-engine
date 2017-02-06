@@ -252,7 +252,7 @@ class User Extends DBObject{
 			$SQL = "INSERT INTO `wm_payout` SET  `type` = 2,`desc`, = 'Автоматический вывод средств', `user` = '".$this->objectId."', `time` = '".time()."', `summ` = '".$_REQUEST['summ']."', `wmz` = '".$this->getVariable('wmz')."'";
 			$this->DBM->ExecuteQuery($SQL);
 			$id = $this->DBM->insert_id();
-			require_once(CLASES_PATH.'wm/wmxml.php');
+			require_once(CLASSES_PATH.'wm/wmxml.php');
 			$wm = new WMI();
 			$code = rand(1000,9999);
 			$a = $wm->x2($id,$id,$this->sys['wmz'],$this->getVariable('wmz'),$_REQUEST['summ'],3,$code,'Вывод средств из сервиса '.$this->sys['title'],0);

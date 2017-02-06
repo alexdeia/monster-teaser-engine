@@ -489,7 +489,7 @@ class Admin{
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		while($data=$this->DBM->GetNextRow($rs)) {			$msg = $_REQUEST['body'];			$msg = str_ireplace('%NAME%',$data['name'],$msg);
 			$msg = str_ireplace('%LOGIN%',$data['login'],$msg);
-			mail($data['email'],$this->sys['title'].' > '.$_REQUEST['title'],$msg,"From: ".$this->sys['massmail_email']."\r\nContent-type: text/html; charset=windows-1251\r\n");
+			mail($data['email'],$this->sys['title'].' > '.$_REQUEST['title'],$msg,"From: ".$this->sys['massmail_email']."\r\nContent-type: text/html; charset=utf-8\r\n");
 		}
 	}
 
