@@ -23,7 +23,7 @@ header("Expires: " . gmdate("D, d M Y H:i:s") . " GMT");
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");
 header("Last-Modified: ".gmdate("D, d M Y H:i:s")."GMT");
-header('Content-type: text/html; charset=windows-1251');
+header('Content-type: text/html; charset=utf-8');
 
 function check_var(&$var,$key) {
 	if (is_array($var)) {
@@ -43,6 +43,6 @@ function check_var(&$var,$key) {
 	return TRUE;
 }
 array_walk($_REQUEST, 'check_var');
-define('VERSION','2.1');
+define('VERSION_MTE', '1.9');
 $IP = getenv('REMOTE_ADDR');
 ?>

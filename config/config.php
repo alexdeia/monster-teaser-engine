@@ -11,13 +11,14 @@ E-mail: alexk.deia@gmail.com
 =============================================================
 */
 
-define('ENGINE_PATH','engine/');
-define('CLASSES_PATH','engine/classes/');
-define('HANDLERS_PATH','engine/handlers/');
-define('ERROR','err');
-define('OK','ok');
-define('RO','r');
-define('RWC','a+');
+define('ENGINE_PATH', 'engine/');
+define('CLASSES_PATH', 'engine/classes/');
+define('HANDLERS_PATH', 'engine/handlers/');
+define('CONFIG_PATH', 'config/');
+define('ERROR', 'err');
+define('OK', 'ok');
+define('RO', 'r');
+define('RWC', 'a+');
 
 require_once('mysql.conf.php');
 require_once('main.php');

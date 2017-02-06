@@ -1,13 +1,13 @@
 <div class="page_content">
-	<h2 class="title">Восстановление пароля</h2>
+	<h2 class="title">Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР°СЂРѕР»СЏ</h2>
     <div id="cont">
 		<form action="/set-password/<REQ>code</REQ>.html" method="post">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td><label for="password">Введите новый пароль</label></td>
+				<td><label for="password">Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ</label></td>
 				<td>
 					<input type="password" name="password" id="password" autocomplete="off">
-					<input type="submit" class="button" value="Установить новый пароль">
+					<input type="submit" class="button" value="РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІС‹Р№ РїР°СЂРѕР»СЊ">
 				</td>
 			</tr>
 		</table>

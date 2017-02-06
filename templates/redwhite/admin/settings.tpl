@@ -4,7 +4,10 @@
 		<form action="/admin.php?show=settings&action=save_settings" method="post">
 		<table width="500">
 			<tr><td colspan="2" align="center" bgcolor="#e4e4e4"><b>Общие настройки</b></td></tr>
-
+			<tr>
+				<td class="frm">Версия движка</td>
+				<td class="frm"><b><TVAR>version_mte</TVAR></b></td>
+			</tr>
 			<tr>
 				<td class="frm">Название сайта</td>
 				<td class="frm"><input type="text" name="sys[title]" value="<SYS>title</SYS>" style="width: 200px;"></td>

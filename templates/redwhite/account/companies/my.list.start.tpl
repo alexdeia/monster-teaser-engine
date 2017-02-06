@@ -1,16 +1,16 @@
 <div class="page_content">
-	<h2 class="title">Мои рекламные компании</h2>
+	<h2 class="title">РњРѕРё СЂРµРєР»Р°РјРЅС‹Рµ РєРѕРјРїР°РЅРёРё</h2>
     <div id="cont">
     <div style="text-align: right;">
-    	<a href="/account/companies/add.html"><img src="/templates/<SYS>template</SYS>/img/plus.gif" border="0" align="top">&nbsp;&nbsp;Добавить новую рекламную компанию</a>
+    	<a href="/account/companies/add.html"><img src="/templates/<SYS>template</SYS>/img/plus.gif" border="0" align="top">&nbsp;&nbsp;Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ СЂРµРєР»Р°РјРЅСѓСЋ РєРѕРјРїР°РЅРёСЋ</a>
     </div>
     <br/>
 	<table width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
 		<tr>
-			<th>Статус</th>
-			<th>Название</th>
-			<th>Баланс компании</th>
-			<th>Потраченно средств</th>
-			<th>Действия</th>
+			<th>РЎС‚Р°С‚СѓСЃ</th>
+			<th>РќР°Р·РІР°РЅРёРµ</th>
+			<th>Р‘Р°Р»Р°РЅСЃ РєРѕРјРїР°РЅРёРё</th>
+			<th>РџРѕС‚СЂР°С‡РµРЅРЅРѕ СЃСЂРµРґСЃС‚РІ</th>
+			<th>Р”РµР№СЃС‚РІРёСЏ</th>
 		</tr>
 

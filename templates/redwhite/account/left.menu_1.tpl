@@ -1,7 +1,7 @@
 				<ul>
-					<li><a href="/index.php?handler=user&show=settings">Мои настройки</a></li>
-					<li><a href="/index.php?handler=site&show=my_list">Мои сайты</a></li>
-					<li><a href="/index.php?handler=user&show=funds">Бухгалтерия</a></li>
-					<li><a href="/index.php?handler=user&show=referrals">Рефералы</a></li>
-					<li><a href="/index.php?handler=user&action=logout"><strong>Выход</strong></a></li>
+					<li><a href="/index.php?handler=user&show=settings">РњРѕРё РЅР°СЃС‚СЂРѕР№РєРё</a></li>
+					<li><a href="/index.php?handler=site&show=my_list">РњРѕРё СЃР°Р№С‚С‹</a></li>
+					<li><a href="/index.php?handler=user&show=funds">Р‘СѓС…РіР°Р»С‚РµСЂРёСЏ</a></li>
+					<li><a href="/index.php?handler=user&show=referrals">Р РµС„РµСЂР°Р»С‹</a></li>
+					<li><a href="/index.php?handler=user&action=logout"><strong>Р’С‹С…РѕРґ</strong></a></li>
 				</ul>

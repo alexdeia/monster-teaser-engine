@@ -1,28 +1,28 @@
 <div class="page_content">
-	<h2 class="title">Добавление новой компании</h2>
+	<h2 class="title">Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ РєРѕРјРїР°РЅРёРё</h2>
     <div id="cont">
 		<form action="/account/companies/add.html" method="post">
 		<input type="hidden" name="action" value="add">
 	    <input type="hidden" name="redlist" value="0">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td valign="top"><label for="name">Название</label></td><td>
+				<td valign="top"><label for="name">РќР°Р·РІР°РЅРёРµ</label></td><td>
 					<input type="text" name="name" id="name" value="">
-				<div class="help">Введите краткое название рекламной компании. Оно будет отображаться только Вам.</div></td>
+				<div class="help">Р’РІРµРґРёС‚Рµ РєСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ СЂРµРєР»Р°РјРЅРѕР№ РєРѕРјРїР°РЅРёРё. РћРЅРѕ Р±СѓРґРµС‚ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ С‚РѕР»СЊРєРѕ Р’Р°Рј.</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="url">Размер</label></td><td><TVAR>tizer_formats</TVAR>
-				<div class="help">Выберите один из форматов тизеров</div></td>
+				<td><label for="url">Р Р°Р·РјРµСЂ</label></td><td><TVAR>tizer_formats</TVAR>
+				<div class="help">Р’С‹Р±РµСЂРёС‚Рµ РѕРґРёРЅ РёР· С„РѕСЂРјР°С‚РѕРІ С‚РёР·РµСЂРѕРІ</div></td>
 			</tr>
-<p>Перед созданием рекламной компании вам необходимо загрузить изображения 
-тизеров соответствующего формата по следующей ссылке &quot;Мои информеры&quot; - &quot;Добавить 
-новый информер&quot; или добавить на следующей странице из имеющихся уже у вас 
-тизеров такого же формата.<br>
+<p>РџРµСЂРµРґ СЃРѕР·РґР°РЅРёРµРј СЂРµРєР»Р°РјРЅРѕР№ РєРѕРјРїР°РЅРёРё РІР°Рј РЅРµРѕР±С…РѕРґРёРјРѕ Р·Р°РіСЂСѓР·РёС‚СЊ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ 
+С‚РёР·РµСЂРѕРІ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРіРѕ С„РѕСЂРјР°С‚Р° РїРѕ СЃР»РµРґСѓСЋС‰РµР№ СЃСЃС‹Р»РєРµ &quot;РњРѕРё РёРЅС„РѕСЂРјРµСЂС‹&quot; - &quot;Р”РѕР±Р°РІРёС‚СЊ 
+РЅРѕРІС‹Р№ РёРЅС„РѕСЂРјРµСЂ&quot; РёР»Рё РґРѕР±Р°РІРёС‚СЊ РЅР° СЃР»РµРґСѓСЋС‰РµР№ СЃС‚СЂР°РЅРёС†Рµ РёР· РёРјРµСЋС‰РёС…СЃСЏ СѓР¶Рµ Сѓ РІР°СЃ 
+С‚РёР·РµСЂРѕРІ С‚Р°РєРѕРіРѕ Р¶Рµ С„РѕСЂРјР°С‚Р°.<br>
 <br>
 &nbsp;</p>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-			<tr><td colspan="2" align="right"><input type="submit" value="Продолжить создание рекламной компании" class="button"></td></tr>
+			<tr><td colspan="2" align="right"><input type="submit" value="РџСЂРѕРґРѕР»Р¶РёС‚СЊ СЃРѕР·РґР°РЅРёРµ СЂРµРєР»Р°РјРЅРѕР№ РєРѕРјРїР°РЅРёРё" class="button"></td></tr>
 		</table>
 		</form>
 	</div>

@@ -13,7 +13,7 @@
 		<a href="/account/sites/<TVAR>site_id</TVAR>/edit.html"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
 		<a href="/account/sites/<TVAR>site_id</TVAR>/delete.html"><img src="/templates/<SYS>template</SYS>/img/delete.gif" border="0"></a>
 		<a href="/account/sites/<TVAR>site_id</TVAR>/reports.html"><img src="/templates/<SYS>template</SYS>/img/reports.gif" border="0"></a>
-		<a title="Ïîëó÷èòü êîä äëÿ ñàéòà" href="/account/sites/<TVAR>site_id</TVAR>/code.html"><img src="/templates/<SYS>template</SYS>/img/code.gif" border="0"></a>
+		<a title="ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ ÐºÐ¾Ð´ Ð´Ð»Ñ ÑÐ°Ð¹Ñ‚Ð°" href="/account/sites/<TVAR>site_id</TVAR>/code.html"><img src="/templates/<SYS>template</SYS>/img/code.gif" border="0"></a>
 	</td>
 </tr>
 

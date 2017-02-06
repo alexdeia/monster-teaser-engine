@@ -28,6 +28,11 @@
     				<a href="/admin.php?show=sites" class="menu">
     				<img src="/templates/<SYS>template</SYS>/img/admin/sites.gif" border="0"><br/>Сайты</a>
     			</td>
+				<td width="30"></td>
+				<td align="center">
+					<a href="/admin.php?show=companies" class="menu">
+						<img src="/templates/<SYS>template</SYS>/img/admin/companies.gif" border="0"><br/>Рекламные кампании</a>
+				</td>
     			<td width="30"></td>
     			<td align="center">
     				<a href="/admin.php?show=tizers" class="menu">

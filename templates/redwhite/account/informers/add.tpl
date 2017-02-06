@@ -1,31 +1,31 @@
 <div class="page_content">
-	<h2 class="title">Добавление нового информера</h2>
+	<h2 class="title">Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РёРЅС„РѕСЂРјРµСЂР°</h2>
     <div id="cont">
 		<form action="/account/informers/add.html" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="add">
 		<table cellpadding="0" width="100%" cellspacing="5">
 			<tr>
-				<td><label for="image">Изображение тизера</label></td><td>
+				<td><label for="image">РР·РѕР±СЂР°Р¶РµРЅРёРµ С‚РёР·РµСЂР°</label></td><td>
 					<input name="image" id="image" type="file" style="height: 26px; font-weight: bold;">
-				<div class="help">Картинка информера. Максимальный размер 60*60 пикселей. Допустимы форматы gif,jpeg,png</div></td>
+				<div class="help">РљР°СЂС‚РёРЅРєР° РёРЅС„РѕСЂРјРµСЂР°. РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ 60*60 РїРёРєСЃРµР»РµР№. Р”РѕРїСѓСЃС‚РёРјС‹ С„РѕСЂРјР°С‚С‹ gif,jpeg,png</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="url">Размер</label></td><td><TVAR>tizer_formats</TVAR>
-				<div class="help">Выберите один из форматов тизера</div></td>
+				<td><label for="url">Р Р°Р·РјРµСЂ</label></td><td><TVAR>tizer_formats</TVAR>
+				<div class="help">Р’С‹Р±РµСЂРёС‚Рµ РѕРґРёРЅ РёР· С„РѕСЂРјР°С‚РѕРІ С‚РёР·РµСЂР°</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
 				<td><label for="url">URL</label></td><td><input type="text" name="url" id="url" value="<TVAR>inf_url</TVAR>">
-				<div class="help">Введите URL на который будет совершен переход</div></td>
+				<div class="help">Р’РІРµРґРёС‚Рµ URL РЅР° РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СЃРѕРІРµСЂС€РµРЅ РїРµСЂРµС…РѕРґ</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr>
-				<td><label for="text">Текст</label></td><td><input type="text" name="text" id="text" value="<TVAR>inf_text</TVAR>">
-				<div class="help">Текст тизера</div></td>
+				<td><label for="text">РўРµРєСЃС‚</label></td><td><input type="text" name="text" id="text" value="<TVAR>inf_text</TVAR>">
+				<div class="help">РўРµРєСЃС‚ С‚РёР·РµСЂР°</div></td>
 			</tr>
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
-			<tr><td colspan="2" align="right"><input type="submit" value="Добавить информер" class="button"></td></tr>
+			<tr><td colspan="2" align="right"><input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ РёРЅС„РѕСЂРјРµСЂ" class="button"></td></tr>
 		</table>
 		</form>
 	</div>

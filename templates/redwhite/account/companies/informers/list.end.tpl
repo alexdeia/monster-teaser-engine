@@ -1,6 +1,6 @@
 		</table>
 		<div style="text-align: right; margin-top: 10px;">
-			<input type="submit" value="Äîáàâèòü òèçåðû" class="button">
+			<input type="submit" value="Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ‚Ð¸Ð·ÐµÑ€Ñ‹" class="button">
 		</div>
 		</form>
 		<div style="font-size: 11px; color: #555555;">
