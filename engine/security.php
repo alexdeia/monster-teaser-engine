@@ -43,6 +43,6 @@ function check_var(&$var,$key) {
 	return TRUE;
 }
 array_walk($_REQUEST, 'check_var');
-define('VERSION','2.1');
+define('VERSION_MTE', '1.9');
 $IP = getenv('REMOTE_ADDR');
 ?>
