@@ -1,0 +1,43 @@
+body
+{
+	font-family: arial; 
+	color: #2e2e2e; 
+	font-size: 12px;
+	color: gray;
+}
+
+img
+{
+	border: 0px;
+}
+
+.main
+{
+	font-size: 12px;
+}
+
+a
+{
+	color: gray; 
+}
+
+.emb a
+{
+	text-decoration: none;
+	color: #2e2e2e;
+}
+
+.emb li
+{
+        list-style: none;
+        border-bottom: 1px dotted #cccccc;
+        line-height: 26px;
+	color: #2e2e2e;
+}
+
+input
+{
+	font-family: arial;
+	color: #2e2e2e;
+	font-size: 12px;
+}

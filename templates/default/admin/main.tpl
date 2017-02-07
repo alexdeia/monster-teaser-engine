@@ -10,14 +10,14 @@
 	<!-- Bootstrap CSS -->
 	<link href="/templates/default/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
-	<link href="/templates/default/css/jumbotron.css" rel="stylesheet">
+	<link href="/templates/default/admin/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand" href="#">ChronoEngine - Teaser</a>
+	<a class="navbar-brand" href="#">ChronoEngine - AdminPanel</a>
 
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
@@ -49,37 +49,66 @@
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
-<div class="container">
-	<div class="starter-template">
-		<h1>Bootstrap starter template</h1>
-		<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-	</div>
-	<!-- Example row of columns -->
-	<TVAR>notice</TVAR>
-	<TVAR>content</TVAR>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-		</div>
+		<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+			<ul class="nav nav-pills flex-column">
+				<li class="nav-item">
+					<a class="nav-link active" href="#">Главная <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=settings">Настройки</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=cats">Категории</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=users">Пользователи</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=news">Новости</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=massmail">Рассылка</a>
+				</li>
+			</ul>
+
+			<ul class="nav nav-pills flex-column">
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=sites">Сайты</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=payouts">Выплаты</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=payouts_reports">Отчеты</a>
+				</li>
+			</ul>
+
+			<ul class="nav nav-pills flex-column">
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=companies">Рекламные кампании</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=tizers">Тизеры</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin.php?show=payments">Пополнения</a>
+				</li>
+			</ul>
+
+			<hr>
+
+			<footer>
+				<p>&copy; ChronoEngine 2017</p>
+			</footer>
+		</nav>
+
+		<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+			<TVAR>notice</TVAR>
+			<TVAR>content</TVAR>
+		</main>
 	</div>
-
-	<hr>
-
-	<footer>
-		<p>&copy; Company 2017</p>
-	</footer>
 </div> <!-- /container -->
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
