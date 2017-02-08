@@ -1,4 +1,4 @@
-<tr bgcolor="#f5f5f5">
+<tr>
 	<td><img src="/templates/<SYS>template</SYS>/img/status_<TVAR>site_status</TVAR>.gif" border="0"></td>
 	<td><TVAR>site_id</TVAR></td>
 	<td><TVAR>site_url</TVAR></td>

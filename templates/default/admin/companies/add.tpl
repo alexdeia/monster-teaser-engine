@@ -1,9 +1,7 @@
-<div class="page_content">
-	<h2 class="title">Добавление нового информера</h2>
-    <div id="cont">
-		<form action="/account/informers/add.html" method="post" enctype="multipart/form-data">
+<h2 class="title">Добавление нового информера</h2>
+	<form action="/account/informers/add.html" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="action" value="add">
-		<table cellpadding="0" width="100%" cellspacing="5">
+		<table class="table">
 			<tr>
 				<td><label for="image">Изображение тизера</label></td><td>
 					<input name="image" id="image" type="file" style="height: 26px; font-weight: bold;">
@@ -22,6 +20,4 @@
 			<tr><td colspan="2" height="1" bgcolor="#e4e4e4"></td></tr>
 			<tr><td colspan="2" align="right"><input type="submit" value="Добавить информер" class="button"></td></tr>
 		</table>
-		</form>
-	</div>
-</div>
+	</form>
