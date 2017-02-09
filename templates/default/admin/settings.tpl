@@ -23,7 +23,7 @@
 				<td class="frm"><input class="form-control" type="text" name="sys[admin_icq]" value="<SYS>admin_icq</SYS>"></td>
 			</tr>
 			<tr>
-				<td class="frm">Разрешенные символы в никах</td>
+				<td class="frm">Разрешенные символы в логинах</td>
 				<td class="frm"><input class="form-control" type="text" name="sys[login_chars]" value="<SYS>login_chars</SYS>"></td>
 			</tr>
 			<tr>
@@ -32,15 +32,15 @@
 			</tr>
 			<tr><td colspan="2" align="center"><b>Email адреса системы</b></td></tr>
 			<tr>
-				<td class="frm">email админа</td>
+				<td class="frm">Email админа</td>
 				<td class="frm"><input class="form-control" type="text" name="sys[admin_email]" value="<SYS>admin_email</SYS>"></td>
 			</tr>
 			<tr>
-				<td class="frm">email восст. пароля</td>
+				<td class="frm">Email восст. пароля</td>
 				<td class="frm"><input class="form-control" type="text" name="sys[passrobot_email]" value="<SYS>passrobot_email</SYS>"></td>
 			</tr>
 			<tr>
-				<td class="frm">email рассылки</td>
+				<td class="frm">Email рассылки</td>
 				<td class="frm"><input class="form-control" type="text" name="sys[massmail_email]" value="<SYS>massmail_email</SYS>"></td>
 			</tr>
 
@@ -54,7 +54,7 @@
 				<td class="frm"><input class="form-control" type="text" name="sys[wmz]" value="<SYS>wmz</SYS>"></td>
 			</tr>
 			<tr>
-				<td class="frm">Инфа о выплатах</td>
+				<td class="frm">Информация о выплатах</td>
 				<td class="frm"><input class="form-control" type="text" name="sys[payout_info]" value="<SYS>payout_info</SYS>"></td>
 			</tr>
 			<tr>

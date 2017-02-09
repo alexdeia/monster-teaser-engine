@@ -1,8 +1,6 @@
-<div class="page_content">
-	<h2 class="title">Отчеты для тизера #<TVAR>inf_id</TVAR></h2>
-    <div id="cont">
-		<form action="/admin.php?show=tizer_reports&id=<TVAR>inf_id</TVAR>" method="post">
-		<table align="center">
+<h2 class="title">Отчеты для тизера #<TVAR>inf_id</TVAR></h2>
+	<form action="/admin.php?show=tizer_reports&id=<TVAR>inf_id</TVAR>" method="post">
+		<table class="table">
 			<tr>
 				<td>Выберите дату для формирования отчета</td>
 				<td>
@@ -13,7 +11,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Установите фильры отчета</td>
+				<td>Установите фильтры отчета</td>
 				<td>
 					<select name="type">
 						<option value="all">Клики и показы</option>
@@ -23,12 +21,14 @@
 				</td>
 			</tr>
 		</table>
-		<p align="right"><input type="submit" value="Формировать отчет" class="button"></p>
-		<table width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
-			<tr>
-				<th>Время</th>
-				<th>Показ/Уникальный</th>
-				<th>Клик/Уникальный</th>
-				<th>IP адрес</th>
-				<th>Реферер</th>
-			</tr>
+		<p align="right"><input type="submit" value="Формировать отчет" class="btn btn-outline-success"></p>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Время</th>
+					<th>Показ/Уникальный</th>
+					<th>Клик/Уникальный</th>
+					<th>IP адрес</th>
+					<th>Реферер</th>
+				</tr>
+			</thead>

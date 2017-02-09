@@ -19,7 +19,7 @@
 	</button>
 	<a class="navbar-brand" href="#">ChronoEngine - AdminPanel</a>
 
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	<div class="collapse navbar-collapse" id="navbarsTop">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
 				<a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
@@ -51,10 +51,10 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+		<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar" id="menuLeft">
 			<ul class="nav nav-pills flex-column">
 				<li class="nav-item">
-					<a class="nav-link active" href="#">Главная <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/admin.php?show=settings">Настройки</a>
