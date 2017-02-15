@@ -17,18 +17,18 @@
 	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand" href="#">ChronoEngine - Teaser</a>
+	<a class="navbar-brand" href="#">eTeaser Engine</a>
 
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">FAQ</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Контакты</a>
+				<a class="nav-link" href="/index.php?page=contacts">Контакты</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link disabled" href="#">Disabled</a>
@@ -42,43 +42,24 @@
 				</div>
 			</li>
 		</ul>
-		<!-- login form -->
-		<TVAR>left_menu</TVAR>
+		<ul class="navbar-nav mr-auto navbar-toggler-right">
+			<!-- login form -->
+			<TVAR>left_menu</TVAR>
+		</ul>
 	</div>
 </nav>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
 <div class="container">
-	<div class="starter-template">
-		<h1>Bootstrap starter template</h1>
-		<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-	</div>
 	<!-- Example row of columns -->
 	<TVAR>notice</TVAR>
 	<TVAR>content</TVAR>
-	<div class="row">
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-md-4">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-	</div>
 
 	<hr>
 
 	<footer>
-		<p>&copy; Company 2017</p>
+		<p>&copy; eTeaser Engine 2010 - 2017 | chronodev.ru | aklykov.ru</p>
 	</footer>
 </div> <!-- /container -->
 

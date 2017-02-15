@@ -17,12 +17,12 @@
 	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand" href="#">ChronoEngine - AdminPanel</a>
+	<a class="navbar-brand" href="#">eTeaser - AdminPanel</a>
 
 	<div class="collapse navbar-collapse" id="navbarsTop">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="/admin.php?show=settings">Главная <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">FAQ</a>
@@ -31,19 +31,21 @@
 				<a class="nav-link" href="#">Контакты</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link disabled" href="#">Disabled</a>
+				<a class="nav-link disabled" href="#">Тикеты</a>
 			</li>
-			<li class="nav-item dropdown">
+			<!-- <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown01">
 					<a class="dropdown-item" href="#">Action</a>
 					<a class="dropdown-item" href="#">Another action</a>
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div>
-			</li>
+			</li> -->
 		</ul>
 		<!-- login form -->
-		<TVAR>left_menu</TVAR>
+		<form class="form-inline my-2 my-lg-0" method="post" action="/admin.php?exit">
+		<button type="submit" class="btn btn-danger" href="/admin.php?exit">Выход</button>
+		</form>
 	</div>
 </nav>
 
@@ -53,9 +55,6 @@
 	<div class="row">
 		<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar" id="menuLeft">
 			<ul class="nav nav-pills flex-column">
-				<li class="nav-item">
-					<a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
-				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/admin.php?show=settings">Настройки</a>
 				</li>
@@ -96,11 +95,9 @@
 					<a class="nav-link" href="/admin.php?show=payments">Пополнения</a>
 				</li>
 			</ul>
-
-			<hr>
-
 			<footer>
-				<p>&copy; ChronoEngine 2017</p>
+				<p class="card-footer">&copy; eTeaser Engine 2010 - 2017</p>
+				<p class="card-footer"> aklykov.ru</p>
 			</footer>
 		</nav>
 

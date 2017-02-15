@@ -36,7 +36,7 @@
     </div> <!-- /container -->
 		<div class="footer">
 			<p><a href="http://chronodev.ru" target="_blank">Made in chronodev</a></p>
-			<p>Powered by Monster Teaser Engine</p>
+			<p>Powered by eTeaser 1.0</p>
 		</div>
 
     <!-- Bootstrap core JavaScript
