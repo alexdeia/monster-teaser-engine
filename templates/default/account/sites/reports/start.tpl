@@ -1,8 +1,6 @@
-<div class="page_content">
-	<h2 class="title">Отчеты для сайта <TVAR>site_url</TVAR></h2>
-    <div id="cont">
-		<form action="/account/sites/<TVAR>site_id</TVAR>/reports.html" method="post">
-		<table align="center">
+<h2 class="title">Отчеты для сайта <TVAR>site_url</TVAR></h2>
+	<form action="/account/sites/<TVAR>site_id</TVAR>/reports.html" method="post">
+		<table class="table" align="center">
 			<tr>
 				<td>Выберите дату для формирования отчета</td>
 				<td>
@@ -23,13 +21,15 @@
 				</td>
 			</tr>
 		</table>
-		<p align="right"><input type="submit" value="Формировать отчет" class="button"></p>
+		<p align="right"><input type="submit" value="Сформировать отчет" class="btn btn-secondary"></p>
 		<TVAR>graph</TVAR>
-		<table width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
-			<tr>
-				<th>Время</th>
-				<th>Показ/Уникальный</th>
-				<th>Клик/Уникальный</th>
-				<th>IP адрес</th>
-				<th>Реферер</th>
-			</tr>
+		<table class="table" width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
+			<thead>
+				<tr>
+					<th>Время</th>
+					<th>Показ/Уникальный</th>
+					<th>Клик/Уникальный</th>
+					<th>IP адрес</th>
+					<th>Реферер</th>
+				</tr>
+			</thead>

@@ -70,7 +70,7 @@ class Site Extends DBObject{
 		return FALSE;
 	}
 
-	public function action_delete() {		$this->user->have_access();		if ($this->get(intval($_REQUEST['id']))) {			if ($this->getVariable('owner') == $this->user->objectId) {				$this->delete_dir_tree('data/sites/'.$this->objectId);				if ($this->delete()) {		        	$this->session->set_notice('���� ������� ������',OK);
+	public function action_delete() {		$this->user->have_access();		if ($this->get(intval($_REQUEST['id']))) {			if ($this->getVariable('owner') == $this->user->objectId) {				$this->delete_dir_tree('data/sites/'.$this->objectId);				if ($this->delete()) {		        	$this->session->set_notice('Сайт удален',OK);
 	 		       	return TRUE;
 	 			}else{	 				$this->session->set_notice('Сайт не может быть удален',ERROR);
 	 			}
