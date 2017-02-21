@@ -253,7 +253,7 @@ class Site Extends DBObject{
 				$this->tpl->set('s_font_type',$this->tpl->get_select_form('font_type',array('Regular'=>'Обычный','Bold'=>'Полужирный'),$_REQUEST['font_type'],'font_type'));
 				$this->tpl->set('s_decoration',$this->tpl->get_select_form('decoration',array('underline'=>'Да','none'=>'Нет'),$_REQUEST['decoration'],'decoration'));
 				$this->tpl->set('s_font_size',$this->tpl->get_select_form('font_size',array(10=>'10px',11=>'11px',12=>'12px',13=>'13px',14=>'14px',16=>'16px',),$_REQUEST['font_size'],'font_size'));
-				$code = "<!---Tizer Start-->\r\n";
+				$code = "<!---Tizer Start " . $this->sys['title'] . "-->\r\n";
 				$code .= '<iframe src="'.$this->sys['url'].'get_tizer.php?site='.$this->objectId.'&';
 				$code .= 'cols='.$_REQUEST['cols'].'&rows='.$_REQUEST['rows'].'&bgcolor='.str_replace('#','',$_REQUEST['bgcolor']).'&';
 				$code .= 'acolor:'.str_replace('#','',$_REQUEST['acolor']).'&ahover='.str_replace('#','',$_REQUEST['ahover']).'&font='.$_REQUEST['font'].'&';

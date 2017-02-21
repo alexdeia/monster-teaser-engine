@@ -3,6 +3,7 @@
 =============================================================
 =============================================================
 MTE - Monster Teaser Engine
+eTeaser @ 2017
 Author: unknown
 Refactoring: Alexey Klykov
 Contacts: http://chronodev.ru | http://aklykov.ru
@@ -11,7 +12,6 @@ E-mail: alexk.deia@gmail.com
 =============================================================
 */
 require_once('engine/security.php');
-
 class Admin{
 
 	public $acc_types = array(1=>'Вебмастер', 2=>'Рекламодатель');
@@ -121,33 +121,33 @@ class Admin{
 		$SQL = "SELECT * FROM `companies` WHERE `owner` = '".$_REQUEST['id']."' LIMIT 1";
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		if ($this->DBM->NumberOfRows($rs)) {			while($data=$this->DBM->GetNextRow($rs)) {				$this->delete_dir_tree('data/companies/'.$data['id']);
-			$SQL = "DELETE FROM `tar_cat` WHERE `id` = '".$_REQUEST['id']."' LIMIT 1";
-			$this->DBM->ExecuteQuery($SQL);
-			$SQL = "DELETE FROM `tar_day` WHERE `id` = '".$_REQUEST['id']."' LIMIT 1";
-			$this->DBM->ExecuteQuery($SQL);
-			$SQL = "DELETE FROM `tar_hrs` WHERE `id` = '".$_REQUEST['id']."' LIMIT 1";
-			$this->DBM->ExecuteQuery($SQL);
-		}
+				$SQL = "DELETE FROM `tar_cat` WHERE `id` = '".$_REQUEST['id']."' LIMIT 1";
+				$this->DBM->ExecuteQuery($SQL);
+				$SQL = "DELETE FROM `tar_day` WHERE `id` = '".$_REQUEST['id']."' LIMIT 1";
+				$this->DBM->ExecuteQuery($SQL);
+				$SQL = "DELETE FROM `tar_hrs` WHERE `id` = '".$_REQUEST['id']."' LIMIT 1";
+				$this->DBM->ExecuteQuery($SQL);
+			}
 		}
 	}
 
 	public function delete_dir_tree($path) {		if (file_exists($path)) {			if (is_dir($path)) {				$dir = scandir($path);
-		unset($dir[0],$dir[1]);
-		foreach($dir as $key => $val) {    				$file = $path.'/'.$val;    				if (is_dir($file)) {    					$this->delete_dir_tree($file);
-		}else{						unlink($file);
-		}
-		}
-		rmdir($path);
-	}else{    			unlink($path);
-	}
-	}
+  				unset($dir[0],$dir[1]);
+   			 	foreach($dir as $key => $val) {    				$file = $path.'/'.$val;    				if (is_dir($file)) {    					$this->delete_dir_tree($file);
+    				}else{						unlink($file);
+    				}
+    			}
+    			rmdir($path);
+    		}else{    			unlink($path);
+    		}
+    	}
 	}
 
 	public function get_users_logins() {		$SQL = "SELECT `id`,`login` FROM `users`";
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		$this->users_logins = array();
 		while($data=$this->DBM->GetNextRow($rs)) {
-			$this->users_logins[$data['id']] = $data['login'];
+        	$this->users_logins[$data['id']] = $data['login'];
 		}
 	}
 
@@ -210,22 +210,22 @@ class Admin{
 					$tar_cat .= '<td width="50">'.(($data['price_click']/10*9)).' / '.(($data['price_click_uniq']/10*9)).'</td>';
 					$tar_cat .= '</tr>';
 					$i++;
-				}
-			}
-			$this->tpl->set('i_max',$i);
-			$this->tpl->set('cats',$tar_cat);			return $this->tpl->out('admin/sites/edit');
+		   		}
+		   	}
+		   	$this->tpl->set('i_max',$i);
+		    $this->tpl->set('cats',$tar_cat);			return $this->tpl->out('admin/sites/edit');
 		}
 	}
 
 	public function action_save_site() {		require_once(CLASSES_PATH.'site.php');
 		$site = new Site();
 		if ($site->get($_REQUEST['id'])) { 			$site->setVariable('url',$_REQUEST['url']);
-			foreach($_REQUEST['cat'] as $c => $val) {
-				$cats[] = $c;
-			}
-			$site->setVariable('categories',serialize($cats));
-			$site->setVariable('status',1);
-			$site->update();
+  			foreach($_REQUEST['cat'] as $c => $val) {
+  		 		$cats[] = $c;
+	  		}
+  		 	$site->setVariable('categories',serialize($cats));
+  		  	$site->setVariable('status',1);
+    		$site->update();
 		}
 	}
 
@@ -249,7 +249,7 @@ class Admin{
 				if ($i%2==0) {
 					$this->tpl->set('inf_row_color','#F8F8F8');
 				}else{
-					$this->tpl->set('inf_row_color','#F0F0F0');
+                	$this->tpl->set('inf_row_color','#F0F0F0');
 				}
 				$i++;
 				$inf->load($data);
@@ -265,7 +265,7 @@ class Admin{
 	public function show_edit_tizer() {		require_once(CLASSES_PATH.'informer.php');
 		$inf = new Informer();
 		if ($inf->get($_REQUEST['id'])) {   			$inf->load_tpl_vars();
-			return $this->tpl->out('admin/tizers/edit');
+   			return $this->tpl->out('admin/tizers/edit');
 		}
 	}
 
@@ -290,40 +290,40 @@ class Admin{
 	public function show_site_reports() {
 		require_once(CLASSES_PATH.'site.php');
 		$site = new Site();		if ($site->get(intval($_REQUEST['id']))) {
-			$site->load_tpl_vars();
+           	$site->load_tpl_vars();
 			if (!$_REQUEST['year']) {
-				$_REQUEST['year'] = date('Y');
-			}
-			if (!$_REQUEST['month']) {
-				$_REQUEST['month'] = date('n');
-			}
-			if (!$_REQUEST['day']) {
-				$_REQUEST['day'] = date('j');
-			}
-			if (!$_REQUEST['type']) {
-				$_REQUEST['type'] = 'all';
-			}
-			$log = 'data/sites/'.$site->objectId.'/logs/'.$_REQUEST['year'].'/'.$_REQUEST['month'].'/'.$_REQUEST['day'].'.log';
-			$str = $this->tpl->out('admin/sites/reports/start');
-			if (file_exists($log)) {
-				$data = file($log);
-				foreach($data as $i => $line) {
-					list($time,$type,$show_uniq,$show,$ip,$ref) = explode("\t",$line);
-					if ($type == $_REQUEST['type'] || $_REQUEST['type'] == 'all') {
-						$site->tpl->set('l_time',date('H:i:s',$time));
-						if ($type == 'show') {
-							$site->tpl->set('l_shows',$show.'/'.$show_uniq);
-						}else{
-							$site->tpl->set('l_clicks',$show.'/'.$show_uniq);
-						}
+           		$_REQUEST['year'] = date('Y');
+           	}
+           	if (!$_REQUEST['month']) {
+           		$_REQUEST['month'] = date('n');
+           	}
+          	if (!$_REQUEST['day']) {
+           		$_REQUEST['day'] = date('j');
+           	}
+           	if (!$_REQUEST['type']) {
+           		$_REQUEST['type'] = 'all';
+           	}
+           	$log = 'data/sites/'.$site->objectId.'/logs/'.$_REQUEST['year'].'/'.$_REQUEST['month'].'/'.$_REQUEST['day'].'.log';
+           	$str = $this->tpl->out('admin/sites/reports/start');
+           	if (file_exists($log)) {
+           		$data = file($log);
+           		foreach($data as $i => $line) {
+           			list($time,$type,$show_uniq,$show,$ip,$ref) = explode("\t",$line);
+	       			if ($type == $_REQUEST['type'] || $_REQUEST['type'] == 'all') {
+ 						$site->tpl->set('l_time',date('H:i:s',$time));
+       					if ($type == 'show') {
+            				$site->tpl->set('l_shows',$show.'/'.$show_uniq);
+            			}else{
+                          	$site->tpl->set('l_clicks',$show.'/'.$show_uniq);
+            			}
 						$site->tpl->set('l_ip',$ip);
 						$site->tpl->set('l_ref',$ref);
 						$str .= $site->tpl->out('admin/sites/reports/row');
 					}
-				}
-			}else{
-				$str .= $site->tpl->out('admin/sites/reports/row2');
-			}
+           		}
+           	}else{
+           		$str .= $site->tpl->out('admin/sites/reports/row2');
+           	}
 			$str .= $site->tpl->out('admin/sites/reports/end');
 			return $str;
 		}
@@ -333,41 +333,41 @@ class Admin{
 		require_once(CLASSES_PATH.'informer.php');
 		$inf = new Informer();
 		if ($inf->get(intval($_REQUEST['id']))) {
-			$inf->load_tpl_vars();
+           	$inf->load_tpl_vars();
 			if (!$_REQUEST['year']) {
-				$_REQUEST['year'] = date('Y');
-			}
-			if (!$_REQUEST['month']) {
-				$_REQUEST['month'] = date('n');
-			}
-			if (!$_REQUEST['day']) {
-				$_REQUEST['day'] = date('j');
-			}
-			if (!$_REQUEST['type']) {
-				$_REQUEST['type'] = 'all';
-			}
-			$log = 'data/informers/'.$inf->objectId.'/logs/'.$_REQUEST['year'].'/'.$_REQUEST['month'].'/'.$_REQUEST['day'].'.log';
-			$str = $this->tpl->out('admin/tizers/reports/start');
-			if (file_exists($log)) {
-				$data = file($log);
-				foreach($data as $i => $line) {
+           		$_REQUEST['year'] = date('Y');
+           	}
+           	if (!$_REQUEST['month']) {
+           		$_REQUEST['month'] = date('n');
+           	}
+          	if (!$_REQUEST['day']) {
+           		$_REQUEST['day'] = date('j');
+           	}
+           	if (!$_REQUEST['type']) {
+           		$_REQUEST['type'] = 'all';
+           	}
+           	$log = 'data/informers/'.$inf->objectId.'/logs/'.$_REQUEST['year'].'/'.$_REQUEST['month'].'/'.$_REQUEST['day'].'.log';
+           	$str = $this->tpl->out('admin/tizers/reports/start');
+           	if (file_exists($log)) {
+           		$data = file($log);
+           		foreach($data as $i => $line) {
 					list($time,$type,$show_uniq,$show,$com,$ip,$site,$ref) = explode("\t",$line);
-					if ($type == $_REQUEST['type'] || $_REQUEST['type'] == 'all') {
-						$this->tpl->set('l_time',date('H:i:s'));
-						if ($type == 'show') {
-							$this->tpl->set('l_shows',$show.'/'.$show_uniq);
-						}else{
-							$this->tpl->set('l_clicks',$show.'/'.$show_uniq);
-						}
+	    			if ($type == $_REQUEST['type'] || $_REQUEST['type'] == 'all') {
+	       				$this->tpl->set('l_time',date('H:i:s'));
+	           			if ($type == 'show') {
+	             			$this->tpl->set('l_shows',$show.'/'.$show_uniq);
+	             		}else{
+	               			$this->tpl->set('l_clicks',$show.'/'.$show_uniq);
+	             		}
 						$this->tpl->set('l_ip',$ip);
 						$this->tpl->set('l_ref',$ref);
 						$str .= $this->tpl->out('admin/tizers/reports/row');
 					}
-				}
+           		}
 
-			}else{
-				$str .= $inf->tpl->out('admin/tizers/reports/row2');
-			}
+           	}else{
+           		$str .= $inf->tpl->out('admin/tizers/reports/row2');
+           	}
 			$str .= $inf->tpl->out('admin/tizers/reports/end');
 			return $str;
 		}
@@ -398,20 +398,20 @@ class Admin{
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		if ($this->DBM->NumberOfRows($rs)) {
 			while($data=$this->DBM->GetNextRow($rs)) {				if (preg_match("/(Z[0-9]*)/i",$data['wmz'])) {					$str .= "\t<payment>\r\n";
-				$str .= "\t\t<Destination>".$data['wmz']."</Destination>\r\n";
-				$str .= "\t\t<Amount>".$data['balance']."</Amount>\r\n";
-				$str .= "\t\t<Description>Вывод средств из сервиса ".$this->sys['url']."</Description>\r\n";
-				$str .= "\t\t<Id>".$data['id']."</Id>\r\n";
-				$str .= "\t</payment>\r\n";
-				$SQL = "UPDATE `users` SET `balance` = balance-".$data['balance']." WHERE `id` = '".$data['id']."' LIMIT 1";
-				$this->DBM->ExecuteQuery($SQL);
-				if ($data['referrer']) {						$perc = (($data['balance']/100)*$this->sys['ref_perc']);
-					$SQL = "UPDATE `users` SET `balance`=balance+".(float)$perc.",`ref_balance`=ref_balance+".(float)$perc." WHERE `id` = '".$data['referrer']."' LIMIT 1";
+					$str .= "\t\t<Destination>".$data['wmz']."</Destination>\r\n";
+					$str .= "\t\t<Amount>".$data['balance']."</Amount>\r\n";
+					$str .= "\t\t<Description>Вывод средств из сервиса ".$this->sys['url']."</Description>\r\n";
+					$str .= "\t\t<Id>".$data['id']."</Id>\r\n";
+					$str .= "\t</payment>\r\n";
+					$SQL = "UPDATE `users` SET `balance` = balance-".$data['balance']." WHERE `id` = '".$data['id']."' LIMIT 1";
+					$this->DBM->ExecuteQuery($SQL);
+					if ($data['referrer']) {						$perc = (($data['balance']/100)*$this->sys['ref_perc']);
+			  			$SQL = "UPDATE `users` SET `balance`=balance+".(float)$perc.",`ref_balance`=ref_balance+".(float)$perc." WHERE `id` = '".$data['referrer']."' LIMIT 1";
+			  	 		$this->DBM->ExecuteQuery($SQL);
+			  	 	}
+					$SQL = "INSERT DELAYED INTO `wm_payout` SET `type` = 1, `user` = '".$data['id']."', `time` = '".time()."', `status` = 1, `summ` = '".$data['balance']."'";
 					$this->DBM->ExecuteQuery($SQL);
 				}
-				$SQL = "INSERT DELAYED INTO `wm_payout` SET `type` = 1, `user` = '".$data['id']."', `time` = '".time()."', `status` = 1, `summ` = '".$data['balance']."'";
-				$this->DBM->ExecuteQuery($SQL);
-			}
 			}
 		}
 		$f = fopen('data/mptf/'.date('Y-m-d H_i').'.xml','w');
@@ -420,7 +420,7 @@ class Admin{
 	}
 
 	public function show_payments() {		if (!$_REQUEST['from']) {			$_REQUEST['from'] = date('Y-m-d');
-	}
+		}
 		if (!$_REQUEST['to']) {
 			$_REQUEST['to'] = date('Y-m-d');
 		}
@@ -430,13 +430,13 @@ class Admin{
 		$SQL = "SELECT * FROM `wm_pay` WHERE `time` BETWEEN ".mktime(0,0,0,$fm,$fd,$fy)." AND ".mktime(59,59,23,$tm,$td,$ty)." AND `status` = 2";
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		if ($this->DBM->NumberOfRows($rs)) {			while($data=$this->DBM->GetNextRow($rs)) {				$this->tpl->set('log_time',date('Y-m-d H:i:s',$data['time']));
-			$this->tpl->set('log_summ',$data['summ']);
-			$SQL = "SELECT `login` FROM `users` WHERE `id` = '".$data['user']."' LIMIT 1";
-			list($this->tpl->vars['log_user']) = $this->DBM->SingleRowQuery($SQL);				$str .= $this->tpl->out('admin/payments/row');
-		}
+				$this->tpl->set('log_summ',$data['summ']);
+				$SQL = "SELECT `login` FROM `users` WHERE `id` = '".$data['user']."' LIMIT 1";
+				list($this->tpl->vars['log_user']) = $this->DBM->SingleRowQuery($SQL);				$str .= $this->tpl->out('admin/payments/row');
+			}
 			$this->tpl->set('reports',$str);
 		}
-		return $this->tpl->out('admin/payments/main');
+  		return $this->tpl->out('admin/payments/main');
 	}
 
 	public function show_payouts_reports() {
@@ -463,7 +463,7 @@ class Admin{
 			}
 			$this->tpl->set('reports',$str);
 		}
-		return $this->tpl->out('admin/payout/main');
+  		return $this->tpl->out('admin/payout/main');
 	}
 
 
@@ -500,11 +500,11 @@ class Admin{
 	}
 
 	public function show_cats() {  		$SQL = "SELECT * FROM `categories`";
-		$rs = $this->DBM->ExecuteQuery($SQL);
-		$str = $this->tpl->out('admin/cats/list.start');
-		while($data=$this->DBM->GetNextRow($rs)) {  			foreach($data as $key => $val) {  				$this->tpl->set('cat_'.$key,$val);
-		}	  		$str .= $this->tpl->out('admin/cats/list.row');
-		}
+  		$rs = $this->DBM->ExecuteQuery($SQL);
+  		$str = $this->tpl->out('admin/cats/list.start');
+  		while($data=$this->DBM->GetNextRow($rs)) {  			foreach($data as $key => $val) {  				$this->tpl->set('cat_'.$key,$val);
+  			}	  		$str .= $this->tpl->out('admin/cats/list.row');
+  		}
 		$str .= $this->tpl->out('admin/cats/list.end');
 		return $str;
 	}
@@ -519,7 +519,7 @@ class Admin{
 	}
 
 	public function action_delete_cat() {  		$SQL = "DELETE FROM `categories` WHERE `id` = '".(int)$_REQUEST['id']."' LIMIT 1";
-		$this->DBM->ExecuteQuery($SQL);
+  		$this->DBM->ExecuteQuery($SQL);
 	}
 
 	public function show_companies() {		require_once(CLASSES_PATH.'company.php');
@@ -547,7 +547,7 @@ class Admin{
 				if ($i%2==0) {
 					$this->tpl->set('com_row_color','#F8F8F8');
 				}else{
-					$this->tpl->set('com_row_color','#F0F0F0');
+                	$this->tpl->set('com_row_color','#F0F0F0');
 				}
 				$i++;
 				$com->load($data);
@@ -572,7 +572,7 @@ class Admin{
 		$rs = $this->DBM->ExecuteQuery($SQL);
 		$this->categories = array();
 		while($data=$this->DBM->GetNextRow($rs)) {
-			$this->categories[$data['id']] = $data['name'];
+        	$this->categories[$data['id']] = $data['name'];
 		}
 	}
 
@@ -594,22 +594,22 @@ class Admin{
 				$infs = @implode(',',$ia);
 				$SQL = "SELECT * FROM `categories` WHERE `id` IN (".$infs.")";
 			}
-			return $this->tpl->out('admin/companies/info');
+       		return $this->tpl->out('admin/companies/info');
 		}
 	}
 
 	public function action_delete_com() {		require_once(CLASSES_PATH.'company.php');
 		$com = new Company();
 		if ($com->get($_REQUEST['id'])) {				$com->delete_dir_tree('data/companies/'.$com->objectId);
-			$SQL = "DELETE FROM `tar_cat` WHERE `id` = '".$com->objectId."'";
-			$this->DBM->ExecuteQuery($SQL);
-			$SQL = "DELETE FROM `tar_day` WHERE `id` = '".$com->objectId."'";
-			$this->DBM->ExecuteQuery($SQL);
-			$SQL = "DELETE FROM `tar_hrs` WHERE `id` = '".$com->objectId."'";
-			$this->DBM->ExecuteQuery($SQL);
-			$SQL = "UPDATE `users` SET `balance` = balance+".(float)$com->getVariable('funds')." WHERE `id` = '".$com->getVariable('owner')."' LIMIT 1";
-			$this->DBM->ExecuteQuery($SQL);
-			$com->delete();
+				$SQL = "DELETE FROM `tar_cat` WHERE `id` = '".$com->objectId."'";
+				$this->DBM->ExecuteQuery($SQL);
+				$SQL = "DELETE FROM `tar_day` WHERE `id` = '".$com->objectId."'";
+				$this->DBM->ExecuteQuery($SQL);
+				$SQL = "DELETE FROM `tar_hrs` WHERE `id` = '".$com->objectId."'";
+				$this->DBM->ExecuteQuery($SQL);
+				$SQL = "UPDATE `users` SET `balance` = balance+".(float)$com->getVariable('funds')." WHERE `id` = '".$com->getVariable('owner')."' LIMIT 1";
+				$this->DBM->ExecuteQuery($SQL);
+				$com->delete();
 		}
 	}
 
@@ -649,14 +649,14 @@ class Admin{
 					$tar_cat .= '<td width="50">'.(($data['price_click']/100*(100-$this->sys['perc']))).' / '.(($data['price_click_uniq']/100*(100-$this->sys['perc']))).'</td>';
 					$tar_cat .= '</tr>';
 				}
-			}
-			for($i=1;$i<8;$i++) {
+		 	}
+		 	for($i=1;$i<8;$i++) {
 				$tar_day .= '<input type="checkbox" id="td_'.$i.'" name="tar_day['.$i.']"';
 				if (@in_array($i,$com_days)) {
 					$tar_day .= ' checked';
 				}
 				$tar_day .= '>'.$this->tpl->week_days[$i].'&nbsp;&nbsp;&nbsp;';
-			}
+		 	}
 			$tar_time = '';
 			$e=0;
 			for($i=0;$i<24;$i++) {
@@ -669,18 +669,18 @@ class Admin{
 				}
 				$tar_time .= '></td><td>'.$i.':00 - '.$i.':59</td><td width="30"></td>';
 				$e++;
-			}
-			$tar_uniq = '<tr>';
-			$tar_uniq .= '<td>Только уникальные показы</td><td><input type="checkbox" name="uniq_shows"';
+		 	}
+		  	$tar_uniq = '<tr>';
+		  	$tar_uniq .= '<td>Только уникальные показы</td><td><input type="checkbox" name="uniq_shows"';
 			if ($com->getVariable('uniq_shows') == 1) {
 				$tar_uniq .= ' checked';
-			}
-			$tar_uniq .= ' /></td><td width="50"></td>';
-			$tar_uniq .= '<td>Только уникальные клики</td><td><input type="checkbox" name="uniq_clicks"';
-			if ($com->getVariable('uniq_clicks') == 1) {
+		  	}
+		   	$tar_uniq .= ' /></td><td width="50"></td>';
+		    $tar_uniq .= '<td>Только уникальные клики</td><td><input type="checkbox" name="uniq_clicks"';
+		    if ($com->getVariable('uniq_clicks') == 1) {
 				$tar_uniq .= ' checked';
-			}
-			$tar_uniq .= ' /></td></tr>';
+		  	}
+		   	$tar_uniq .= ' /></td></tr>';
 			$this->tpl->set('tar_cat',$tar_cat);
 			$this->tpl->set('tar_time',$tar_time);
 			$this->tpl->set('tar_day',$tar_day);
@@ -702,10 +702,10 @@ class Admin{
 				}
 			}
 			if (!$_REQUEST['tar_cat']) {
-				$_REQUEST['tar_cat'] = 1;
+    			$_REQUEST['tar_cat'] = 1;
 			}
 			if (!$_REQUEST['tar_time']) {
-				$_REQUEST['tar_time'] = array(0);
+    			$_REQUEST['tar_time'] = array(0);
 			}else{
 				foreach($_REQUEST['tar_time'] as $key => $val) {
 					$tar_time[] = $key;
@@ -745,15 +745,15 @@ class Admin{
 					if ($i%2==0) {
 						$this->tpl->set('inf_row_color','#F8F8F8');
 					}else{
-						$this->tpl->set('inf_row_color','#F0F0F0');
+		   				$this->tpl->set('inf_row_color','#F0F0F0');
 					}
 					$i++;
 					foreach ($data as $key => $val) {
 						$this->tpl->set('inf_'.$key,$val);
 					}
-					$str .= $this->tpl->out('admin/companies/informers/list.row');
-				}
-			}
+		   			$str .= $this->tpl->out('admin/companies/informers/list.row');
+		    	}
+		    }
 			$str .= $this->tpl->out('admin/companies/informers/list.end');
 			return $str;
 		}
@@ -776,15 +776,15 @@ class Admin{
 						if ($i%2==0) {
 							$this->tpl->set('inf_row_color','#F8F8F8');
 						}else{
-							$this->tpl->set('inf_row_color','#F0F0F0');
+	  	              	$this->tpl->set('inf_row_color','#F0F0F0');
 						}
 						$i++;
 						foreach ($data as $key => $val) {
 							$this->tpl->set('inf_'.$key,$val);
 						}
-						$str .= $this->tpl->out('admin/companies/informers/delete.list.row');
-					}
-				}
+	  		          	$str .= $this->tpl->out('admin/companies/informers/delete.list.row');
+	  		  		}
+	  		  	}
 				$str .= $this->tpl->out('admin/companies/informers/delete.list.end');
 			}else{
 				$str = $this->tpl->out('admin/companies/informers/delete.list.start');
@@ -816,19 +816,19 @@ class Admin{
 		$com = new Company();
 		if ($com->get(intval($_REQUEST['id']))) {
 			$com->load_tpl_vars();
-			if (is_array($_REQUEST['inf'])) {
-				$infs = array();
-				foreach ($_REQUEST['inf'] as $key => $val) {
-					if ($val == 'on') {
+   			if (is_array($_REQUEST['inf'])) {
+      			$infs = array();
+         		foreach ($_REQUEST['inf'] as $key => $val) {
+           			if ($val == 'on') {
 						$infs[] = $key;
-					}
-				}
-				$infz = unserialize($com->getVariable('informers'));
-				foreach($infz as $key => $val) {
-					$infs[] = $val;
-				}
-				$com->setVariable('informers',serialize($infs));
-				$com->update();
+                	}
+      			}
+         		$infz = unserialize($com->getVariable('informers'));
+           		foreach($infz as $key => $val) {
+             		$infs[] = $val;
+              	}
+               	$com->setVariable('informers',serialize($infs));
+                $com->update();
 			}
 		}
 	}
