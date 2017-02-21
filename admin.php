@@ -29,16 +29,21 @@ $user = new user();
 $tpl->__construct();
 $admin = new Admin();
 
-if ($_REQUEST['admin_login'] == 1) {	if ($sys['admin_user'] ==  $_REQUEST['login'] && $sys['admin_pass'] ==  $_REQUEST['password']) {
-		$session->setVariable('_admin_in',TRUE);
+if ($_REQUEST['admin_login'] == 1) {
+	if ($sys['admin_user'] ==  $_REQUEST['login'] && $sys['admin_pass'] ==  $_REQUEST['password']) {
+		$session->setVariable('_admin_in', TRUE);
+		header('Location: /admin.php?show=first');
 	}
 }
 
-if (isset($_REQUEST['exit'])) {	$session->setVariable('_admin_in',FALSE);
+if (isset($_REQUEST['exit'])) {
+	$session->setVariable('_admin_in', FALSE);
 }
 
-if (!$session->getVariable('_admin_in')) {	echo $tpl->out('admin/login');
-	exit();}
+if (!$session->getVariable('_admin_in')) {
+	echo $tpl->out('admin/login');
+	exit();
+}
 
 $tpl->set('left_menu',$tpl->out('left.login'));
 
@@ -46,7 +51,7 @@ if (isset($_REQUEST['action'])) {
 	$action_function = 'action_'.$_REQUEST['action'];
 	if (method_exists($admin,$action_function)) {
 		$tpl->set('content',call_user_func(array($admin,$action_function)));
-	}else{
+	} else {
 		trigger_error('Обращение к несуществующему методу '.get_class($admin).'::'.$action_function.'()',E_USER_NOTICE);
 	}
 }
@@ -61,4 +66,3 @@ if (isset($_REQUEST['show'])) {
 }
 
 echo $tpl->out('admin/main');
-?>
