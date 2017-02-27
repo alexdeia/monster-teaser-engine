@@ -1,8 +1,6 @@
-<div class="page_content">
 	<h2 class="title">Отчеты для рекламной компании #<TVAR>com_id</TVAR></h2>
-    <div id="cont">
 		<form action="/account/informers/<TVAR>com_id</TVAR>/reports.html" method="post">
-		<table align="center">
+		<table class="table" align="center">
 			<tr>
 				<td>Выберите дату для формирования отчета</td>
 				<td>
@@ -23,11 +21,13 @@
 				</td>
 			</tr>
 		</table>
-		<p align="right"><input type="submit" value="Формировать отчет" class="button"></p>
-		<table width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
-			<tr>
-				<th>Время</th>
-				<th>Показ/Уникальный</th>
-				<th>Клик/Уникальный</th>
-				<th>IP адрес</th>
-			</tr>
+		<p align="right"><input type="submit" value="Формировать отчет" class="btn btn-secondary"></p>
+		<table class="table" width="100%" cellspadding="2" cellspacing="1" bgcolor="#D7D7D7">
+			<thead>
+				<tr>
+					<th>Время</th>
+					<th>Показ/Уникальный</th>
+					<th>Клик/Уникальный</th>
+					<th>IP адрес</th>
+				</tr>
+			</thead>

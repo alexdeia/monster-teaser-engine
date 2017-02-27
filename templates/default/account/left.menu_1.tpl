@@ -1,4 +1,3 @@
-
 <li class="nav-item"><a class="nav-link" href="/index.php?handler=user&show=settings">Мои настройки</a></li>
 <li class="nav-item"><a class="nav-link" href="/index.php?handler=site&show=my_list">Мои сайты</a></li>
 <li class="nav-item"><a class="nav-link" href="/index.php?handler=user&show=funds">Бухгалтерия</a></li>

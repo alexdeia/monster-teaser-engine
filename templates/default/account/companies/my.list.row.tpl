@@ -1,17 +1,17 @@
 <tr>
-	<td bgcolor="<TVAR>com_row_color</TVAR>" align="center">
+	<td>
 		<img src="/templates/<SYS>template</SYS>/img/status_<TVAR>com_status</TVAR>.gif" border="0">
 	</td>
-	<td bgcolor="<TVAR>com_row_color</TVAR>" align="center">
+	<td>
 		<TVAR>com_name</TVAR>
 	</td>
-	<td bgcolor="<TVAR>com_row_color</TVAR>">
+	<td>
 		<TVAR>com_funds</TVAR>
 	</td>
-	<td bgcolor="<TVAR>com_row_color</TVAR>">
+	<td>
 		<TVAR>com_spent</TVAR>
 	</td>
-	<td bgcolor="<TVAR>com_row_color</TVAR>" align="center">
+	<td>
 		<a title="Редактировать компанию" href="/account/companies/<TVAR>com_id</TVAR>/edit.html"><img src="/templates/<SYS>template</SYS>/img/edit.gif" border="0"></a>
 		<a title="Настройка таргетинга" href="/account/companies/<TVAR>com_id</TVAR>/targeting.html"><img src="/templates/<SYS>template</SYS>/img/tar.gif" border="0"></a>
 		<a title="Добавить тизеры" href="/account/companies/<TVAR>com_id</TVAR>/add-informers.html"><img src="/templates/<SYS>template</SYS>/img/tiz_add.gif" border="0"></a>
