@@ -35,7 +35,7 @@
       </form>
     </div> <!-- /container -->
 		<div class="footer">
-			<p><a href="http://chronodev.ru" target="_blank">Made in chronodev</a></p>
+			<p><a href="http://e-dev.ru" target="_blank">Made in e-dev</a></p>
 			<p>Powered by eTeaser 1.0</p>
 		</div>
 

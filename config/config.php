@@ -3,9 +3,10 @@
 =============================================================
 =============================================================
 MTE - Monster Teaser Engine
+eTeaser @ 2017
 Author: unknown
 Refactoring: Alexey Klykov
-Contacts: http://chronodev.ru
+Contacts: http://e-dev.ru | http://aklykov.ru
 E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================

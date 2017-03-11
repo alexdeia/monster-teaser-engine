@@ -5,7 +5,7 @@
 MTE - Monster Teaser Engine
 Author: unknown
 Refactoring: Alexey Klykov
-Contacts: http://chronodev.ru
+Contacts: http://e-dev.ru
 E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================

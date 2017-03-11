@@ -1,18 +1,6 @@
 <?php
-/*
-=============================================================
-=============================================================
-MTE - Monster Teaser Engine
-Author: unknown
-Refactoring: Alexey Klykov
-Contacts: http://chronodev.ru
-E-mail: alexk.deia@gmail.com
-=============================================================
-=============================================================
-*/
-
 $sys['title'] = 'Monster Teaser Engine';
-$sys['template'] = 'redwhite';
+$sys['template'] = 'default';
 $sys['perc'] = '15';
 $sys['admin_icq'] = '51917207';
 $sys['login_chars'] = 'a-zA-Z0-9';
@@ -22,7 +10,7 @@ $sys['tizer_formats'] = '60x60
 $sys['admin_email'] = 'admin@admonster.org';
 $sys['passrobot_email'] = 'info@admonster.org';
 $sys['massmail_email'] = 'info@admonster.org';
-$sys['wmid'] = '';
+$sys['wmid'] = '139466065543';
 $sys['wmz'] = '';
 $sys['payout_info'] = 'Выплаты по пятницам. Минимальная сумма выплат - 5$.';
 $sys['payout_type'] = 'mp';

@@ -59,7 +59,7 @@
 	<hr>
 
 	<footer>
-		<p>&copy; eTeaser Engine 2010 - 2017 | chronodev.ru | aklykov.ru</p>
+		<p>&copy; eTeaser Engine 2010 - 2017 | e-dev.ru | aklykov.ru</p>
 	</footer>
 </div> <!-- /container -->
 
