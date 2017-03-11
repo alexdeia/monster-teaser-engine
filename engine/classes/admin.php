@@ -6,7 +6,7 @@ MTE - Monster Teaser Engine
 eTeaser @ 2017
 Author: unknown
 Refactoring: Alexey Klykov
-Contacts: http://chronodev.ru | http://aklykov.ru
+Contacts: http://e-dev.ru | http://aklykov.ru
 E-mail: alexk.deia@gmail.com
 =============================================================
 =============================================================
@@ -21,6 +21,11 @@ class Admin{
 		$this->DBM = $DBM;
 		$this->tpl = $tpl;
 		$this->session = $session;
+	}
+
+	public function show_first()
+	{
+		return $this->tpl->out('admin/first');
 	}
 
 	public function show_settings() {
