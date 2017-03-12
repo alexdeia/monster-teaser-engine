@@ -22,8 +22,8 @@
 
       <form class="form-signin" action="admin.php?admin_login=1" method="post">
         <h2 class="form-signin-heading">Авторизация</h2>
-        <label for="inputEmail" class="sr-only">Login</label>
-        <input type="email" id="inputEmail" class="form-control" name="login" placeholder="Логин" required autofocus>
+        <label for="inputLogin" class="sr-only">Login</label>
+        <input type="login" id="inputLogin" class="form-control" name="login" placeholder="Логин" required autofocus>
         <label for="inputPassword" class="sr-only">Пароль</label>
         <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Пароль" required>
         <div class="checkbox">
